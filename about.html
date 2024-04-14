@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us/Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>About Us/Contact Us</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map.html">Book Exchange Map</a></li>
+            <li><a href="books.html">Book Exchange Boxes</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="about.html" class="active">About Us/Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>We are a not-for-profit organization dedicated to promoting reading and literacy in our community through book exchange initiatives.</p>
+        <p>Our mission is to make books more accessible to everyone and foster a love for reading.</p>
+    </section>
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
