@@ -7,7 +7,7 @@
     <style>
         /* Adjust map container size */
         #map {
-            height: 400px;
+            height: 600px;
             width: 100%;
         }
     </style>
@@ -20,50 +20,34 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="map.html">Book Exchange Map</a></li>
-            <li><a href="books.html">Book Exchange Boxes</a></li>
+            <li><a href="book_boxes.html">Book Exchange Boxes</a></li>
             <li><a href="forum.html">Forum</a></li>
-            <li><a href="about.html">About Us/Contact Us</a></li>
+            <li><a href="about_us.html">About Us/Contact Us</a></li>
         </ul>
     </nav>
     <section id="map"></section>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // Initialize and display the map
-        function initMap() {
-            // Map options
-            var mapOptions = {
-                center: { lat: 0, lng: 0 }, // Center the map initially at (0, 0)
-                zoom: 8, // Set default zoom level
-            };
+        var map = L.map('map').setView([50.8798438, 4.7005176], 12);
+        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp', { attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>' })
+            .addTo(map);
 
-            // Create the map
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            // Fetch book exchange box data from your JSON file
-            fetch('coordinates.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Iterate over the data and add markers for each book exchange box
-                    data.forEach(function(box) {
-                        var marker = new google.maps.Marker({
-                            position: { lat: box.latitude, lng: box.longitude },
-                            map: map,
-                            title: box.name,
-                        });
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching book exchange box data:', error);
+        fetch('coordinates.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(box => {
+                    L.marker([box.latitude, box.longitude]).addTo(map)
+                        .bindPopup(box.name);
                 });
-        }
+            })
+            .catch(error => {
+                console.error('Error fetching book exchange box data:', error);
+            });
     </script>
-    <!-- Include the Google Maps JavaScript API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <!-- Replace "YOUR_API_KEY" with your actual Google Maps API key -->
-    
+
     <footer>
         <p>&copy; 2024 Book Exchange</p>
     </footer>
 </body>
 </html>
-
