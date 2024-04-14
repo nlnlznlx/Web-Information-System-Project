@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Exchange Map</title>
+    <style>
+        /* Adjust map container size */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Exchange Map</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map.html">Book Exchange Map</a></li>
+            <li><a href="books.html">Book Exchange Boxes</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="about.html">About Us/Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="map"></section>
+
+    <script>
+        // Initialize and display the map
+        function initMap() {
+            // Map options
+            var mapOptions = {
+                center: { lat: 0, lng: 0 }, // Center the map initially at (0, 0)
+                zoom: 8, // Set default zoom level
+            };
+
+            // Create the map
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Fetch book exchange box data from your JSON file
+            fetch('coordinates.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Iterate over the data and add markers for each book exchange box
+                    data.forEach(function(box) {
+                        var marker = new google.maps.Marker({
+                            position: { lat: box.latitude, lng: box.longitude },
+                            map: map,
+                            title: box.name,
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching book exchange box data:', error);
+                });
+        }
+    </script>
+    <!-- Include the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <!-- Replace "YOUR_API_KEY" with your actual Google Maps API key -->
+    
+    <footer>
+        <p>&copy; 2024 Book Exchange</p>
+    </footer>
+</body>
+</html>
 
