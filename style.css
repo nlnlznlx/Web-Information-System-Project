@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #f4f4f4;
 }
 
 header {
@@ -9,6 +10,14 @@ header {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+.container, .container-fluid {
+    padding: 20px 15px; /* Consistent padding around the content */
+}
+
+.navbar {
+    margin-bottom: 20px; /* Space below the navbar */
 }
 
 nav ul {
@@ -33,6 +42,36 @@ nav a.active {
 
 .about-section, .contact-section {
     margin: 20px;
+}
+
+.carousel {
+    margin: auto; /* Center the carousel horizontally */
+    max-width: 90%; /* Limiting the width of the carousel */
+}
+
+.carousel-inner img {
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#welcome {
+    text-align: center; /* Center-align the welcome message */
+    padding: 20px;
+    background: white; /* White background for the text area */
+    margin-top: 20px; /* Space above the welcome section */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+footer {
+    background-color: #333; /* Dark footer background */
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.form-inline {
+    justify-content: center; /* Center form in the available space */
+    padding: 20px 0; /* Padding around the form */
 }
 
 .form-group {
