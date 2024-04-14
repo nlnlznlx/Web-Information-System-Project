@@ -12,6 +12,7 @@
             height: 600px;
             width: 100%;
         }
+
     </style>
 </head>
 <body>
@@ -34,6 +35,8 @@
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp', { attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>' })
             .addTo(map);
 
+
+
         fetch('coordinates.json')
             .then(response => {
                 if (!response.ok) {
@@ -47,7 +50,7 @@
                     var imageUrl = `img/${box.name}.jpg`; // Assuming images are stored in /img folder with same name as box
                     popupContent += `<img src="${imageUrl}" alt="${box.name} Image" style="max-width: 200px;">`;
                     L.marker([box.latitude, box.longitude]).addTo(map)
-                        .bindPopup(popupContent);
+                        .bindPopup(popupContent, { maxWidth: "auto" });
                 });
             })
             .catch(error => {
