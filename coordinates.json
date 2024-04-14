@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Guldensporenlaan 47",
+        "latitude": 50.883296,
+        "longitude": 4.7389162
+    },
+    {
+        "name": "Schoolstraat 2",
+        "latitude": 50.875684,
+        "longitude": 4.7272217
+    },
+    {
+        "name": "Elfnovemberlaan 49",
+        "latitude": 50.885737,
+        "longitude": 4.7260617
+    }
+    // Add more book exchange box data as needed
+]
