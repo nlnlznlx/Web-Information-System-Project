@@ -28,10 +28,7 @@
         </ul>
     </nav>
     <section id="map"></section>
-    <div id="map"></div>
-    #map { height: 180px; }
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         var map = L.map('map').setView([50.8798438, 4.7005176], 12);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp', { attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>' })
@@ -46,8 +43,11 @@
             })
             .then(data => {
                 data.forEach(box => {
+                    var popupContent = `<b>${box.name}</b><br>`;
+                    var imageUrl = `img/${box.name}.jpg`; // Assuming images are stored in /img folder with same name as box
+                    popupContent += `<img src="${imageUrl}" alt="${box.name} Image" style="max-width: 200px;">`;
                     L.marker([box.latitude, box.longitude]).addTo(map)
-                        .bindPopup(box.name);
+                        .bindPopup(popupContent);
                 });
             })
             .catch(error => {
