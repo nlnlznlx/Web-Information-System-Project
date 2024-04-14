@@ -13,6 +13,235 @@
         "name": "Elfnovemberlaan 49",
         "latitude": 50.885737,
         "longitude": 4.7260617
+    },
+    {
+        "name": "Patroonschapstraat 7",
+        "latitude": 50.884924,
+        "longitude": 4.7237778
+    },
+    {
+        "name": "Leopold Ruelensstraat 26",
+        "latitude": 50.890673,
+        "longitude": 4.7262615
+    },
+    {
+        "name": "Albrecht Rodenbachstraat 55",
+        "latitude": 50.890636,
+        "longitude": 4.7240621
+    },
+    {
+        "name": "Gemeenteplein 33",
+        "latitude": 50.890501,
+        "longitude": 4.7295043
+    },
+    {
+        "name": "Holsbeeksesteenweg 82",
+        "latitude": 50.896913,
+        "longitude": 4.7315696
+    },
+    {
+        "name": "Bergstraat 73",
+        "latitude": 50.903539,
+        "longitude": 4.7304565
+    },
+    {
+        "name": "Klein Langeveld 30",
+        "latitude": 50.91061,
+        "longitude": 4.7204304
+    },
+    {
+        "name": "Wielewaallaan 26",
+        "latitude": 50.901261,
+        "longitude": 4.7203928
+    },
+    {
+        "name": "Eenmeilaan 35",
+        "latitude": 50.885895,
+        "longitude": 4.7175497
+    },
+    {
+        "name": "Wipstraat 1",
+        "latitude": 50.886856,
+        "longitude": 4.7205591
+    },
+    {
+        "name": "Rijende Artillerielaan",
+        "latitude": 50.884072,
+        "longitude": 4.7050264
+    },
+    {
+        "name": "Mechelsesteenweg 55",
+        "latitude": 50.890961,
+        "longitude": 4.6940804
+    },
+    {
+        "name": "Schorenshof 13",
+        "latitude": 50.890616,
+        "longitude": 4.6986294
+    },
+    {
+        "name": "Jaartallenpad",
+        "latitude": 50.885533,
+        "longitude": 4.6971273
+    },
+    {
+        "name": "Vaartkom 4",
+        "latitude": 50.887583,
+        "longitude": 4.7002172
+    },
+    {
+        "name": "Brouwersstraat 36",
+        "latitude": 50.88317,
+        "longitude": 4.6934879
+    },
+    {
+        "name": "Mechelsesteenweg 485",
+        "latitude": 50.907363,
+        "longitude": 4.6683741
+    },
+    {
+        "name": "Locomotievenstraat 5",
+        "latitude": 50.882927,
+        "longitude": 4.7223911
+    },
+    {
+        "name": "Karel Schurmansstraat 23",
+        "latitude": 50.880849,
+        "longitude": 4.7192502
+    },
+    {
+        "name": "Désiré Mellaertsstraat 3",
+        "latitude": 50.883324,
+        "longitude": 4.7276925
+    },
+    {
+        "name": "Persilstraat 53",
+        "latitude": 50.904305,
+        "longitude": 4.668932
+    },
+    {
+        "name": "Celestijnenlaan 200C",
+        "latitude": 50.864066,
+        "longitude": 4.675894
+    },
+    {
+        "name": "Rijweg 43",
+        "latitude": 50.899064,
+        "longitude": 4.6771395
+    },
+    {
+        "name": "Waversebaan 68",
+        "latitude": 50.8641609,
+        "longitude": 4.6933568
+    },
+    {
+        "name": "Groenveldstraat 42",
+        "latitude": 50.8745267,
+        "longitude": 4.6834789
+    },
+    {
+        "name": "Bankstraat 72",
+        "latitude": 50.8762115,
+        "longitude": 4.6874124
+    },
+    {
+        "name": "Groeneweg 48",
+        "latitude": 50.869753,
+        "longitude": 4.663364
+    },
+    {
+        "name": "Ravenstraat 92",
+        "latitude": 50.879175,
+        "longitude": 4.7102246
+    },
+    {
+        "name": "Goswin lll Laan 15-9",
+        "latitude": 50.8710044,
+        "longitude": 4.6689977
+    },
+    {
+        "name": "Wisselbox, G. Vander Lindenstraat 8",
+        "latitude": 50.8690901,
+        "longitude": 4.7002504
+    },
+    {
+        "name": "Albert Giraudstraat 28",
+        "latitude": 50.8707402,
+        "longitude": 4.6982059
+    },
+    {
+        "name": "Weldadigheidsstraat 74",
+        "latitude": 50.8711167,
+        "longitude": 4.7010392
+    },
+    {
+        "name": "Frederik Lintsstraat 48",
+        "latitude": 50.8732159,
+        "longitude": 4.7029886
+    },
+    {
+        "name": "Dekenstraat 6",
+        "latitude": 50.8740725,
+        "longitude": 4.7083282
+    },
+    {
+        "name": "Groefstraat 2",
+        "latitude": 50.8796268,
+        "longitude": 4.6850172
+    },
+    {
+        "name": "Refugehof 9",
+        "latitude": 50.8766245,
+        "longitude": 4.6935976
+    },
+    {
+        "name": "Redingenstraat 90",
+        "latitude": 50.872708,
+        "longitude": 4.6944934
+    },
+    {
+        "name": "Quinten Metsysplein 3",
+        "latitude": 50.876462,
+        "longitude": 4.7122765
+    },
+    {
+        "name": "Koetsweg 45",
+        "latitude": 50.8747052,
+        "longitude": 4.7338468
+    },
+    {
+        "name": "Albert Stainierstraat 2",
+        "latitude": 50.8714656,
+        "longitude": 4.7235203
+    },
+    {
+        "name": "Zegelaan 29",
+        "latitude": 50.8657374,
+        "longitude": 4.7044391
+    },
+    {
+        "name": "Zwaluwenlaan 45",
+        "latitude": 50.8589452,
+        "longitude": 4.6915269
+    },
+    {
+        "name": "Bronlaan 2",
+        "latitude": 50.8630829,
+        "longitude": 4.707924
+    },
+    {
+        "name": "Philipslaan 84",
+        "latitude": 50.8648368,
+        "longitude": 4.7237317
+    },
+    {
+        "name": "Sparrendreef 15",
+        "latitude": 50.8584101,
+        "longitude": 4.7021699
+    },
+    {
+        "name": "Hoveniersdreef 1",
+        "latitude": 50.8639617,
+        "longitude": 4.6929816
     }
-    // Add more book exchange box data as needed
 ]
