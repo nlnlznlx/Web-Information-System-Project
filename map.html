@@ -34,7 +34,12 @@
             .addTo(map);
 
         fetch('coordinates.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch book exchange box data');
+                }
+                return response.json();
+            })
             .then(data => {
                 data.forEach(box => {
                     L.marker([box.latitude, box.longitude]).addTo(map)
