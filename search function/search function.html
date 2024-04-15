@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Exchange Box</title>
+</head>
+<body>
+<h1>Book Exchange Box</h1>
+
+<!-- Search form -->
+<h2>Search Books</h2>
+<form id="searchForm">
+    <label for="searchTitle">Search by Title:</label>
+    <input type="text" id="searchTitle" name="title">
+    <button type="submit">Search</button>
+</form>
+<form id="searchFormAuthor">
+    <label for="searchAuthor">Search by Author:</label>
+    <input type="text" id="searchAuthor" name="title">
+    <button type="submit">Search</button>
+</form>
+<form id="searchFormBox">
+    <label for="searchBox">Search by Book Box:</label>
+    <input type="text" id="searchBox" name="title">
+    <button type="submit">Search</button>
+</form>
+<ul id="searchResults"></ul>
+
+<!-- Add book form -->
+<h2>Add New Book</h2>
+<form id="addForm">
+    <label for="addTitle">Title:</label>
+    <input type="text" id="addTitle" name="title" required><br>
+    <!-- Add other fields as needed -->
+    <button type="submit">Add Book</button>
+</form>
+
+<!-- Delete book form -->
+<h2>Delete Book</h2>
+<form id="deleteForm">
+    <label for="deleteId">Enter Book ID to Delete:</label>
+    <input type="text" id="deleteId" name="id" required><br>
+    <button type="submit">Delete Book</button>
+</form>
+
+<script>
+    // Base URL of your Express.js server
+    const baseURL = 'http://localhost:3001';
+
+    // Search form submission handler
+    document.getElementById('searchForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const searchTitle = document.getElementById('searchTitle').value;
+        const response = await fetch(`${baseURL}/api/search?title=${encodeURIComponent(searchTitle)}`);
+        const data = await response.json();
+        displaySearchResults(data);
+    });
+
+    // Search form submission handler for author
+    document.getElementById('searchFormAuthor').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const searchAuthor = document.getElementById('searchAuthor').value;
+        const response = await fetch(`${baseURL}/api/search?author=${encodeURIComponent(searchAuthor)}`);
+        const data = await response.json();
+        displaySearchResults(data);
+    });
+
+    document.getElementById('searchFormBox').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const searchBox = document.getElementById('searchBox').value;
+        const response = await fetch(`${baseURL}/api/search?bookBox=${encodeURIComponent(searchBox)}`);
+        const data = await response.json();
+        displaySearchResults(data);
+    });
+
+    // Function to display search results
+    function displaySearchResults(data) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+        data.forEach(book => {
+            const li = document.createElement('li');
+            const title = document.createElement('strong');
+            title.textContent = `Title: ${book['Title of the Book']}`;
+            li.appendChild(title);
+
+            const author = document.createElement('p');
+            author.textContent = `Author: ${book['Name of the First Author or Publisher']}`;
+            li.appendChild(author);
+
+            const bookBox = document.createElement('p');
+            bookBox.textContent = `Book Box: ${book['Address of the Book Box']}`;
+            li.appendChild(bookBox);
+
+            searchResults.appendChild(li);
+        });
+    }
+
+    // Add book form submission handler
+    // Add book form submission handler
+    document.getElementById('addForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const addTitle = document.getElementById('addTitle').value;
+        // Add other fields as needed
+        const requestBody = {
+            title: addTitle,
+            // Add other fields here
+        };
+        const response = await fetch(`${baseURL}/api/add`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        });
+        const data = await response.json();
+        console.log(data);
+    });
+
+
+    // Delete book form submission handler
+    document.getElementById('deleteForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const deleteId = document.getElementById('deleteId').value;
+        const response = await fetch(`${baseURL}/api/delete/${deleteId}`, {
+            method: 'DELETE'
+        });
+        const data = await response.json();
+        console.log(data);
+    });
+</script>
+</body>
+</html>
