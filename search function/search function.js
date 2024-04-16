@@ -1,5 +1,8 @@
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
+const bodyParser = require('body-parser')
+const multer = require('multer') // v1.0.5
+const upload = multer() // for parsing multipart/form-data
 
 const app = express();
 const port = 3001;
@@ -25,6 +28,9 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 // Search for books by title, author and book box
 app.get('/api/search', async (req, res) => {
     try {
@@ -36,8 +42,16 @@ app.get('/api/search', async (req, res) => {
             query["Title of the Book"] = { $regex: title, $options: 'i' };
         }
         if (author) {
-            query["Name of the First Author or Publisher"] = { $regex: author, $options: 'i' };
-        }
+            query["$or"] = [
+                { "Name of the First Author or Publisher": { $regex: author, $options: 'i' } },
+                { "Name of the Second Author (optional)": { $regex: author, $options: 'i' } },
+                { "Name of the Third Author (optional)": { $regex: author, $options: 'i' } },
+                { "Name of the Fourth Author (optional)": { $regex: author, $options: 'i' } },
+                { "Name of the Fifth Author (optional)": { $regex: author, $options: 'i' } },
+                { "Name of the Sixth Author (optional)": { $regex: author, $options: 'i' } },
+                { "Name of the Seventh Author (optional)": { $regex: author, $options: 'i' } },
+                // Add more fields for additional authors as needed
+            ]};
         if (bookBox) {
             query["Address of the Book Box"] = { $regex: bookBox, $options: 'i' };
         }
@@ -52,9 +66,21 @@ app.get('/api/search', async (req, res) => {
 // Add a new book
 app.post('/api/add', async (req, res) => {
     try {
+        const { title, author, bookBox } = req.body; // Extract title, author, and bookBox from req.body
         const database = client.db('books');
         const collection = database.collection('book entries');
-        const result = await collection.insertOne(req.body);
+
+        // Define the properties for the new book entry
+        const newBook = {
+            "Title of the Book": title,
+            "Name of the First Author or Publisher": author,
+            "Address of the Book Box": bookBox
+        };
+
+        // Insert the new book entry into the collection
+        const result = await collection.insertOne(newBook);
+
+        // Send a response indicating success
         res.status(201).json({ message: 'Book added successfully', id: result.insertedId });
     } catch (err) {
         console.error('Error adding book:', err);
@@ -62,14 +88,15 @@ app.post('/api/add', async (req, res) => {
     }
 });
 
-// Delete a book by ID
-app.delete('/api/delete/:id', async (req, res) => {
+// Delete a book
+app.delete('/api/delete', async (req, res) => {
     try {
-        const { id } = req.params;
         const database = client.db('books');
         const collection = database.collection('book entries');
-        const result = await collection.deleteOne({ _id: ObjectId(id) });
-        res.json({ message: `${result.deletedCount} book deleted` });
+        console.log('receiving data ...');
+        console.log('body is ',req.body);
+        const result = await collection.deleteOne(req.body);
+        res.status(200).json({ message: 'Book deleted successfully', id: result.deletedId });
     } catch (err) {
         console.error('Error deleting book:', err);
         res.status(500).json({ error: 'Internal server error' });
