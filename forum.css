@@ -1,0 +1,32 @@
+/* forum.html */
+section#book-recommendation {
+    padding: 20px;
+}
+
+#discussion-form {
+    margin-bottom: 20px;
+}
+
+#discussion-posts {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts h2 {
+    margin-top: 0;
+}
+
+#discussion-posts .post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts .post p {
+    margin: 0;
+}
+
