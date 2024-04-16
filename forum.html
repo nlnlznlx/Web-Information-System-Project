@@ -9,20 +9,34 @@
 <body>
     <header>
         <h1>Book Exchange Forum</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Sign Up/Login</a></li>
-                <li><a href="#">Explore Book Listings</a></li>
-                <li><a href="#">Join Discussion</a></li>
-                <li><a href="#">Give Feedback</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map.html">Book Exchange Map</a></li>
+            <li><a href="books.html">Book Exchange Boxes</a></li>
+            <li><a href="forum.html" class="active">Forum</a></li>
+            <li><a href="about.html">About Us/Contact Us</a></li>
+        </ul>
+    </nav>
     <section id="book-listings">
         <!-- Book listings will be dynamically populated here -->
     </section>
     <section id="book-recommendation">
-        <!-- Book recommendation form and results will be displayed here -->
+        <h2>Join the Discussion</h2>
+        <form id="discussion-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit">Post Message</button>
+        </form>
+        <!-- Discussion posts will be displayed here -->
+        <div id="discussion-posts">
+            <!-- Posts will be dynamically populated here -->
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Book Exchange Forum</p>
