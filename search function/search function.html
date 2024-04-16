@@ -32,21 +32,29 @@
 <form id="addForm">
     <label for="addTitle">Title:</label>
     <input type="text" id="addTitle" name="title" required><br>
-    <!-- Add other fields as needed -->
+    <label for="addAuthor">Author:</label>
+    <input type="text" id="addAuthor" name="author" required><br>
+    <label for="addBookBox">Book Box:</label>
+    <input type="text" id="addBookBox" name="bookBox" required><br>
     <button type="submit">Add Book</button>
 </form>
 
 <!-- Delete book form -->
 <h2>Delete Book</h2>
 <form id="deleteForm">
-    <label for="deleteId">Enter Book ID to Delete:</label>
-    <input type="text" id="deleteId" name="id" required><br>
+    <label for="deleteTitle">Title:</label>
+    <input type="text" id="deleteTitle" name="title" required><br>
+    <label for="deleteAuthor">Author:</label>
+    <input type="text" id="deleteAuthor" name="author" required><br>
+    <label for="deleteBookBox">Book Box:</label>
+    <input type="text" id="deleteBookBox" name="bookBox" required><br>
     <button type="submit">Delete Book</button>
 </form>
 
 <script>
     // Base URL of your Express.js server
     const baseURL = 'http://localhost:3001';
+    console.log(baseURL)
 
     // Search form submission handler
     document.getElementById('searchForm').addEventListener('submit', async (event) => {
@@ -97,14 +105,15 @@
     }
 
     // Add book form submission handler
-    // Add book form submission handler
     document.getElementById('addForm').addEventListener('submit', async (event) => {
         event.preventDefault();
         const addTitle = document.getElementById('addTitle').value;
-        // Add other fields as needed
+        const addAuthor = document.getElementById('addAuthor').value;
+        const addBookBox = document.getElementById('addBookBox').value;
         const requestBody = {
-            title: addTitle,
-            // Add other fields here
+            "Title of the Book": addTitle,
+            "Name of the First Author or Publisher": addAuthor,
+            "Address of the Book Box": addBookBox,
         };
         const response = await fetch(`${baseURL}/api/add`, {
             method: 'POST',
@@ -117,13 +126,23 @@
         console.log(data);
     });
 
-
     // Delete book form submission handler
     document.getElementById('deleteForm').addEventListener('submit', async (event) => {
         event.preventDefault();
-        const deleteId = document.getElementById('deleteId').value;
-        const response = await fetch(`${baseURL}/api/delete/${deleteId}`, {
-            method: 'DELETE'
+        const deleteTitle = document.getElementById('deleteTitle').value;
+        const deleteAuthor = document.getElementById('deleteAuthor').value;
+        const deleteBookBox = document.getElementById('deleteBookBox').value;
+        const requestBody = {
+            "Title of the Book": deleteTitle,
+            "Name of the First Author or Publisher": deleteAuthor,
+            "Address of the Book Box": deleteBookBox,
+        };
+        const response = await fetch(`${baseURL}/api/delete`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
         const data = await response.json();
         console.log(data);
