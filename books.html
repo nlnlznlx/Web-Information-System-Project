@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Book Boxes</title>
+    <style>
+        /* Style for the book box container */
+        .book-box {
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
 
+        /* Style for the popup */
+        .popup {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the popup arrow */
+        .popup::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #ccc transparent transparent transparent;
+        }
+
+        /* Show the popup on hover */
+        .book-box:hover .popup {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All Book Boxes</h1>
+    </header>
+    <main>
+        <div class="book-box" onclick="window.location.href='Guldensporenlaan47.html';">
+            <img src="Guldensporenlaan47.jpg" alt="Guldensporenlaan 47">
+            <div class="popup">
+                <p>Name: Guldensporenlaan 47</p>
+                <p>Location: Example Location</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="book-box" onclick="window.location.href='Schoolstraat2.html';">
+            <img src="Schoolstraat2.jpg" alt="Schoolstraat 2">
+            <div class="popup">
+                <p>Name: Schoolstraat 2</p>
+                <p>Location: Example Location</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <!-- Add more book boxes as needed -->
+    </main>
+</body>
+</html>
