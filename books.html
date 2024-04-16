@@ -6,10 +6,25 @@
     <title>All Book Boxes</title>
     <style>
         /* Style for the book box container */
+        .book-box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1000px; /* Adjust the maximum width as needed */
+        }
+
         .book-box {
-            display: inline-block;
+            width: calc(20% - 20px); /* 20% width with 20px margin */
             margin: 10px;
             position: relative;
+            text-align: center;
+        }
+
+        /* Style for the book box image */
+        .book-box img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Style for the popup */
@@ -24,6 +39,7 @@
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1; /* Ensure popup is on top */
         }
 
         /* Style for the popup arrow */
@@ -50,7 +66,7 @@
     </header>
     <main>
         <div class="book-box" onclick="window.location.href='Guldensporenlaan47.html';">
-            <img src="Guldensporenlaan47.jpg" alt="Guldensporenlaan 47">
+            <img src="img/Guldensporenlaan 47.jpg" alt="Guldensporenlaan 47">
             <div class="popup">
                 <p>Name: Guldensporenlaan 47</p>
                 <p>Location: Example Location</p>
@@ -58,7 +74,7 @@
             </div>
         </div>
         <div class="book-box" onclick="window.location.href='Schoolstraat2.html';">
-            <img src="Schoolstraat2.jpg" alt="Schoolstraat 2">
+            <img src="img/Schoolstraat 2.jpg" alt="Schoolstraat 2">
             <div class="popup">
                 <p>Name: Schoolstraat 2</p>
                 <p>Location: Example Location</p>
