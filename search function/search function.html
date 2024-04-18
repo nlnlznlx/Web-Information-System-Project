@@ -92,9 +92,47 @@
             title.textContent = `Title: ${book['Title of the Book']}`;
             li.appendChild(title);
 
-            const author = document.createElement('p');
-            author.textContent = `Author: ${book['Name of the First Author or Publisher']}`;
-            li.appendChild(author);
+            if (book['Name of the First Author or Publisher']) {
+                const author1 = document.createElement('p');
+                author1.textContent = `First Author or Publisher: ${book['Name of the First Author or Publisher']}`;
+                li.appendChild(author1);
+            }
+
+            if (book['Name of the Second Author (optional)']) {
+                const author2 = document.createElement('p');
+                author2.textContent = `Second Author: ${book['Name of the Second Author (optional)']}`;
+                li.appendChild(author2);
+            }
+
+            if (book['Name of the Third Author (optional)']) {
+                const author3 = document.createElement('p');
+                author3.textContent = `Third Author: ${book['Name of the Third Author (optional)']}`;
+                li.appendChild(author3);
+            }
+
+            if (book['Name of the Fourth Author (optional)']) {
+                const author4 = document.createElement('p');
+                author4.textContent = `Fourth Author: ${book['Name of the Fourth Author (optional)']}`;
+                li.appendChild(author4);
+            }
+
+            if (book['Name of the Fifth Author (optional)']) {
+                const author5 = document.createElement('p');
+                author5.textContent = `Fifth Author: ${book['Name of the Fifth Author (optional)']}`;
+                li.appendChild(author5);
+            }
+
+            if (book['Name of the Sixth Author (optional)']) {
+                const author6 = document.createElement('p');
+                author6.textContent = `Sixth Author: ${book['Name of the Sixth Author (optional)']}`;
+                li.appendChild(author6);
+            }
+
+            if (book['Name of the Seventh Author (optional)']) {
+                const author7 = document.createElement('p');
+                author7.textContent = `Seventh Author: ${book['Name of the Seventh Author (optional)']}`;
+                li.appendChild(author7);
+            }
 
             const bookBox = document.createElement('p');
             bookBox.textContent = `Book Box: ${book['Address of the Book Box']}`;
