@@ -1,0 +1,74 @@
+/* forum.html */
+section#book-recommendation {
+    padding: 20px;
+}
+
+#discussion-form {
+    margin-bottom: 20px;
+}
+
+#discussion-posts {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts h2 {
+    margin-top: 0;
+}
+
+#discussion-posts .post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts .post p {
+    margin: 0;
+}
+
+/* Copy the relevant styles from style.css */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a.active {
+    color: #000;
+}
+
+#book-listings {
+    /* Add specific styles for the book listings section */
+}
+
+#book-recommendation {
+    /* Add specific styles for the book recommendation section */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
