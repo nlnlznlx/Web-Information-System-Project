@@ -106,3 +106,147 @@ button:hover {
 }
 
 
+/* books.html */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+section#book-listings {
+    padding: 20px;
+}
+
+.book-box {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.book-box img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.book-box:hover .popup {
+    display: block;
+}
+
+
+/* forum.html */
+section#book-recommendation {
+    padding: 20px;
+}
+
+#discussion-form {
+    margin-bottom: 20px;
+}
+
+#discussion-posts {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts h2 {
+    margin-top: 0;
+}
+
+#discussion-posts .post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#discussion-posts .post p {
+    margin: 0;
+}
+
+/* Copy the relevant styles from style.css */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a.active {
+    color: #000;
+}
+
+#book-listings {
+    /* Add specific styles for the book listings section */
+}
+
+#book-recommendation {
+    /* Add specific styles for the book recommendation section */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* map.html */
+#map-container {
+    height: 600px;
+    width: 100%;
+    margin-top: 20px;
+}
