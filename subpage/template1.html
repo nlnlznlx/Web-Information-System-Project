@@ -2,35 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box {ID}</title>
+    <title>Book Box {{ address }}</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-    <h1>Book Box {ID}</h1>
+    <h1>Book Box {{ address }}</h1>
 </header>
 
 <div class="container">
-    <section id="book-listings">
-        <div class="book-box">
-            <img src="{Book Box Image Link}" alt="Book Box {ID}">
-            <div class="popup">
-                <!-- Dynamically populate book titles here -->
-            </div>
-        </div>
-    </section>
+    <div class="book-box-image">
+        <img src="{{ image_link }}" alt="Book Box {{ address }}">
+    </div>
 
-    <section id="map-container">
+    <div class="book-title-slider">
+        <a href="{{ book_url }}">{{ title }}</a> by {{ author }}
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
         <!-- Leaflet Map will be embedded here -->
-        <div id="bookBoxMap"></div>
-    </section>
+    </div>
 </div>
 
-<footer>
-    <p>Footer content</p>
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
 </footer>
 
-<script src="map.js"></script>
+<script>
+    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ title }}');
+</script>
 </body>
 </html>
+
+
 

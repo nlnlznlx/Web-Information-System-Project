@@ -209,44 +209,58 @@ header {
     padding: 1rem 0;
 }
 
-nav ul {
-    list-style-type: none;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    text-align: center;
+    background: #f4f4f4;
 }
 
-nav li {
-    display: inline;
-    margin-right: 20px;
+
+
+.container {
+    display: flex;
+    padding: 20px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
+.book-box-image, .book-title-slider, .book-box-map {
+    padding: 10px;
+    margin: 10px;
 }
 
-nav a.active {
-    color: #000;
+.book-box-image {
+    flex: 1;
 }
 
-#book-listings {
-    /* Add specific styles for the book listings section */
+.book-title-slider {
+    flex: 2;
+    overflow-y: auto; /* Allows for a scrolling effect if content exceeds height */
 }
 
-#book-recommendation {
-    /* Add specific styles for the book recommendation section */
+.book-box-map {
+    flex: 2;
+    height: 500px; /* Adjust as needed for your map height */
 }
 
 footer {
     background-color: #333;
     color: white;
+    text-align: center;
     padding: 10px 0;
     margin-top: 20px;
 }
 
-/* map.html */
-#map-container {
-    height: 600px;
-    width: 100%;
-    margin-top: 20px;
+/* Additional styling for book titles and sliding effect */
+.book-title {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px solid #ccc;
 }
+
+.book-title:hover {
+    background-color: #f0f0f0;
+}
+
+
