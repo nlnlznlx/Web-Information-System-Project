@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Book Box Albrecht Rodenbachstraat 55</title>
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 </head>
 <body>
 <header>
@@ -30,9 +33,9 @@
 
 <script>
     var map = L.map('bookBoxMap').setView([50.890636, 4.7240621], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+    {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+
     L.marker([50.890636, 4.7240621]).addTo(map).bindPopup('In the Blink of an Eye: A Perspective on Film Editing');
 </script>
 </body>
