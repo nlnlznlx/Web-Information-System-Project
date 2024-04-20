@@ -3,80 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Book Boxes</title>
-    <link rel= "stylesheet" href= "style.css?v=1.0">
+    <title>Book Exchange Boxes</title>
+    <link rel= "stylesheet" href= "style.css">
     <!-- Bootstrap CSS -->
     <link rel= "stylesheet"
           href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity= "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin= "anonymous">
-    <style>
-        /* Style for the book box container */
-        .book-box-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0 auto;
-            max-width: 1000px; /* Adjust the maximum width as needed */
-        }
-
-        .book-box {
-            width: calc(20% - 20px); /* 20% width with 20px margin */
-            margin: 10px;
-            position: relative;
-            text-align: center;
-        }
-
-        /* Style for the book box image */
-        .book-box img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Style for the popup */
-        .popup {
-            display: none;
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1; /* Ensure popup is on top */
-        }
-
-        /* Style for the popup arrow */
-        .popup::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #ccc transparent transparent transparent;
-        }
-
-        /* Show the popup on hover */
-        .book-box:hover .popup {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>All Book Boxes</h1>
+        <h1>Book Exchange Boxes</h1>
     </header>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="map.html">Book Exchange Map</a></li>
-            <li><a href="books.html" class="active">Book Exchange Boxes</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="books.html" class="active">Book Boxes</a></li>
             <li><a href="forum.html">Forum</a></li>
-            <li><a href="about.html">About Us/Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
     <main>
@@ -125,6 +70,10 @@
             </div>
         </div>
         <!-- Continue adding the remaining book boxes in the same format -->
-    </main>    
+    </main>
+    
+    <footer class="container-fluid text-center">
+        <p>&copy; 2024 Book Exchange</p>
+    </footer>
 </body>
 </html>

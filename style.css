@@ -114,29 +114,6 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-}
-
 section#book-listings {
     padding: 20px;
 }
@@ -168,14 +145,83 @@ section#book-listings {
     display: block;
 }
 
+/* Style for the book box container */
+.book-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px; /* Adjust the maximum width as needed */
+}
 
-/* forum.html */
-section#book-recommendation {
-    padding: 20px;
+.book-box {
+    width: calc(20% - 20px); /* 20% width with 20px margin */
+    margin: 10px;
+    position: relative;
+    text-align: center;
+}
+
+/* Style for the book box image */
+.book-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the popup */
+.popup {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure popup is on top */
+}
+
+/* Style for the popup arrow */
+.popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ccc transparent transparent transparent;
+}
+
+/* Show the popup on hover */
+.book-box:hover .popup {
+    display: block;
+}
+
+/* forum.css */
+main {
+    margin: 20px; /* Add margin to create space around the main content */
+    padding: 20px; /* Add padding to create space inside the main content */
+}
+
+#discussion-join {
+    margin-left: 20px; /* Add margin to the left of the h2 element */
+}
+
+#book-listings {
+    /* Add specific styles for the book listings section */
+}
+
+#book-recommendation {
+    /* Add specific styles for the book recommendation section */
+    padding: 20px; /* Add padding to create space inside the book recommendation section */
 }
 
 #discussion-form {
     margin-bottom: 20px;
+    margin-left: 20px; /* Add margin to the left */
+    margin-right: 20px; /* Add margin to the right */
 }
 
 #discussion-posts {
@@ -187,6 +233,7 @@ section#book-recommendation {
 
 #discussion-posts h2 {
     margin-top: 0;
+    
 }
 
 #discussion-posts .post {
@@ -201,47 +248,12 @@ section#book-recommendation {
     margin: 0;
 }
 
-/* Copy the relevant styles from style.css */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-nav a.active {
-    color: #000;
-}
-
-#book-listings {
-    /* Add specific styles for the book listings section */
-}
-
-#book-recommendation {
-    /* Add specific styles for the book recommendation section */
-}
-
 footer {
     background-color: #333;
     color: white;
     padding: 10px 0;
     margin-top: 20px;
+    
 }
 
 /* map.html */

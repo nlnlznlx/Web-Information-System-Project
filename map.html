@@ -4,40 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Exchange Map</title>
+    <link rel= "stylesheet" href= "style.css">
+    <!-- Bootstrap CSS -->
+    <link rel= "stylesheet"
+          href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity= "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin= "anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <style>
-        /* Adjust map container size */
-        #map {
-            height: 600px;
-            width: 100%;
-        }
-
-        /* Style for the navigation bar */
-        .navbar {
-    margin-bottom: 20px; /* Space below the navbar */
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-nav a.active {
-    color: #000;
-}
-    </style>
+    <style>#map {
+        height: 600px;
+        width: 100%;
+    }</style>
 </head>
 <body>
     <header>
@@ -46,10 +24,10 @@ nav a.active {
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="map.html" class="active">Book Exchange Map</a></li>
-            <li><a href="books.html">Book Exchange Boxes</a></li>
+            <li><a href="map.html" class="active">Map</a></li>
+            <li><a href="books.html">Book Boxes</a></li>
             <li><a href="forum.html">Forum</a></li>
-            <li><a href="about.html">About Us/Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
     <section id="map"></section>
@@ -82,8 +60,8 @@ nav a.active {
             });
     </script>
 
-    <footer>
-        <p>&copy; 2024 Book Exchange</p>
-    </footer>
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
 </body>
 </html>
