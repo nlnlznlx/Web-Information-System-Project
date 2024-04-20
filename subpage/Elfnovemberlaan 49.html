@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Elfnovemberlaan 49</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Elfnovemberlaan 49</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Elfnovemberlaan 49.jpg" alt="Book Box Elfnovemberlaan 49">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/een-huis-met-een-naam/666830852/">Een tafel voor vijf!</a> by Riet Wille
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.885737, 4.7260617], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.885737, 4.7260617]).addTo(map).bindPopup('Een tafel voor vijf!');
+</script>
+</body>
+</html>
+
+

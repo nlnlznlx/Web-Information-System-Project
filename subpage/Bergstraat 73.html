@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Bergstraat 73</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Bergstraat 73</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Bergstraat 73.jpg" alt="Book Box Bergstraat 73">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/het-verhaal-van-tracy-beaker/9200000002142362/">Het verhaal van Tracy Beaker</a> by Jacqueline Wilson
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.903539, 4.7304565], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.903539, 4.7304565]).addTo(map).bindPopup('Het verhaal van Tracy Beaker');
+</script>
+</body>
+</html>
+
+

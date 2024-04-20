@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Refugehof 9</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Refugehof 9</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Refugehof 9.jpg" alt="Book Box Refugehof 9">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/baccara-extra-32-baccara-extra-band-32/9300000158779094/">Baccara</a> by Jacqueline Diamond
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.8766245, 4.6935976], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.8766245, 4.6935976]).addTo(map).bindPopup('Baccara');
+</script>
+</body>
+</html>
+
+

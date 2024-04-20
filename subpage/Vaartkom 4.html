@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Vaartkom 4</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Vaartkom 4</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Vaartkom 4.jpg" alt="Book Box Vaartkom 4">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/een-huis-in-toscane/9200000049438277/">Een Huis In Toscane</a> by Frances Mayes
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.887583, 4.7002172], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.887583, 4.7002172]).addTo(map).bindPopup('Een Huis In Toscane');
+</script>
+</body>
+</html>
+
+

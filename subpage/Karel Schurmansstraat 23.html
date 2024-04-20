@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Karel Schurmansstraat 23</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Karel Schurmansstraat 23</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Karel Schurmansstraat 23.jpg" alt="Book Box Karel Schurmansstraat 23">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="No link found">Kaltwasserfische in Aquarium und Gartenteich</a> by Werner Ladiges
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.880849, 4.7192502], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.880849, 4.7192502]).addTo(map).bindPopup('Kaltwasserfische in Aquarium und Gartenteich');
+</script>
+</body>
+</html>
+
+

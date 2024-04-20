@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Zegelaan 29</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Zegelaan 29</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Zegelaan 29.jpg" alt="Book Box Zegelaan 29">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/hotel-habbekrats-mysterious-cabbage-murder/9300000096669889/">Hotel Habbekrats</a> by Rik Peters
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.8657374, 4.7044391], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.8657374, 4.7044391]).addTo(map).bindPopup('Hotel Habbekrats');
+</script>
+</body>
+</html>
+
+

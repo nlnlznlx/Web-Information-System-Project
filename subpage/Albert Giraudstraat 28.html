@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Albert Giraudstraat 28</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header>
+    <h1>Book Box Albert Giraudstraat 28</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="img/Albert Giraudstraat 28.jpg" alt="Book Box Albert Giraudstraat 28">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/the-last-family-in-england/9200000087005081/">The Last Family in England</a> by Matt Haig
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.8707402, 4.6982059], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([50.8707402, 4.6982059]).addTo(map).bindPopup('The Last Family in England');
+</script>
+</body>
+</html>
+
+
