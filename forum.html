@@ -13,17 +13,32 @@
 
 </head>
 <body>
-    <header>
-        <h1>Book Exchange Forum</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="map.html">Map</a></li>
-            <li><a href="books.html">Book Boxes</a></li>
-            <li><a href="forum.html" class="active">Forum</a></li>
-            <li><a href="about.html">About Us</a></li>
-        </ul>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Book Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <section>
         <h2 id="discussion-join">Join the Discussion</h2>
@@ -48,9 +63,11 @@
         </form>
         
         <!-- Discussion posts will be displayed here -->
+        <label for="discussion-posts">Posted Messages:</label><br>
         <div id="discussion-posts">
             <!-- Posts will be dynamically populated here -->
         </div>
+        
     </section>
     <footer class="container-fluid text-center">
         <p>&copy; 2024 Book Exchange</p>
