@@ -63,6 +63,8 @@
                     var popupContent = `<b>${box.name}</b><br>`;
                     var imageUrl = `img/${box.name}.jpg`; // Assuming images are stored in /img folder with same name as box
                     popupContent += `<img src="${imageUrl}" alt="${box.name} Image" style="max-width: 200px;">`;
+
+                    popupContent += `<button onclick="window.location.href='${box.name}.html';" class="btn btn-primary btn-sm" style="font-size: 0.8em; padding: 5px 10px;">Visit</button>`;
                     L.marker([box.latitude, box.longitude]).addTo(map)
                         .bindPopup(popupContent, { maxWidth: "auto" });
                 });
