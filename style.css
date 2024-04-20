@@ -199,13 +199,29 @@ section#book-listings {
     display: block;
 }
 
-/* forum.html */
-section#book-recommendation {
-    padding: 20px;
+/* forum.css */
+main {
+    margin: 20px; /* Add margin to create space around the main content */
+    padding: 20px; /* Add padding to create space inside the main content */
+}
+
+#discussion-join {
+    margin-left: 20px; /* Add margin to the left of the h2 element */
+}
+
+#book-listings {
+    /* Add specific styles for the book listings section */
+}
+
+#book-recommendation {
+    /* Add specific styles for the book recommendation section */
+    padding: 20px; /* Add padding to create space inside the book recommendation section */
 }
 
 #discussion-form {
     margin-bottom: 20px;
+    margin-left: 20px; /* Add margin to the left */
+    margin-right: 20px; /* Add margin to the right */
 }
 
 #discussion-posts {
@@ -217,6 +233,7 @@ section#book-recommendation {
 
 #discussion-posts h2 {
     margin-top: 0;
+    
 }
 
 #discussion-posts .post {
@@ -231,19 +248,12 @@ section#book-recommendation {
     margin: 0;
 }
 
-#book-listings {
-    /* Add specific styles for the book listings section */
-}
-
-#book-recommendation {
-    /* Add specific styles for the book recommendation section */
-}
-
 footer {
     background-color: #333;
     color: white;
     padding: 10px 0;
     margin-top: 20px;
+    
 }
 
 /* map.html */
