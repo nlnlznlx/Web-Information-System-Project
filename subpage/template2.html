@@ -24,10 +24,10 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="map.html">Map</a>
+                    <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="books.html">Book Boxes<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="books.html">Book Boxes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="forum.html">Forum</a>
@@ -44,11 +44,11 @@
 
 <div class="container">
     <div class="book-box-image">
-        <img src="{{ image_link }}" alt="Book Box {{ address }}">
+        <img src="../{{ image_link }}" alt="Book Box {{ address }}">
     </div>
 
     <div class="book-title-slider">
-        <a href="{{ book_url }}">{{ title }}</a> by {{ author }}
+        <a href="{{ book_url }}">{{ title }}</a>
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
