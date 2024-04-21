@@ -30,7 +30,7 @@ async function fetchBearerToken(apiKey) {
 // Call API to retrieve data from MongoDB
 async function fetchDataWithBearerToken(searchTerm) {
     //const apiKey = 'oB2wTC0KRWMhtHJiPBx7czhDViWrsaWAP3was9D59XpXcmQUUo6TyNgD0CkBJFwA'; // my "book" api key - for test
-    const apiKey = '%%' // need to be replaced with api key
+    const apiKey = '87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'
 
     try {
         const bearerToken = await fetchBearerToken(apiKey);
