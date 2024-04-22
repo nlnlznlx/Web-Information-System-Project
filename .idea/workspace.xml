@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3f48dd-5d2d-4bf8-8ff7-33c21b6cf81f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search function/search function.css" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.html" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.js" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.js" afterDir="false" />
     </list>
@@ -76,10 +77,28 @@
       <workItem from="1713697946539" duration="3996000" />
       <workItem from="1713771903600" duration="5305000" />
       <workItem from="1713777260329" duration="30000" />
+      <workItem from="1713778112973" duration="5501000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
