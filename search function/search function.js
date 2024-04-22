@@ -1,108 +1,167 @@
-const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
-const bodyParser = require('body-parser')
-const multer = require('multer') // v1.0.5
-const upload = multer() // for parsing multipart/form-data
+// Fetch bearer token using MongoDB API key
+async function fetchBearerToken(apiKey) {
+    const url = 'https://services.cloud.mongodb.com/api/client/v2.0/app/data-mqtzj/auth/providers/api-key/login';
 
-const app = express();
-const port = 3001;
-
-const uri = 'mongodb+srv://yiyaojin:jinyiyao1996@book-box.wwzodjl.mongodb.net/?retryWrites=true&w=majority&appName=book-box';
-const client = new MongoClient(uri);
-
-async function connectToMongoDB() {
     try {
-        await client.connect();
-        console.log('Connected to MongoDB');
-    } catch (err) {
-        console.error('Error connecting to MongoDB', err);
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                key: apiKey
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch bearer token');
+        }
+
+        const responseData = await response.json();
+        return responseData.access_token;
+    } catch (error) {
+        console.error('Error fetching bearer token:', error);
+        throw error;
     }
 }
-connectToMongoDB();
 
-// Enable CORS manually
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
+// General function to interact with the MongoDB Data API
+async function performApiRequest(token, method, path, body) {
+    const url = `https://data.mongodb-api.com/app/data-mqtzj/endpoint/data/v1/${path}`;
+    const response = await fetch(url, {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(body)
+    });
+    if (!response.ok) {
+        throw new Error('Failed to execute API request');
+    }
+    return await response.json();
+}
 
-app.use(bodyParser.json()) // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+// Handlers for search, add, and delete operations
+document.getElementById('searchForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const searchQuery = document.getElementById('searchQuery').value;
+    const searchType = document.getElementById('searchType').value;
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with actual API key
 
-// Search for books by title, author and book box
-app.get('/api/search', async (req, res) => {
-    try {
-        const { title, author, bookBox } = req.query;
-        const database = client.db('books');
-        const collection = database.collection('book entries');
-        const query = {};
-        if (title) {
-            query["Title of the Book"] = { $regex: title, $options: 'i' };
-        }
-        if (author) {
-            query["$or"] = [
-                { "Name of the First Author or Publisher": { $regex: author, $options: 'i' } },
-                { "Name of the Second Author (optional)": { $regex: author, $options: 'i' } },
-                { "Name of the Third Author (optional)": { $regex: author, $options: 'i' } },
-                { "Name of the Fourth Author (optional)": { $regex: author, $options: 'i' } },
-                { "Name of the Fifth Author (optional)": { $regex: author, $options: 'i' } },
-                { "Name of the Sixth Author (optional)": { $regex: author, $options: 'i' } },
-                { "Name of the Seventh Author (optional)": { $regex: author, $options: 'i' } },
-                // Add more fields for additional authors as needed
+    let filter = {};
+    if (searchType === "title") {
+        filter = { "Title of the Book": { "$regex": searchQuery, "$options": "i" } };
+    } else if (searchType === "author") {
+        filter = filter = {
+            $or: [
+                {"Name of the First Author or Publisher": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Second Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Third Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Fourth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Fifth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Sixth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Seventh Author (optional)": {"$regex": searchQuery, "$options": "i"}}
             ]};
-        if (bookBox) {
-            query["Address of the Book Box"] = { $regex: bookBox, $options: 'i' };
+
+    } else if (searchType === "bookBox") {
+        filter = { "Address of the Book Box": { "$regex": searchQuery, "$options": "i" } };
+    }
+
+    const data = await performApiRequest(token, 'POST', 'action/find', {
+        dataSource: 'book-box',
+        database: 'books',
+        collection: 'book entries',
+        filter: filter
+    });
+    displaySearchResults(data.documents);
+});
+
+document.getElementById('addForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const title = document.getElementById('addTitle').value;
+    const author = document.getElementById('addAuthor').value;
+    const bookBox = document.getElementById('addBookBox').value;
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Replace 'your-api-key-here' with your actual API key
+    await performApiRequest(token, 'POST', 'action/insertOne', {
+        dataSource: 'book-box',
+        database: 'books',
+        collection: 'book entries',
+        document: { "Title of the Book": title, "Name of the First Author or Publisher": author, "Address of the Book Box": bookBox }
+    });
+    alert('Book added successfully!');
+});
+
+document.getElementById('deleteForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const title = document.getElementById('deleteTitle').value;
+    const author = document.getElementById('deleteAuthor').value;
+    const bookBox = document.getElementById('deleteBookBox').value;
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Replace 'your-api-key-here' with your actual API key
+    await performApiRequest(token, 'POST', 'action/deleteOne', {
+        dataSource: 'book-box',
+        database: 'books',
+        collection: 'book entries',
+        filter: { "Title of the Book": title, "Name of the First Author or Publisher": author, "Address of the Book Box": bookBox }
+    });
+    alert('Book deleted successfully!');
+});
+
+function displaySearchResults(data) {
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
+    data.forEach(book => {
+        const li = document.createElement('li');
+        const title = document.createElement('strong');
+        title.textContent = `Title: ${book['Title of the Book']}`;
+        li.appendChild(title);
+
+        if (book['Name of the First Author or Publisher']) {
+            const author1 = document.createElement('p');
+            author1.textContent = `First Author or Publisher: ${book['Name of the First Author or Publisher']}`;
+            li.appendChild(author1);
         }
-        const books = await collection.find(query).toArray();
-        res.json(books);
-    } catch (err) {
-        console.error('Error searching for books:', err);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
 
-// Add a new book
-app.post('/api/add', async (req, res) => {
-    try {
-        const { title, author, bookBox } = req.body; // Extract title, author, and bookBox from req.body
-        const database = client.db('books');
-        const collection = database.collection('book entries');
+        if (book['Name of the Second Author (optional)']) {
+            const author2 = document.createElement('p');
+            author2.textContent = `Second Author: ${book['Name of the Second Author (optional)']}`;
+            li.appendChild(author2);
+        }
 
-        // Define the properties for the new book entry
-        const newBook = {
-            "Title of the Book": title,
-            "Name of the First Author or Publisher": author,
-            "Address of the Book Box": bookBox
-        };
+        if (book['Name of the Third Author (optional)']) {
+            const author3 = document.createElement('p');
+            author3.textContent = `Third Author: ${book['Name of the Third Author (optional)']}`;
+            li.appendChild(author3);
+        }
 
-        // Insert the new book entry into the collection
-        const result = await collection.insertOne(newBook);
+        if (book['Name of the Fourth Author (optional)']) {
+            const author4 = document.createElement('p');
+            author4.textContent = `Fourth Author: ${book['Name of the Fourth Author (optional)']}`;
+            li.appendChild(author4);
+        }
 
-        // Send a response indicating success
-        res.status(201).json({ message: 'Book added successfully', id: result.insertedId });
-    } catch (err) {
-        console.error('Error adding book:', err);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+        if (book['Name of the Fifth Author (optional)']) {
+            const author5 = document.createElement('p');
+            author5.textContent = `Fifth Author: ${book['Name of the Fifth Author (optional)']}`;
+            li.appendChild(author5);
+        }
 
-// Delete a book
-app.delete('/api/delete', async (req, res) => {
-    try {
-        const database = client.db('books');
-        const collection = database.collection('book entries');
-        console.log('receiving data ...');
-        console.log('body is ',req.body);
-        const result = await collection.deleteOne(req.body);
-        res.status(200).json({ message: 'Book deleted successfully', id: result.deletedId });
-    } catch (err) {
-        console.error('Error deleting book:', err);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+        if (book['Name of the Sixth Author (optional)']) {
+            const author6 = document.createElement('p');
+            author6.textContent = `Sixth Author: ${book['Name of the Sixth Author (optional)']}`;
+            li.appendChild(author6);
+        }
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+        if (book['Name of the Seventh Author (optional)']) {
+            const author7 = document.createElement('p');
+            author7.textContent = `Seventh Author: ${book['Name of the Seventh Author (optional)']}`;
+            li.appendChild(author7);
+        }
+
+        const bookBox = document.createElement('p');
+        bookBox.textContent = `Book Box: ${book['Address of the Book Box']}`;
+        li.appendChild(bookBox);
+
+        searchResults.appendChild(li);
+    });
+}
