@@ -1,61 +1,90 @@
-const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
-const bodyParser = require('body-parser')
-const multer = require('multer') // v1.0.5
-const upload = multer() // for parsing multipart/form-data
 
-const app = express();
-const port = 3001;
+// Fetch bearer token using MongoDB API key
+async function fetchBearerToken(apiKey) {
+    const url = 'https://services.cloud.mongodb.com/api/client/v2.0/app/data-mqtzj/auth/providers/api-key/login';
 
-const uri = 'mongodb+srv://yiyaojin:jinyiyao1996@book-box.wwzodjl.mongodb.net/?retryWrites=true&w=majority&appName=book-box';
-const client = new MongoClient(uri);
-
-async function connectToMongoDB() {
     try {
-        await client.connect();
-        console.log('Connected to MongoDB');
-    } catch (err) {
-        console.error('Error connecting to MongoDB', err);
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                key: apiKey
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch bearer token');
+        }
+
+        const responseData = await response.json();
+        return responseData.access_token;
+    } catch (error) {
+        console.error('Error fetching bearer token:', error);
+        throw error;
     }
 }
-connectToMongoDB();
 
-// Enable CORS manually
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
-
-app.use(bodyParser.json()) // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-
-app.get('/images', async (req, res) => {
-    try {
-        // Retrieve all image documents from the collection
-        const images = await imagesCollection.find().toArray();
-        
-        // Extract URLs from the retrieved documents
-        const urls = images.map(image => image.url);
-        
-        // Respond with the list of URLs
-        res.json(urls);
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).send('Internal server error');
+// General function to interact with the MongoDB Data API
+async function performApiRequest(token, method, path, body) {
+    const url = `https://data.mongodb-api.com/app/data-mqtzj/endpoint/data/v1/${path}`;
+    const response = await fetch(url, {
+        method: method,
+        headers: {
+            'Content-Type': 'application/ejson',
+            'Accept':'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(body)
+    });
+    if (!response.ok) {
+        throw new Error('Failed to execute API request');
     }
-});
+    response_data = await response.json();
+    return response_data
+}
 
-fetch('/images')
-    .then(response => response.json())
-    .then(urls => {
-        // Display images on the page using the retrieved URLs
-        const imageContainer = document.getElementById('image-container');
-        urls.forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            imageContainer.appendChild(img);
-        });
-    })
-    .catch(error => console.error('Error fetching image URLs:', error))
+
+        // Reference to the image gallery container
+        const imageGallery = document.getElementById('image-gallery');
+
+        // Function to load images from the server and display them
+        async function loadImages() {
+            try {
+                const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with actual API key
+                const data = await performApiRequest(token, 'POST', 'action/find', {
+                dataSource: 'book-box',
+                database: 'books',
+                collection: 'images',
+                //filter: {street_name : {"$regex": "(?i)" + "Albert Giraudstraat 28"}}  // change here based on interaction
+                } );
+
+                // Clear existing images in the gallery
+                imageGallery.innerHTML = '';
+
+                // Create and display image elements
+                data["documents"].forEach(item => {
+
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    const title = document.createElement('h2');
+                    title.textContent = item.street_name;
+
+                    const img = document.createElement('img'); // Create an <img> element
+                    img.src = item.image_url; // Set the image source to the URL
+                    card.appendChild(title);
+                    card.appendChild(img); // Add the image to the gallery
+                    imageGallery.appendChild(card);
+
+
+                    
+                });
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        }
+
+        // Load images when the page loads
+        window.addEventListener('load', loadImages);
