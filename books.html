@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,56 +39,41 @@
             </ul>
         </div>
     </nav>
-    <main>
-        <div class="book-box" onclick="window.location.href='Guldensporenlaan 47.html';">
-            <img src="img/Guldensporenlaan 47.jpg" alt="Guldensporenlaan 47">
-            <div class="popup">
-                <p>Name: Guldensporenlaan 47</p>
-                <p>Location: Example Location</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="book-box" onclick="window.location.href='Schoolstraat 2.html';">
-            <img src="img/Schoolstraat 2.jpg" alt="Schoolstraat 2">
-            <div class="popup">
-                <p>Name: Schoolstraat 2</p>
-                <p>Location: Example Location</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <!-- Add all the following book boxes -->
-        <!-- Ensure images are placed in the 'img' folder -->
-        <!-- Ensure HTML pages are named accordingly -->
-        <!-- Ensure all necessary information is provided -->
-        <div class="book-box" onclick="window.location.href='AlbertGiraudstraat 28.html';">
-            <img src="img/Albert Giraudstraat 28.jpg" alt="Albert Giraudstraat 28">
-            <div class="popup">
-                <p>Name: Albert Giraudstraat 28</p>
-                <p>Location: Example Location</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="book-box" onclick="window.location.href='AlbertStainierstraat 2.html';">
-            <img src="img/Albert Stainierstraat 2.jpg" alt="Albert Stainierstraat 2">
-            <div class="popup">
-                <p>Name: Albert Stainierstraat 2</p>
-                <p>Location: Example Location</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="book-box" onclick="window.location.href='AlbrechtRodenbachstraat 55.html';">
-            <img src="img/Albrecht Rodenbachstraat 55.jpg" alt="Albrecht Rodenbachstraat 55">
-            <div class="popup">
-                <p>Name: Albrecht Rodenbachstraat 55</p>
-                <p>Location: Example Location</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <!-- Continue adding the remaining book boxes in the same format -->
-    </main>
-    
-    <footer class="container-fluid text-center">
-        <p>&copy; 2024 Book Exchange</p>
-    </footer>
+
+    <!-- Image gallery container -->
+    <div id="image-gallery">
+        <!-- Images will be dynamically loaded here -->
+    </div>
+
+    <script>
+        // Reference to the image gallery container
+        const imageGallery = document.getElementById('image-gallery');
+
+        // Function to load images from the server and display them
+        async function loadImages() {
+            try {
+                const response = await fetch('/images');
+                const urls = await response.json();
+                console.log(urls)
+
+                // Clear existing images in the gallery
+                imageGallery.innerHTML = '';
+
+                // Create and display image elements
+                urls.forEach(url => {
+                    const img = document.createElement('img'); // Create an <img> element
+                    img.src = url; // Set the image source to the URL
+                    imageGallery.appendChild(img); // Add the image to the gallery
+                });
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        }
+
+        // Load images when the page loads
+        window.addEventListener('load', loadImages);
+    </script>
+
 </body>
+
 </html>
