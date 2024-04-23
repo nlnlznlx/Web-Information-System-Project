@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="map.html">Map</a>
@@ -54,7 +54,7 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/Wisselbox, G. Vander Lindenstraat 8.jpg"
+                    <img src="img/G.%20Vander%20Lindenstraat%208.jpg"
                          class="d-block w-100" alt="bookshelf1">
                 </div>
                 <div class="carousel-item">
@@ -92,13 +92,34 @@
 
 <div id="welcome">
     <h1>Welcome to Book Exchange</h1>
-    <p>Want to read for a free book to read in Leuven? Search to find out!</p>
 </div>
 
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+<div class="container">
+    <div class="row">
+        <!-- Borrow a book section -->
+        <div class="col-md-6">
+            <h4>Want to borrow a book? Search to find out!</h4>
+            <form id="searchForm" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" name="bookSearch" placeholder="Search by Book Title" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div id="searchMessage" style="display: none;">
+                The book is not there, but you can <a href="books.html">explore more</a>...
+            </div>
+        </div>
+
+        <!-- Return a book section -->
+        <div class="col-md-6">
+            <h4>Want to return a book? Select a book box!</h4>
+            <form id="returnForm" class="form-inline my-2 my-lg-0">
+                <select class="form-control mr-sm-2" name="bookBoxSelect">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <footer class="container-fluid text-center">
     <p>&copy; 2024 Book Exchange</p>
@@ -107,6 +128,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>

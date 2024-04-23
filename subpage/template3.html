@@ -17,25 +17,22 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="map.html">Map</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="books.html">Book Boxes<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="forum.html">Forum</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-            </ul>
+
+        <div class="container">
+            <header>
+                <h1>Book Box at {{ address }}</h1>
+            </header>
+
+            {% for book in books %}
+            <div class="book-entry">
+                <div class="book-box-image">
+                    <img src="../{{ book['Image Link'] }}" alt="Book Box {{ address }}">
+                </div>
+                <div class="book-title-slider">
+                    <a href="{{ book['Book URL'] }}">{{ book['Title of the Book'] }}</a> by {{ book['Name of the First Author or Publisher'] }}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </nav>
 <header>
@@ -44,11 +41,11 @@
 
 <div class="container">
     <div class="book-box-image">
-        <img src="{{ image_link }}" alt="Book Box {{ address }}">
+        <img src="../{{ image_link }}" alt="Book Box {{ address }}">
     </div>
 
     <div class="book-title-slider">
-        <a href="{{ book_url }}">{{ title }}</a> by {{ author }}
+        <a href="{{ book_url }}">{{ title }}</a>
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
