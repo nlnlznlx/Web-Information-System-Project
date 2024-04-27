@@ -1,5 +1,6 @@
 {
     "workbench.editorAssociations": {
         "file:/**/*.csv": "jupyter-data-wrangler"
-    }
+    },
+    "liveServer.settings.port": 5501
 }
