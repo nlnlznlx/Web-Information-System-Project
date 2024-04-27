@@ -68,7 +68,7 @@ async function loadImages() {
 
             // Create the anchor tag to wrap the card content
             const cardLink = document.createElement('a');
-            cardLink.href = `/subpage/${encodeURIComponent(item.street_name)}.html`; // Update the path as needed
+            cardLink.href = `/csv-to-html.py/subpage/${encodeURIComponent(item.street_name)}.html`; // Update the path as needed
             cardLink.className = 'card-link-styling'; // Add this class to style the anchor tag
 
             const card = document.createElement('div');

@@ -4,22 +4,23 @@ header {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    align-items: start;
 }
 
 
 
 .container {
     display: grid;
-    grid-template-columns: 3fr 2fr 5fr;
-    gap: 20px; /* Space between the columns */
+    grid-template-columns: 10fr 20fr 1fr;
+    gap: 30px; /* Space between the columns */
     margin-top: 20px;
     padding: 0 20px;
 }
 
 .book-box-image {
-    padding: 0;
+    padding: 5px;
     border: 0px solid #ccc; /* A thicker border for emphasis */
-    border-radius: 10px; /* Rounded corners for the image */
+    border-radius: 0px; /* Rounded corners for the image */
     overflow: hidden; /* Ensures the border radius clips the image */
 }
 
@@ -44,7 +45,7 @@ header {
 }
 
 .book-title {
-    padding: 10px;
+    padding: 5px;
     margin: 5px 0;
     border-bottom: 1px solid #ccc; /* Separator for each title */
     transition: background-color 0.3s ease; /* Smooth background transition */
@@ -56,34 +57,19 @@ header {
 }
 
 .book-box-map {
-    height: 10%;
-    width: 500px;
-    margin-top: 20px;
+    height: 320px;
+    width: 300px;
+    margin-top: 5px;
     margin-left: 20px; /* Add margin to the left */
     margin-right: 20px; /* Add margin to the right */
 
 
-
 }
 
-#map {
-    height: 200px;
-    width: 45%;
-    margin-left: 20px; /* Add margin to the left */
-    margin-right: 20px; /* Add margin to the right */
-}
-
-
-
-
-
-
-
-.book-title-slider,
-.book-box-map {
-    height: auto; /* Height is auto to prevent a fixed large height on small screens */
-}
-}
+@media (max-width: 768px) {
+    .book-title-slider, .book-box-map {
+        height: auto; /* Auto height on smaller screens */
+    }
 
 footer {
     background-color: #333;
