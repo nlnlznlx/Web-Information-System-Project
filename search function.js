@@ -43,10 +43,11 @@ async function performApiRequest(token, method, path, body) {
 }
 
 // Handlers for search, add, and delete operations
-document.getElementById('searchForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const searchQuery = document.getElementById('searchQuery').value;
-    const searchType = document.getElementById('searchType').value;
+document.addEventListener('DOMContentLoaded', async (event) => {
+    const params = new URLSearchParams(window.location.search);
+    const searchType = params.get('type');
+    const searchQuery = params.get('query');
+
     const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with actual API key
 
     let filter = {};
