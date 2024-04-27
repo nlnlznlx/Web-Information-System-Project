@@ -93,6 +93,7 @@ def create_html_page(address, latitude, longitude, books):
     # Create the list of book titles with links and authors
     book_list = ""
     for _, book in books.iterrows():
+        address = book["Address of the Book Box"]
         title = book["Title of the Book"]
         book_url = book["Book URL"]
         author = book["Name of the First Author or Publisher"]
