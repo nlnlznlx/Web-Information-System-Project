@@ -56,7 +56,7 @@ for address, data in grouped_by_address:
     file_path = os.path.join(output_dir, file_name)
     
     # Write the HTML content to a file
-    with open(file_path, 'w') as html_file:
+    with open(file_path, 'w', encoding='utf-8') as html_file:
         html_file.write(html_content)
     
     # Store the path of the file created
