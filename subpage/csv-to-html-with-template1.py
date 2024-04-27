@@ -3,7 +3,7 @@ from io import StringIO
 import os
 
 # Load CSV data into a DataFrame
-csv_data = "/subpage/updated1.csv"  # Replace with your actual CSV file path
+csv_data = "../subpage/updated1.csv"  # Replace with your actual CSV file path
 df = pd.read_csv(csv_data)
 
 # Group books by address
@@ -57,7 +57,7 @@ html_template = """
 
     <div class="container">
         <div class="book-box-image">
-            <img src="{{ image_link }}" alt="Book Box {{ address }}">
+            <img src="../{{ image_link }}" alt="Book Box {{ address }}">
         </div>
 
         <div class="book-list">
@@ -117,7 +117,7 @@ def create_html_page(address, latitude, longitude, books):
     return html_content
 
 # Create the output directory if it doesn't exist
-output_dir = "/subpage/"
+output_dir = "../subpage/"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
