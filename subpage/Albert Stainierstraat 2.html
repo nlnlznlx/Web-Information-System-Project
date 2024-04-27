@@ -68,5 +68,24 @@
 </html>
 
 
+<<<<<<< Updated upstream
+=======
+<div id="bookBoxMap" class="book-box-map">
+    <!-- Leaflet Map will be embedded here -->
+</div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.864066, 4.675894], 14);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.864066, 4.675894]).addTo(map).bindPopup('Celestijnenlaan 200C');
+</script>
+
+>>>>>>> Stashed changes
 
 
