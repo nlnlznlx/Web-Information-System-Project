@@ -1,4 +1,5 @@
 import pandas as pd
+from io import StringIO
 import os
 
 # Load CSV data into a DataFrame
@@ -11,6 +12,11 @@ grouped_by_address = df.groupby("Address of the Book Box")
 # Function to create an HTML page for each address
 def create_html_page(address, books):
     html_content = f"<html><head><title>Books at {address}</title></head><body>"
+
+    # Include a representative image for each address at the top of the page
+    image_link = books["Image Link"].iloc[0]
+    html_content += f"<img src='{image_link}' alt='{address}' style='width:100%;height:auto;'>"
+    
     html_content += f"<h1>Books at {address}</h1><ul>"
     
     # Create list items with clickable links and image references
@@ -26,10 +32,6 @@ def create_html_page(address, books):
         else:
             # If a valid URL, create a link
             book_entry = f"<a href='{book_url}'>{title}</a>"
-
-        # Include the image if it exists
-        if image_link != "img/":
-            book_entry += f"<br><img src='{image_link}' alt='{title}'>"
 
         html_content += f"<li>{book_entry}</li>"
     
