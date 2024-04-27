@@ -8,21 +8,23 @@
 
 /* Custom card styles */
 .card {
-    height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
-    padding: 0;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
+    overflow: hidden;
+    min-height: 270px;
 }
 
 .card-body {
-    padding: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 100%; /* Image takes up the full width of the card */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Image will cover the area, may crop if necessary */
 }
 
 .card-title, .card-text {
@@ -37,7 +39,7 @@
 }
 
 .card-link-styling:hover, .card-link-styling:focus {
-    text-decoration: none; /* Optional: Removes the underline on hover/focus */
+    text-decoration: none; 
 }
 
 /* Specific class for the location pin icon */
