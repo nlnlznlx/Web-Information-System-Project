@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # Load CSV data into a DataFrame
 csv_data = "/subpage/updated1.csv"
@@ -36,16 +37,27 @@ def create_html_page(address, books):
     
     return html_content
 
-# Create HTML pages for each unique address
-html_pages = {}
+# Directory to save the HTML files
+output_dir = "/subpage/"
+
+# Create the output directory if it doesn't exist
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Create and save HTML pages for each unique address
+file_paths = []
 for address, data in grouped_by_address:
     html_content = create_html_page(address, data)
     
-    # Store the HTML content with the address as the key
-    html_pages[address] = html_content
+    # Sanitize the file name to remove special characters and spaces
+    file_name = address.replace(" ", "_") + ".html"
+    file_path = os.path.join(output_dir, file_name)
+    
+    # Write the HTML content to a file
+    with open(file_path, 'w') as html_file:
+        html_file.write(html_content)
+    
+    # Store the path of the file created
+    file_paths.append(file_path)
 
-# Display the HTML content for each address
-for address, html_content in html_pages.items():
-    print(f"HTML content for {address}:")
-    print(html_content)
-    print()
+file_paths  # Return the list of file paths to verify the created HTML files
