@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5e3f48dd-5d2d-4bf8-8ff7-33c21b6cf81f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/search function/search function.css" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.html" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.js" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.js" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +77,14 @@
       <updated>1710842057932</updated>
       <workItem from="1710842063479" duration="746000" />
       <workItem from="1713647258748" duration="10828000" />
+<<<<<<< Updated upstream
       <workItem from="1713697946539" duration="3996000" />
       <workItem from="1713771903600" duration="5305000" />
       <workItem from="1713777260329" duration="30000" />
       <workItem from="1713778112973" duration="5501000" />
+=======
+      <workItem from="1713697946539" duration="5767000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
