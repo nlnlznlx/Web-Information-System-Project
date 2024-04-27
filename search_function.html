@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name= "viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel= "stylesheet" href= "search function.css">
+    <link rel= "stylesheet" href= "search_function.css">
     <!-- Bootstrap CSS -->
     <link rel= "stylesheet"
           href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -39,9 +38,9 @@
             </li>
         </ul>
 
-        <form id="searchForm" class="form-inline my-2 my-lg-0" action="search function.html" method="GET">
+        <form id="searchForm" class="form-inline my-2 my-lg-0" action="search_function.html" method="GET">
             <label for="searchQuery" class="sr-only">Search by:</label>
-            <select id="searchType" class="form-control mr-sm-2">
+            <select id="searchType" name="searchType" class="form-control mr-sm-2">
                 <option value="title">Title</option>
                 <option value="author">Author</option>
                 <option value="bookBox">Book Box</option>
@@ -83,6 +82,6 @@
 
 </div>
 
-<script src="search function.js"></script> <!-- Fixed script tag syntax -->
+<script src="search_function.js"></script>
 </body>
 </html>

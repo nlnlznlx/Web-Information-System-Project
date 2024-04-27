@@ -35,9 +35,9 @@
             </li>
         </ul>
 
-        <form id="searchForm" class="form-inline my-2 my-lg-0" action="search function.html" method="GET">
+        <form id="searchForm" class="form-inline my-2 my-lg-0" action="search_function.html" method="GET">
             <label for="searchQuery" class="sr-only">Search by:</label>
-            <select id="searchType" class="form-control mr-sm-2">
+            <select id="searchType" name="searchType" class="form-control mr-sm-2">
                 <option value="title">Title</option>
                 <option value="author">Author</option>
                 <option value="bookBox">Book Box</option>
@@ -102,9 +102,9 @@
     <h1>Welcome to Book Exchange</h1>
 </div>
 
+<!--
 <div class="container">
     <div class="row">
-        <!-- Borrow a book section -->
         <div class="col-md-6">
             <h4>Want to borrow a book? Search to find out!</h4>
             <form id="searchForm" class="form-inline my-2 my-lg-0">
@@ -116,18 +116,17 @@
             </div>
         </div>
 
-        <!-- Return a book section -->
         <div class="col-md-6">
             <h4>Want to return a book? Select a book box!</h4>
             <form id="returnForm" class="form-inline my-2 my-lg-0">
                 <select class="form-control mr-sm-2" name="bookBoxSelect">
-                    <!-- Options will be populated dynamically -->
                 </select>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
             </form>
         </div>
     </div>
 </div>
+-->
 
 <footer class="container-fluid text-center">
     <p>&copy; 2024 Book Exchange</p>
@@ -136,7 +135,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<!-- <script src="script.js"></script> -->
-<script src="search function.js"></script>
+<script src="search_function.js"></script>
+<!--<script src="script.js"></script>-->
 </body>
 </html>
