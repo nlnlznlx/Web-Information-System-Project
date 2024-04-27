@@ -92,7 +92,7 @@
                     popupContent += `<img src="${imageUrl}" alt="${box.name} Image" style="max-width: 200px;">`;
 
                     let url = `/subpage/${encodeURIComponent(box.name)}.html`;
-                    popupContent += `<button onclick="window.location.href='/${box.name}.html';" class="btn btn-primary btn-sm" style="font-size: 0.8em; padding: 5px 10px;">Visit</button>`;
+                    popupContent += `<button onclick="window.location.href='/csv-to-html.py/subpage/${box.name}.html';" class="btn btn-primary btn-sm" style="font-size: 0.8em; padding: 5px 10px;">Visit</button>`;
                     L.marker([box.latitude, box.longitude]).addTo(map)
                         .bindPopup(popupContent, { maxWidth: "auto" });
                 });
