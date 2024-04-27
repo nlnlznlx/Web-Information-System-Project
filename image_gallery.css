@@ -1,24 +1,51 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+/* Custom CSS for larger screens */
+@media (min-width: 992px) {
+    .card-column {
+        flex: 0 0 auto;
+        width: 20%; /* Each card takes up 20% of the container width */
+    }
 }
 
+/* Custom card styles */
 .card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    min-height: 270px;
 }
 
-.card h2 {
-    font-size: 20px;
-    margin: 0;
+.card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card p {
-    margin: 10px 0;
+.card-img-top {
+    width: 100%; /* Image takes up the full width of the card */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Image will cover the area, may crop if necessary */
+}
+
+.card-title, .card-text {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.card-link-styling {
+    text-decoration: none; /* Removes the underline from links */
+    color: inherit; /* Keeps the text color the same as the rest of the card */
+    display: block; /* Anchor takes up the entire space of its container */
+}
+
+.card-link-styling:hover, .card-link-styling:focus {
+    text-decoration: none; 
+}
+
+/* Specific class for the location pin icon */
+.icon {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    object-fit: contain;
 }
