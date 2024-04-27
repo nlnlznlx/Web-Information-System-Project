@@ -105,6 +105,7 @@
             .then(weatherData => {
                 var weatherDetails = `
                     <p>Temperature: ${weatherData.current.temp_c} °C</p>
+                    <p>Feels Like: ${weatherData.current.feelslike_c} °C</p>
                     <p>Condition: ${weatherData.current.condition.text}</p>
                     <img src="${weatherData.current.condition.icon}" alt="Weather Condition">
                     <p>Wind: ${weatherData.current.wind_kph} km/h (${weatherData.current.wind_dir})</p>
