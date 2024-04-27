@@ -2,72 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box {{ address }}</title>
+    <title>Book Box at {{ address }}</title>
     <link rel="stylesheet" href="style2.css">
-    <link rel= "stylesheet"
-          href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity= "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin= "anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">LOGO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="books.html">Book Boxes</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <header>
-    <h1>Book Box {{ address }}</h1>
+    <h1>Book Box at {{ address }}</h1>
 </header>
 
 <div class="container">
     <div class="book-box-image">
-        <img src="../{{ image_link }}" alt="Book Box {{ address }}">
+        <img src="../{{ image_link }}" alt="Book Box at {{ address }}">
     </div>
 
-
-    <div class="book-title-slider">
-        <a href="{{ book_url }}">{{ title }}</a> by {{ author }}
+    <div class="book-list">
+        <ul>
+            {{ book_list }}
+        </ul>
     </div>
-
 
     <div id="bookBoxMap" class="book-box-map">
-        <!-- Leaflet Map will be embedded here -->
+        <!-- Leaflet map will be here -->
     </div>
 </div>
 
 <footer class="container-fluid text-center">
     <p>&copy; 2024 Book Exchange</p>
 </footer>
-
+<section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 14);
+    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}');
+    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}', { maxWidth: "auto" });
 </script>
 </body>
 </html>
-
 
 
