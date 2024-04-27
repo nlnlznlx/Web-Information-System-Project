@@ -50,7 +50,7 @@ for address, data in grouped_by_address:
     html_content = create_html_page(address, data)
     
     # Sanitize the file name to remove special characters and spaces
-    file_name = address.replace(" ", "_") + ".html"
+    file_name = address + ".html"
     file_path = os.path.join(output_dir, file_name)
     
     # Write the HTML content to a file
