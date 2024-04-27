@@ -66,6 +66,11 @@ async function loadImages() {
             const col = document.createElement('div');
             col.className = 'col card-column mb-4';
 
+            // Create the anchor tag to wrap the card content
+            const cardLink = document.createElement('a');
+            cardLink.href = `/subpage/${encodeURIComponent(item.street_name)}.html`; // Update the path as needed
+            cardLink.className = 'card-link-styling'; // Add this class to style the anchor tag
+
             const card = document.createElement('div');
             card.className = 'card';
 
@@ -96,7 +101,8 @@ async function loadImages() {
             card.appendChild(img);
             cardBody.appendChild(titleContainer);
             card.appendChild(cardBody);
-            col.appendChild(card);
+            cardLink.appendChild(card);
+            col.appendChild(cardLink);
             row.appendChild(col);
         });
     } catch (error) {
