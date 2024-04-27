@@ -10,7 +10,7 @@ header {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr;
+    grid-template-columns: 3fr 2fr 5fr;
     gap: 20px; /* Space between the columns */
     margin-top: 20px;
     padding: 0 20px;
@@ -18,7 +18,7 @@ header {
 
 .book-box-image {
     padding: 0;
-    border: 5px solid #ccc; /* A thicker border for emphasis */
+    border: 0px solid #ccc; /* A thicker border for emphasis */
     border-radius: 10px; /* Rounded corners for the image */
     overflow: hidden; /* Ensures the border radius clips the image */
 }
@@ -56,20 +56,28 @@ header {
 }
 
 .book-box-map {
-    width: 100%;   /* Full width of the container */
-    height: 100px; /* Set a fixed height, or use a percentage */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 10%;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 20px; /* Add margin to the left */
+    margin-right: 20px; /* Add margin to the right */
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .book-box-map {
-        height: 300px;
-        .container {
-        grid-template-columns: 1fr; /* Stack the elements on smaller screens */
-        gap: 10px;
+
+
     }
+
+    #map {
+        height: 200px;
+        width: 45%;
+        margin-left: 20px; /* Add margin to the left */
+        margin-right: 20px; /* Add margin to the right */
+    }
+
+
+
+
+
+
 
     .book-title-slider,
     .book-box-map {

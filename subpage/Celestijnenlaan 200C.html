@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box Celestijnenlaan 200C</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel= "stylesheet"
+          href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity= "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin= "anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Book Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<header>
+    <h1>Book Box Celestijnenlaan 200C</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Celestijnenlaan 200C.jpg" alt="Book Box Celestijnenlaan 200C">
+    </div>
+
+    <div class="book-title-slider">
+        <a href="https://www.bol.com/be/nl/p/juste-avant-la-nuit/9200000006371127/">Juste avant la nuit</a>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet Map will be embedded here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+
+<script>
+    var map = L.map('bookBoxMap').setView([50.864066, 4.675894], 14);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.864066, 4.675894]).addTo(map).bindPopup('Celestijnenlaan 200C');
+</script>
+</body>
+</html>
+
+
