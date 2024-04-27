@@ -59,10 +59,10 @@
 </footer>
 <section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([50.8762115, 4.6874124], 14);
+    var map = L.map('bookBoxMap').setView([50.8762115, 4.6874124], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([50.8762115, 4.6874124]).addTo(map).bindPopup('Bankstraat 72');
+    L.marker([50.8762115, 4.6874124]).addTo(map).bindPopup('Bankstraat 72', { maxWidth: "auto" });
 </script>
 </body>
 </html>
