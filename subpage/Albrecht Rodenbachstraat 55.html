@@ -9,6 +9,7 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,13 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="map.html">Map</a>
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="books.html">Book Boxes</a>
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
             </li>
         </ul>
     </div>
@@ -62,7 +63,7 @@
     var map = L.map('bookBoxMap').setView([50.890636, 4.7240621], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([50.890636, 4.7240621]).addTo(map).bindPopup('Albrecht Rodenbachstraat 55', { maxHeight:"auto"  });
+    L.marker([50.890636, 4.7240621]).addTo(map).bindPopup('Albrecht Rodenbachstraat 55', { maxWidth: "auto" });
 </script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Klein Langeveld 30</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Klein Langeveld 30</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Klein Langeveld 30.jpg" alt="Book Box at Klein Langeveld 30">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/risotto-pilav-en-paella/1001004006504925/'>Risotto: Pilav & Paella</a> by Anne Wilson</li><li><a href='https://www.bol.com/be/nl/p/anne-wilson-10-x-koken-1-stoofschotels-en-eenpans-gerechten-2-bakken-en-roerbakken-3-verrassende-groente-gerechten-4-heerlijk-gehakt-5-klassieke-stoofschotels-6-aardappel-schotels-7-de-landelijke-keuken-8-vetarm-koken-9-pizza-s-en-t/9300000176144032/'>Bakken & Roerbakken</a> by Anne Wilson</li><li><a href='https://www.bol.com/be/nl/p/cadres-et-dirigeants-efficaces-la-methode-gordon-pour-un-management-heureux-et-performant/9300000002299831/'>Parents Efficaces: La Methode Gordon</a> by Thomas Gordon</li><li><a href='https://www.bol.com/be/nl/p/marie-claire-crisp/1001004002737780/'>Marie Claire Crispy</a> by Michele Cranston</li><li><a href='https://www.bol.com/be/nl/p/lemons-limes-oranges/9200000050789243/'>Citruskookboek</a> by Coralie Dorman</li><li><a href='https://www.bol.com/be/nl/p/de-soepbijbel/1001004006522079/'>De Soepbijbel </a> by Debra Mayhew</li><li><a href='https://www.bol.com/be/nl/p/bijzonder-brood/1001004001465240/'>Bijzonder brood</a> by Linda Collister</li><li><a href='https://www.bol.com/be/nl/p/foie-gras-en-eend/1001004002617931/'>Foie Gras & Eend</a> by Erik Verdonck</li><li><strong>Het gezonde Kinderkookboek</strong> by Elodie Ouedraogo</li><li><a href='https://www.bol.com/be/nl/p/de-droomfabrikanten/666879096/'>De Droomfabrikanten</a> by Harold Robbins</li><li><a href='https://www.bol.com/be/nl/p/liefde-in-het-grand-hotel/9200000048251201/'>Liefde in het Grandhotel</a> by Marie Louise Fischer</li><li><a href='https://www.bol.com/be/nl/p/nothing-lasts-forever/9200000018004343/'>Nothing Lasts Forever</a> by Sidney Sheldon</li><li><a href='https://www.bol.com/be/nl/p/le-couple/9200000033169022/'>Le Couple</a> by Suzanne Lilar</li><li><strong>Probl¨¨mes de psychologie g¨¦n¨¦tique</strong> by Juan Piaget</li><li><a href='https://www.bol.com/be/nl/p/down-the-chimney-100-most-treasured-christmas-novels-stories-in-one-volume/9200000085983247/'>De Roman van Lucas</a> by Frank Slaughter</li><li><a href='https://www.bol.com/be/nl/p/justine/9300000061388583/'>Justine</a> by Lawrence Durrell</li><li><a href='https://www.bol.com/be/nl/p/enfant-arri-r-et-sa-m-re/9200000037341971/'>L'Enfant arri¨¦r¨¦ et sa m¨¨re</a> by Maud Mannoni</li><li><strong>La prononciation fran?aise d'aujourd'hui</strong> by L.P. Kammans</li><li><strong>La psychologie diff¨¦rentielle </strong> by Reuchlin Maurice</li><li><strong>La Chirurgie d'aujourd'hui</strong> by J. Auvert</li><li><a href='https://www.bol.com/be/nl/p/2-toegepaste-sociologie/1001004005161257/'>Toegepaste sociologie 2</a> by Leo Rademaker</li><li><strong>Vos zones erron¨¦es</strong> by Wayne W. Dyer</li><li><strong>La D¨¦pression nerveuse et le Corps</strong> by Alexander Lowen</li><li><a href='https://www.bol.com/be/nl/p/prabhupada-solo-el-podia-guiarlos/9300000101903236/'>Prabhupada</a> by Satsvarupa das Goswami</li><li><a href='https://www.bol.com/be/nl/p/uki-taart-op-pootjes/1001004010625821/'>Uki - Taart op pootjes</a> by Lannoo</li><li><strong>Uki - Konijn vliegt</strong> by Lannoo</li><li><a href='https://www.bol.com/be/nl/p/de-lekkerste-pastagerechten/1001004001578386/'>Pastagerechten</a> by Deltas</li><li><a href='https://www.bol.com/be/nl/p/embedded-c/1001004001766807/'>Embedded C</a> by Michael J. Pont</li><li><a href='https://www.bol.com/be/nl/p/de-eenhoorn/1001004005165491/'>De Eenhoorn</a> by Teresa van Marcke</li><li><a href='https://www.bol.com/be/nl/p/dochter-van-de-aarde/1001004005093936/'>Dochter van de Aarde</a> by Agnes Smedley</li><li><strong>Molly de Muis</strong> by C¨¦cile Marbehant</li><li><a href='https://www.bol.com/be/nl/p/bumba-mijn-groot-voelboek-de-seizoenen/9200000100887944/'>Bumba - Mijn Groot Voelboek</a> by Studio 100</li><li><a href='https://www.bol.com/be/nl/p/kindervriendschappen/1001004005113365/'>Kindervriendschappen</a> by Z. Rubin</li><li><a href='https://www.bol.com/be/nl/p/de-nieuwe-hardy-s-5-delen-1-deel-2-de-gekruiste-schaduw-2-deel-4-afzender-onbekend-3-deel-30-geheim-agent-op-vlucht-101-4-deel-31-door-het-oog-van-de-naald-5-deel-33-de-sirene/9300000168429255/'>De Sirene</a> by Franklin W. Dixon</li><li><a href='https://www.bol.com/be/nl/p/jan-monter-en-de-groene-banier/1001004005086541/'>Jan Monter en de groene banier</a> by Julien Van Remoortere</li><li><a href='https://www.bol.com/be/nl/p/verhaaltjes-uit-de-schatkamer-van-de-bijbel/9200000049021357/'>Bijbel voor peuters en kleuters</a> by Elmar</li><li><a href='https://www.bol.com/be/nl/p/leuk-maar-lastig/9300000033061382/'>Leuk Maar Lastig</a> by Susan Mallery</li><li><a href='https://www.bol.com/be/nl/p/spoedopname/666811596/'>Spoedopname</a> by Marcia Rose</li><li><a href='https://www.bol.com/be/nl/p/by-loes-en-noortje-thuis/1001004005122968/'>By loes en noortje thuis</a> by Trix can Brussel</li><li><strong>Homeless World Cup</strong> by Geert Degrande</li><li><strong>Een Boutique voor Patricia</strong> by Annamaria Ferretti</li><li><a href='https://www.bol.com/be/nl/p/ninja/9300000161599986/'>Uienhoofd</a> by Weldon Hill</li><li><a href='https://www.bol.com/be/nl/p/het-spel-van-de-liefde/1001004001510433/'>Het Spel van de Liefde</a> by Rosemary Rogers</li><li><a href='https://www.bol.com/be/nl/p/hedge-funds/1001004007140394/'>Hedge Funds</a> by Fran?ois-Serge Lhabitant</li><li><a href='https://www.bol.com/be/nl/p/de-pallisers/9200000048863846/'>De Pallisers</a> by Anthony Trollope</li><li><a href='https://www.bol.com/be/nl/p/ruige-nachten/1001004001536653/'>Ruige nachten</a> by Cyril Collard</li><li><a href='https://www.bol.com/be/nl/p/het-spoor-van-egbert/1001004005154965/'>Het spoor van Egbert</a> by Lydia Verbeeck</li><li><a href='https://www.bol.com/be/nl/p/365-dierenverhalen/1001004005129250/'>365 dierenverhalen </a> by J. Peels</li><li><a href='https://www.bol.com/be/nl/p/lies-of-silence/1001004000968062/'>Lies of Silence</a> by Brian Moore</li><li><strong>Liefde tegen liefde</strong> by Beno?te Groult</li><li><a href='https://www.bol.com/be/nl/p/liefde-in-het-grand-hotel/9200000048251201/'>Liefde in het grand hotel</a> by Marie Louise Fischer </li><li><a href='https://www.bol.com/be/nl/p/de-droomfabrikanten/666879096/'>De droomfabrikanten</a> by Harold Robbins</li><li><strong>Wie Nooit Gezondigd Heft</strong> by John Jacoby</li><li><strong>Roeping en Geweten</strong> by Andre Caroll</li><li><a href='https://www.bol.com/be/nl/p/zoete-leugens/1001004001515010/'>Zoete Leugens</a> by Susan Isaacs</li><li><a href='https://www.bol.com/be/nl/p/de-heerlijkheid-van-julia/9200000068141504/'>De Heerlijkheid van Julia</a> by Oscar van den Boogaard</li><li><strong>Vandaag Begon Ik Opnieuw</strong> by Inge Takin</li><li><a href='https://www.bol.com/be/nl/p/vreugdevuur/1001004001503558/'>Vreugdevuur</a> by Rudi Hermans </li><li><strong>Het Parkietenboekje</strong> by V.C. Breed</li><li><strong>Plotseling alleen</strong> by Marlene Lohner</li><li><a href='https://www.bol.com/be/nl/p/groot-vertelboek-voor-de-bijbelse-geschiedenis-nieuwe-testament/1001004001993637/'>De Nieuwe Kinderbijbel</a> by Anne Edwards</li><li><strong>Kanarievogels. Het houden, kweken, verzorgen en africhten.</strong> by A. Bartels</li><li><a href='https://www.bol.com/be/nl/p/overgang-op-alternatieve-wijze-de/666832215/'>Overgang op Alternatieve Wijze</a> by Joyce Wouters</li><li><a href='https://www.bol.com/be/nl/p/voor-de-vriend-die-naliet-mij-het-leven-te-redden/666776040/'>Voor de vriend die naliet mij het leven te redden</a> by Herv¨¦ Guibert</li><li><strong>Een tijdelijke schuilplaats en andere verhalen</strong> by Mary Gordon</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.91061, 4.7204304], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.91061, 4.7204304]).addTo(map).bindPopup('Klein Langeveld 30', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

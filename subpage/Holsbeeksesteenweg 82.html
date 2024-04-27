@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Holsbeeksesteenweg 82</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Holsbeeksesteenweg 82</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Holsbeeksesteenweg 82.jpg" alt="Book Box at Holsbeeksesteenweg 82">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><strong>Liefdesbrief in viervoud</strong> by Elizabeth Cadell</li><li><a href='https://www.bol.com/be/nl/p/het-verhaal-van-de-griezel-en-de-raadselachtige-verdwijningen/9300000052581939/'>Het verhaal van de griezel en de raadselachtige verdwijningen</a> by Rien Broere</li><li><a href='https://www.bol.com/be/nl/p/groetjes-uit-andromeda/666764950/'>Groetjes uit Andromeda</a> by Patrick Bernauw</li><li><strong>De gesluierde vrouw</strong> by Hedwig Courths-Mahler</li><li><strong>Spaans avontuur</strong> by Manfred Conte</li><li><a href='https://www.bol.com/be/nl/p/satan-s-world/9200000029911464/'>Satan's World</a> by Poul Anderson</li><li><strong>Banco</strong> by Henri Charri¨¨re</li><li><a href='https://www.bol.com/be/nl/p/zr-ms-ulysses-santorini/1001004001510653/'>Santorini</a> by Alistair MacLean</li><li><a href='https://www.bol.com/be/nl/p/operatie-vanessa-kustermans/1001004005103496/'>Operatie Vanessa</a> by Paul Kustermans</li><li><a href='https://www.bol.com/be/nl/p/inspecteur-wallander-reeks-10-de-gekwelde-man/1001004011794924/'>De gekwelde man</a> by Henning Manell</li><li><a href='https://www.bol.com/be/nl/p/trofee/9300000005582506/'>Caro</a> by Gaea Schoeters</li><li><strong>Romance op woeste grond</strong> by Isobel Chace</li><li><strong>De Moordenaar Leeft Nog</strong> by Rudolf Anderl</li><li><a href='https://www.bol.com/be/nl/p/een-volmaakte-spion/1001004005135914/'>Een volmaakte spion</a> by John le Carr¨¦</li><li><strong>Snacks en slaatjes</strong> by Carol Bowen</li><li><a href='https://www.bol.com/be/nl/p/floortje-bellefleur-door-cok-grashoff-8-boeken-1-floortje-bellefleur-2-in-de-sneeuw-3-maakt-de-schoolkrant-4-wint-een-fiets-5-op-jazzballet-6-in-de-miss-verkiezing-7-in-de-playbackshow-8-op-de-dierenambulance/9300000175034054/'>Floortje Bellefleur maakt de schoolkrant</a> by Cok Grashoff</li><li><strong>Een Man Zet Door</strong> by Jan Gerhard Toonder</li><li><a href='https://www.bol.com/be/nl/p/de-avonturiers-waar-liefde-verdween/1001004001510533/'>Waar liefde verdween</a> by Harold Robbins</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.896913, 4.7315696], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.896913, 4.7315696]).addTo(map).bindPopup('Holsbeeksesteenweg 82', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

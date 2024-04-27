@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Mechelsesteenweg 485</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Mechelsesteenweg 485</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Mechelsesteenweg 485.jpg" alt="Book Box at Mechelsesteenweg 485">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/vlucht-van-de-witte-wolf/1001004005085129/'>Vlucht van de witte wolf</a> by Mel Ellis</li><li><a href='https://www.bol.com/be/nl/p/huwelijksnacht/1001004001316766/'>Huwelijksnacht</a> by Kerstin Thorvall</li><li><a href='https://www.bol.com/be/nl/p/geekclub-nasa-collection-james-webb-space-telescope-excl-tools-solderen-electronica/9300000120752033/'>Vuurproef</a> by James Webb</li><li><strong>Fel Waait de Passaat</strong> by Peter Gilman</li><li><strong>De Schaduw der Beelden</strong> by William Barrett</li><li><strong>De bevrijding van Old Surehand</strong> by Karl Friedrich May</li><li><a href='https://www.bol.com/be/nl/p/de-avonden/9300000165609923/'>De Avonden</a> by Gerard Reve</li><li><a href='https://www.bol.com/be/nl/p/de-maanden-6-februari/9300000117168231/'>Februari</a> by Rob van Essen</li><li><a href='https://www.bol.com/be/nl/p/languit-rillen-in-de-zon/9200000049039709/'>Languit Rillen in de Zon</a> by Irina van Goeree</li><li><strong>Bram en Brom roepen de brandweer</strong> by  Schermel¨¦ Willy </li><li><a href='https://www.bol.com/be/nl/p/rozen-en-tortilla-s-en-de-liefde-van-don-jubilo/1001004002720049/'>De liefde van don Jubilo</a> by Laura Esquivel</li><li><a href='https://www.bol.com/be/nl/p/jeugdomnibus/9200000048442094/'>Jeugdomnibus</a> by Leen van Marcke</li><li><a href='https://www.bol.com/be/nl/p/de-val-van-een-fundamentalist/1001004006227699/'>De Val van een Fundamentalist</a> by Mohsin Hamid</li><li><a href='https://www.bol.com/be/nl/p/de-beste-rijtechnieken-voor-de-mountainbiker/9200000091298342/'>De beste rijtechnieken voor de mountainbiker</a> by Holger Meyer</li><li><a href='https://www.bol.com/be/nl/p/drugs/1001004001509874/'>Drugs</a> by Jef Geeraerts</li><li><a href='https://www.bol.com/be/nl/p/de-kleur-van-de-zee/1001004011515541/'>De Kleur van de Zee</a> by Anita Shreve</li><li><strong>Libert¨¦ Egalit¨¦ Beyonc¨¦</strong> by John Davis</li><li><a href='https://www.bol.com/be/nl/p/do-not-say-we-have-nothing/9200000065734900/'>Zekerheid</a> by Madeleine Thien</li><li><a href='https://www.bol.com/be/nl/p/laura/9200000049386652/'>Laura</a> by Emmanuelle Arsan</li><li><a href='https://www.bol.com/be/nl/p/gezond-vanbinnen-vanbuiten-mooi/9200000058575867/'>Gezond vanbinnen, vanbuiten mooi</a> by Jo Wyckmans</li><li><a href='https://www.bol.com/be/nl/p/het-vuur-van-de-liefde/9200000095309728/'>Het vuur van de liefde</a> by Sandra Paretti</li><li><a href='https://www.bol.com/be/nl/p/nathans-vlucht-zb-3161/1001004002054936/'>Nathan's vlucht</a> by John Gilstrap</li><li><a href='https://www.bol.com/be/nl/p/miauwkes-melkmuil-scheefsnor/9300000155865073/'>Uit Elkaar</a> by Veronique Puts</li><li><a href='https://www.bol.com/be/nl/p/een-leven-voor-en-een-leven-na/9300000109242620/'>Een leven voor en een leven na </a> by Nadja Vanhelden</li><li><strong>Our John Willie</strong> by Catherine Cookson</li><li><strong>De vrouwen van mijn vriend</strong> by A.J. Cronin</li><li><a href='https://www.bol.com/be/nl/p/aftershock/1001004010613924/'>Aftershock: Protect Yourself and Profit in the Next Global Financial Meltdown </a> by David Wiedemer</li><li><strong>Het Beste Boek 64</strong> by Vital Alsar</li><li><a href='https://www.bol.com/be/nl/p/rosalie-niemand-roman/666795769/'>Rosalie Niemand</a> by Elisabeth Marain</li><li><a href='https://www.bol.com/be/nl/p/veel-geluk-professor/9300000018474814/'>Patricia</a> by Aster Berkhof</li><li><a href='https://www.bol.com/be/nl/p/tranen-over-shanghai/9200000035026661/'>Tranen Over Shanghai</a> by Natasha Peters</li><li><a href='https://www.bol.com/be/nl/p/porporino-of-de-mysteries-van-napels/9200000049545762/'>Porporino, of De mysteries van Napels</a> by Dominique Fernandez</li><li><strong>Spookhuis aan de Amstel</strong> by Barend Doesburg</li><li><strong>De Gestolen Kroon</strong> by Staf Weyts</li><li><a href='https://www.bol.com/be/nl/p/maansteen/9200000048857453/'>De Maansteen</a> by A. Lefeber</li><li><strong>De Avonturen van Bing</strong> by Omer de Dier</li><li><a href='https://www.bol.com/be/nl/p/alleen-op-de-wereld/9200000060020408/'>Alleen op de wereld</a> by Hector Malot</li><li><strong>Het Robotten Eiland</strong> by M. Renders</li><li><a href='https://www.bol.com/be/nl/p/een-heldenleven/9200000075700021/'>Een heldenleven</a> by Persis Bekkering</li><li><strong>Belle et B¨ºte</strong> by Marcela Iacub</li><li><strong>De Grote Ontdekkingsreizigers</strong> by Hans-Otto Meissner</li><li><a href='https://www.bol.com/be/nl/p/de-zaak-alzheimer-film-editie/1001004002032111/'>De Zaak Alzheimer</a> by Jef Geeraerts</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.907363, 4.6683741], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.907363, 4.6683741]).addTo(map).bindPopup('Mechelsesteenweg 485', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

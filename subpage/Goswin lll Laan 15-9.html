@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Goswin lll Laan 15-9</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Goswin lll Laan 15-9</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Goswin lll Laan 15-9.jpg" alt="Book Box at Goswin lll Laan 15-9">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/het-mysterie/1001004005017005/'>Het Mysterie</a> by Marianne Fredriksson</li><li><a href='https://www.bol.com/be/nl/p/tranen-over-shanghai/9200000035026661/'>Tranen Over Shanghai</a> by Natasha Peters</li><li><a href='https://www.bol.com/be/nl/p/mobiele-minnaars/1001004001807842/'>Mobiele Minnaars</a> by Anna Davis</li><li><a href='https://www.bol.com/be/nl/p/the-wheel-of-time-2-the-great-hunt/1001004001381186/'>The Great Hunt</a> by Robert Jordan</li><li><a href='https://www.bol.com/be/nl/p/de-blik-van-bourlon/9200000072444557/'>De Blik van Bourlon</a> by Hans Bourlon</li><li><a href='https://www.bol.com/be/nl/p/meisje-niemand-t-tryzna/666823000/'>Meisje Niemand</a> by Tomek Tryzna</li><li><strong>Een band voor het leven</strong> by Courths Mahler</li><li><a href='https://www.bol.com/be/nl/p/spel-met-de-dood/1001004005166743/'>Spel met de dood</a> by Necil Shute</li><li><a href='https://www.bol.com/be/nl/p/iemand-als-jij/9200000010218014/'>Iemand als jij</a> by Cathy Kelly</li><li><a href='https://www.bol.com/be/nl/p/hors-collection-5-marianne-tome-5-les-lauriers-de-flammes/9200000034210348/'>Marianne</a> by Juliette Benzoni</li><li><strong>Een spoor van tederheid</strong> by Frank Yeily</li><li><a href='https://www.bol.com/be/nl/p/nethergate/9200000010086906/'>Nethergate</a> by Norah Lofts</li><li><a href='https://www.bol.com/be/nl/p/penmarric/9200000011604994/'>Penmarric</a> by Susan Howatch</li><li><a href='https://www.bol.com/be/nl/p/theet-77/9300000126038404/'>Theet 77</a> by Herman Brussemans</li><li><strong>Kruimels van de tafel</strong> by Theo Willemen</li><li><strong>Goswin lll Laan</strong> by Kunst en Beschaving</li><li><a href='https://www.bol.com/be/nl/p/dossier-k/1001004011369359/'>Diamant</a> by Jef Geeraerts</li><li><strong>Delaatste Voorstelling</strong> by Bert vander Veer</li><li><a href='https://www.bol.com/be/nl/p/3-jeugdomnibus/9200000048439480/'>Jeugdomnibus</a> by Aster Berkhof</li><li><a href='https://www.bol.com/be/nl/p/princess-daisy/9200000051737860/'>Princess Daisy</a> by Judith Krantz</li><li><a href='https://www.bol.com/be/nl/p/het-uitgestelde-paradijs/1001004001549296/'>Het Uitgestelde Paradijs</a> by John Mortimer</li><li><a href='https://www.bol.com/be/nl/p/het-laatste-lied-van-de-steppe/1001004005169934/'>Het Liefdeskomplot</a> by Konsalik Heinz G.</li><li><a href='https://www.bol.com/be/nl/p/de-weg-van-eenvoud/666799082/'>De weg van Eenvoud</a> by Moeder Teresa</li><li><a href='https://www.bol.com/be/nl/p/het-spel/9300000027333325/'>Het Spel</a> by Elle Kennedy</li><li><a href='https://www.bol.com/be/nl/p/de-wraak-van-het-duivelse-boek-ann-m-martin/666796168/'>De wraak van het duivelse boek</a> by Tiener Bibliotheek</li><li><a href='https://www.bol.com/be/nl/p/de-melody-omnibus/1001004002134671/'>De Melody omnibus</a> by Virginia Andrews</li><li><a href='https://www.bol.com/be/nl/p/een-schuilplaats-voor-het-hart-catherine-cookson-isbn9010051706/9300000024193839/'>Een schuilplaatsvoor het hart</a> by Catherine Cookson</li><li><a href='https://www.bol.com/be/nl/p/hartsvriendinnen-voor-altijd/9200000101484439/'>Hartsvriendinnen</a> by Susan Oudot</li><li><a href='https://www.bol.com/be/nl/p/olav-audunszoon-op-hestviken/9200000049415933/'>Olav Audunszoon op Hestviken</a> by Sigrid Undset</li><li><a href='https://www.bol.com/be/nl/p/een-verschrikkelijke-schoonheid/1001004010224357/'>Een Verschrikkelijke Schoonheid</a> by Libba Bray</li><li><a href='https://www.bol.com/be/nl/p/het-marco-effect/9200000102177708/'>Het Marco-Effect</a> by Jussi Adler-Olsen</li><li><a href='https://www.bol.com/be/nl/p/als-bloesem-in-de-stormwind/1001004005089908/'>Alsbloesem in de stormwind</a> by Catherine Cookson</li><li><a href='https://www.bol.com/be/nl/p/gestolen-hartstocht/1001004001534858/'>Gestolen hartstocht</a> by Johanna Lindsey</li><li><a href='https://www.bol.com/be/nl/p/verscheurd-door-het-verleden/1001004001534946/'>Verscheurd door het Verleden</a> by Judith McNaught</li><li><strong>Ierse Kitty</strong> by Norma Lee Clark</li><li><a href='https://www.bol.com/be/nl/p/doorgang/9200000045904582/'>Doorgang</a> by David Mitchell</li><li><a href='https://www.bol.com/be/nl/p/tiny-richt-een-club-op/1001004005093849/'>Tiny richt een 'club' op</a> by Theuermeister</li><li><strong>Een jas met kogelgaten</strong> by Todd Nettleton</li><li><a href='https://www.bol.com/be/nl/p/harte-saga-001-de-macht-van-een-vrouw/1001004002725933/'>De macht van een vrouw</a> by Barbara Taylor Bradford</li><li><a href='https://www.bol.com/be/nl/p/sherlock-holmes-3-de-hond-van-de-baskervilles/9200000050046170/'>Sherlock Holmes - De hond van Baskerville</a> by A. Conan Doyle</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.8710044, 4.6689977], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.8710044, 4.6689977]).addTo(map).bindPopup('Goswin lll Laan 15-9', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+
