@@ -46,45 +46,62 @@ async function performApiRequest(token, method, path, body) {
 }
 
 
-        // Reference to the image gallery container
-        const imageGallery = document.getElementById('image-gallery');
+// Reference to the image gallery container
+const imageGallery = document.getElementById('image-gallery');
 
-        // Function to load images from the server and display them
-        async function loadImages() {
-            try {
-                const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with actual API key
-                const data = await performApiRequest(token, 'POST', 'action/find', {
-                dataSource: 'book-box',
-                database: 'books',
-                collection: 'images',
-                //filter: {street_name : {"$regex": "(?i)" + "Albert Giraudstraat 28"}}  // change here based on interaction
-                } );
+// Function to load images from the server and display them
+async function loadImages() {
+    try {
+        const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
+        const data = await performApiRequest(token, 'POST', 'action/find', {
+            dataSource: 'book-box',
+            database: 'books',
+            collection: 'images',
+        });
 
-                // Clear existing images in the gallery
-                imageGallery.innerHTML = '';
+        const row = document.querySelector('.row'); // Select the row for cards
+        row.innerHTML = ''; // Clear existing content
 
-                // Create and display image elements
-                data["documents"].forEach(item => {
+        data.documents.forEach(item => {
+            const col = document.createElement('div');
+            col.className = 'col card-column mb-4';
 
-                    const card = document.createElement('div');
-                    card.classList.add('card');
+            const card = document.createElement('div');
+            card.className = 'card';
 
-                    const title = document.createElement('h2');
-                    title.textContent = item.street_name;
+            const img = document.createElement('img');
+            img.className = 'card-img-top'; // Bootstrap class for card images
+            img.src = item.image_url; // Assume each item has an image_url
+            img.alt = `Cover image of ${item.street_name}`;
 
-                    const img = document.createElement('img'); // Create an <img> element
-                    img.src = item.image_url; // Set the image source to the URL
-                    card.appendChild(title);
-                    card.appendChild(img); // Add the image to the gallery
-                    imageGallery.appendChild(card);
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
 
+            // Create a flex container for the icon and the title
+            const titleContainer = document.createElement('div');
+            titleContainer.className = 'd-flex align-items-center'; // Bootstrap flexbox classes
 
-                    
-                });
-            } catch (error) {
-                console.error('Error fetching images:', error);
-            }
-        }
+            const icon = document.createElement('img');
+            icon.className = 'icon mr-2'; // 'mr-2' class adds a margin to the right
+            icon.src = "img/location_pin.png";
+            icon.alt = `location pin`;
 
-        // Load images when the page loads
-        window.addEventListener('load', loadImages);
+            const title = document.createElement('h8');
+            title.className = 'card-title mb-0';
+            title.textContent = item.street_name;
+
+            titleContainer.appendChild(icon);
+            titleContainer.appendChild(title);
+
+            card.appendChild(img);
+            cardBody.appendChild(titleContainer);
+            card.appendChild(cardBody);
+            col.appendChild(card);
+            row.appendChild(col);
+        });
+    } catch (error) {
+        console.error('Error fetching images:', error);
+    }
+}
+// Load images when the page loads
+window.addEventListener('load', loadImages);
