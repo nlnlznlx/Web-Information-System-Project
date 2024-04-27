@@ -2,23 +2,14 @@ import pandas as pd
 from io import StringIO
 import os
 
-# Corrected CSV data with proper handling of embedded delimiters
-csv_data = "/subpage/updated1.csv"
-
-# Read the CSV data into a DataFrame
-df = pd.read_csv(StringIO(csv_data), quotechar='"', escapechar='\\', delimiter=',')
+# Load CSV data into a DataFrame
+csv_data = "/subpage/updated1.csv"  # Replace with your actual CSV file path
+df = pd.read_csv(csv_data)
 
 # Group books by address
 grouped_by_address = df.groupby("Address of the Book Box")
 
-# Directory to save the HTML files
-output_dir = "/subpage/"
-
-# Create the output directory if it doesn't exist
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-
-# HTML template with placeholders for address, books, and map data
+# HTML template to use for generating pages
 html_template = """
 <!DOCTYPE html>
 <html lang="en">
@@ -26,19 +17,47 @@ html_template = """
     <meta charset="UTF-8">
     <title>Book Box {{ address }}</title>
     <link rel="stylesheet" href="style2.css">
-    <link rel= "stylesheet"
-          href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity= "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin= "anonymous">
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Book Box at {{ address }}</h1>
-        </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Book Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header>
+        <h1>Book Box {{ address }}</h1>
+    </header>
 
+    <div class="container">
         <div class="book-box-image">
             <img src="{{ image_link }}" alt="Book Box {{ address }}">
         </div>
@@ -50,7 +69,7 @@ html_template = """
         </div>
 
         <div id="bookBoxMap" class="book-box-map">
-            <!-- Leaflet Map will be embedded here -->
+            <!-- Leaflet Map -->
         </div>
     </div>
 
@@ -68,7 +87,7 @@ html_template = """
 </html>
 """
 
-# Function to create an HTML page for each address
+# Function to create an HTML page for each address with the provided template
 def create_html_page(address, latitude, longitude, books):
     # Get the representative image link
     image_link = books["Image Link"].iloc[0]
@@ -80,35 +99,40 @@ def create_html_page(address, latitude, longitude, books):
         book_url = book["Book URL"]
         author = book["Name of the First Author or Publisher"]
 
-        # Create the book link with a title
+        # Create the book entry with a link if valid
         if book_url == "No link found":
-            # If no link, just display the title
             book_entry = f"<li><strong>{title}</strong> by {author}</li>"
         else:
-            # If a valid URL, create a link
             book_entry = f"<li><a href='{book_url}'>{title}</a> by {author}</li>"
 
         book_list += book_entry
 
-    # Replace the placeholders in the template
+    # Replace placeholders in the template with actual data
     html_content = html_template.replace("{{ address }}", address)
-    html_content = html_content.replace("{{ image_link }}", image_link)
     html_content = html_content.replace("{{ latitude }}", str(latitude))
-    html_content = html_content.replace("{{ longitude }}", str(longitude))
-    html_content = html_content.replace("{{ book_list }}", book_list)
-
+    
+    html_content = html_template.replace("{{ longitude }}", str(longitude))
+    html_content = html_template.replace("{{ image_link }}", image_link)
+    html_content = html_template.replace("{{ book_list }}", book_list)
+    
     return html_content
+
+# Create the output directory if it doesn't exist
+output_dir = "/subpage/"
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 
 # Create and save HTML pages for each unique address
 file_paths = []
 for address, data in grouped_by_address:
-    # Extract the latitude and longitude for the map
+    # Get the latitude and longitude for the map
     latitude = data["Latitude"].iloc[0]
     longitude = data["Longitude"].iloc[0]
 
+    # Generate the HTML content with the provided template
     html_content = create_html_page(address, latitude, longitude, data)
-
-    # Sanitize the file name to remove special characters and spaces
+    
+    
     file_name = address + ".html"
     file_path = os.path.join(output_dir, file_name)
     
