@@ -59,10 +59,10 @@
 </footer>
 
 <script>
-    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 14);
+    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}');
+    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}', { maxWidth: "auto" });
 </script>
 </body>
 </html>
