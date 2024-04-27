@@ -81,8 +81,22 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 function displaySearchResults(data) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
-    data.forEach(book => {
+    data.forEach(async (book) => {
         const li = document.createElement('li');
+
+        const coverImage = document.createElement('img');
+        coverImage.alt = "Loading cover...";
+        li.appendChild(coverImage);
+        // Fetch the book cover using the title of the book
+        const imageUrl = await fetchBookCover(book['Title of the Book']);
+        if (imageUrl && imageUrl.startsWith('http')) {  // Check if the URL is valid
+            coverImage.src = imageUrl;
+            coverImage.alt = `Cover image of ${book['Title of the Book']}`;
+        } else {
+            coverImage.alt = 'No cover image available';
+            coverImage.style.display = 'none';  // Optionally hide the image element
+        }
+
         const title = document.createElement('strong');
         title.textContent = `Title: ${book['Title of the Book']}`;
         li.appendChild(title);
@@ -141,3 +155,28 @@ function displaySearchResults(data) {
         searchResults.appendChild(li);
     });
 }
+
+async function fetchBookCover(title) {
+    const apiKey = 'AIzaSyDoEKU8_2pYMFFNXjSO2mPHmhv3rl-SYQo';
+    const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}&key=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+            const book = data.items[0];  // Taking the first book found
+            const coverImageUrl = book.volumeInfo.imageLinks?.thumbnail;  // Using optional chaining in case imageLinks is undefined
+
+            console.log(coverImageUrl);  // Log the URL of the book cover image
+            return coverImageUrl;  // Return the URL
+        } else {
+            console.log("No books found with that title.");
+            return "No books found";
+        }
+    } catch (error) {
+        console.error("Failed to fetch book cover image:", error);
+        return "Error fetching data";
+    }
+}
+
