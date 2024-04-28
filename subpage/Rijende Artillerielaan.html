@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Rijende Artillerielaan</h1>
+    <h1 id="bookBox">Book Box at Rijende Artillerielaan</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><strong>VRG Codex 2000-2001</strong> by Wolters Kluwer</li><li><a href='https://www.bol.com/be/nl/p/de-weg-naar-het-water/666845228/'>De Weg Naar Het Water</a> by Barbara Gowdy</li><li><a href='https://www.bol.com/be/nl/p/johan-doxa/1001004005087508/'>Johan Doxa</a> by Herman Teirlinck</li><li><a href='https://www.bol.com/be/nl/p/het-leven-van-vernon-1/9200000052023825/'>Het Leven Van Vernon 1</a> by Virginie Despentes</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.884072, 4.7050264]).addTo(map).bindPopup('Rijende Artillerielaan', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

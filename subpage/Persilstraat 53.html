@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Persilstraat 53</h1>
+    <h1 id="bookBox">Book Box at Persilstraat 53</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/to-kill-a-kingdom/9200000083123931/'>To Kill a Kingdom</a> by Alexandra Christo</li><li><a href='https://www.bol.com/be/nl/p/herinneringen-ophalen/1001004002524836/'>Ouders en Kinderen</a> by Georges de Corte</li><li><a href='https://www.bol.com/be/nl/p/onze-hond-handboek-de-jack-russell-terrier/666776219/'>De Fox Terrier</a> by Ruud Haak</li><li><a href='https://www.bol.com/be/nl/p/the-model-wife/1001004006114423/'>The Model Wife</a> by Julia Llewellyn</li><li><a href='https://www.bol.com/be/nl/p/baantjer-40-de-cock-en-kogels-voor-een-bruid/666748918/'>De Cock en kogels voor een bruid</a> by A.C. Baantjer</li><li><a href='https://www.bol.com/be/nl/p/op-de-groei-2-samen-eten-is-lekker-en-leuk/9200000052813137/'>Op de Groei 1</a> by Sofie Dumont</li><li><a href='https://www.bol.com/be/nl/p/de-lichtheid-van-het-opvoeden/1001004006306655/'>De Lichtheid van Het Opvoeden</a> by Jan Masschelein</li><li><strong>Impressies van een Nomade</strong> by Tom Botte</li><li><a href='https://www.bol.com/be/nl/p/omgaan-met-je-schaduw/666833520/'>Omgaan met je Schaduw</a> by Connie Zweig</li><li><a href='https://www.bol.com/be/nl/p/ready-steady-baby/9200000032705991/'>Ready Steady Baby!</a> by NHS Scotland</li><li><a href='https://www.bol.com/be/nl/p/outdoor-gps-navigatie-theorie-praktijk/666782620/'>Outdoor GPS Navigatie</a> by Rento Ijsenbrant</li><li><strong>Passion & Poppadoms</strong> by Nisha Minhas</li><li><a href='https://www.bol.com/be/nl/p/beste-marcie/1001004001555705/'>Beste Marcie</a> by Ilse Peys</li><li><a href='https://www.bol.com/be/nl/p/des-cannibales/9300000118609610/'>Des Cannibales</a> by Michel de Montaigne</li><li><strong>De Knik in de Kern</strong> by Roland Walter</li><li><a href='https://www.bol.com/be/nl/p/dromen-ontcijferd/1001004001543264/'>Dromen Ontcijferd</a> by Fiona Zucker</li><li><strong>Lekker Likkebaarden!</strong> by Christopher Luff</li><li><a href='https://www.bol.com/be/nl/p/this-lullaby/1001004002190642/'>This Lullaby</a> by Sarah Dessen</li><li><a href='https://www.bol.com/be/nl/p/ijsvermaak/1001004001531593/'>IJsvermaak</a> by Tracy Metz</li><li><a href='https://www.bol.com/be/nl/p/dagvlinder/1001004005163920/'>Dagvlinder (Belle de Jour)</a> by Joseph Kessel</li><li><a href='https://www.bol.com/be/nl/p/kliniek-van-de-hartstocht/1001004001510652/'>Kliniek van de Hartstocht</a> by Heinz G. Konsalik</li><li><strong>De Zin van Ziekzijn</strong> by R¨¹diger Dahlke</li><li><a href='https://www.bol.com/be/nl/p/jo-leemans/9200000049379871/'>Jo Leemans: de vlucht terug</a> by Marianne De Baere</li><li><a href='https://www.bol.com/be/nl/p/literaria-28-la-saga-de-vigdis/9300000093233196/'>Vigdis Gunnarsdochter</a> by Sigrid Undset</li><li><a href='https://www.bol.com/be/nl/p/wij-krijgen-een-baby/666802005/'>Wij Krijgen een Baby</a> by Lennart Nilsson</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.904305, 4.668932]).addTo(map).bindPopup('Persilstraat 53', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

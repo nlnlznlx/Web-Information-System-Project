@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Schorenshof 13</h1>
+    <h1 id="bookBox">Book Box at Schorenshof 13</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/de-belofte-van-uw-leven/666823285/'>De Belofte van Uw Leven</a> by Theije Twijnstra</li><li><a href='https://www.bol.com/be/nl/p/de-ontdekking-van-holland/9300000164983998/'>Met Liefde</a> by Jan Brokken</li><li><strong>366 Tips voor de Biodiversiteit</strong> by Camille Pisani</li><li><a href='https://www.bol.com/be/nl/p/warbler-press-contemplations-shakespeare-on-love/9300000007933095/'>Shakespeare on Love</a> by Benjamin Darling</li><li><a href='https://www.bol.com/be/nl/p/de-7-spirituele-wetten-van-succes/9300000061978654/'>De 7 spirituele wetten van succes</a> by Deepak Chopra</li><li><a href='https://www.bol.com/be/nl/p/monterosso-mon-amour/9300000093246356/'>Monterosso mon amour</a> by Ilja Leonard Pfeijffer</li><li><a href='https://www.bol.com/be/nl/p/liefde-is-het-enige/666793053/'>Liefde is het enige</a> by Kees Winkler</li><li><a href='https://www.bol.com/be/nl/p/bucketlist-het-bucketlist-boek-voor-ouders/9200000072427149/'>Het Bucketlist Boek voor ouders </a> by Elise de Rijck</li><li><a href='https://www.bol.com/be/nl/p/tijd-voor-jezelf/9300000004657771/'>Tijd voor jezelf</a> by Kathryn Nicolai</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.890616, 4.6986294]).addTo(map).bindPopup('Schorenshof 13', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

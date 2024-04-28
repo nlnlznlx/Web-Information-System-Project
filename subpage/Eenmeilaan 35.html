@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Eenmeilaan 35</h1>
+    <h1 id="bookBox">Book Box at Eenmeilaan 35</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><strong>Tuin Wekboek van Maand to Maand</strong> by Wim Oudshoorn</li><li><a href='https://www.bol.com/be/nl/p/john-grisham-de-broederschap-de-partner-de-claim-3-boeken/9300000150155542/'>De Claim</a> by John Grisham</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.885895, 4.7175497]).addTo(map).bindPopup('Eenmeilaan 35', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

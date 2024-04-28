@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Wielewaallaan 26</h1>
+    <h1 id="bookBox">Book Box at Wielewaallaan 26</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><strong>Doorgaan, ja of nee?</strong> by Jack Dominian</li><li><a href='https://www.bol.com/be/nl/p/libelle-bibliotheek-dansen-op-de-vulkaan/9200000021327696/'>Dansen op de vulkaan</a> by Anthony Capella</li><li><a href='https://www.bol.com/be/nl/p/de-kookclub/1001004008186920/'>De kookclub</a> by Sophie King</li><li><strong>Het Beste Boek 137</strong> by Desmond Bagley</li><li><a href='https://www.bol.com/be/nl/p/als-je-me-niet-kunt-horen-jack-lance/9200000061855712/'>Als Je Me Niet Kunt Horen</a> by Jack Lance</li><li><strong>Het geheim van de Nijl</strong> by Elizabeth Peters</li><li><strong>Zieltjes Zonder Zorg</strong> by Eva Versteeg</li><li><strong>Zwangerschap van Week Tot Week</strong> by Trudy van Ommeren</li><li><strong>Wij Hebben Een Baby</strong> by Irene Vergagen</li><li><strong>Nog Bij Moeder Thuis</strong> by Eva Versteeg</li><li><strong>Gids voor de Homeopatie</strong> by Luc Chaltin</li><li><a href='https://www.bol.com/be/nl/p/eva-s-oog/1001004001638643/'>Eva's Oog</a> by Karin Fossum</li><li><strong>Using Existing Light</strong> by Caroline Grimes</li><li><strong>Marie-Jos¨¦: Princesse de Belgique, derni¨¨re reine d'Italie </strong> by Agnes Adriaenssen</li><li><strong>Global Tender Mangement Optimization</strong> by Marcel Gessler</li><li><strong>Boelvaar poef 2013 - 2/3/4</strong> by Belgische Louis Paul Boongenootschap</li><li><a href='https://www.bol.com/be/nl/p/08-15-omnibus/1001004005138231/'>08/15 Omnibus</a> by Hans Hellmut Kirst</li><li><strong>De meesterwerken van Emile Zola</strong> by ¨¦mile Zola</li><li><a href='https://www.bol.com/be/nl/p/adobe-photoshop-lightroom-3-book/1001004010295296/'>The Adobe Photoshop Lightroom 3 Book: The Complete Guide for Photographers</a> by Martin Evening</li><li><a href='https://www.bol.com/be/nl/p/judith-krantz-5-x-hardcover-1-frederique-2-justine-3-gigi-4-dazzle-5-scruples/9300000172480155/'>Gigi</a> by Judith Krantz</li><li><a href='https://www.bol.com/be/nl/p/deze-kant-van-de-vrede/1001004001510816/'>Deze Kant van de Vrede</a> by Hanan Ashrawi</li><li><strong>Gids Homeopathie</strong> by Luc Chaltin</li><li><strong>Dokter zonder geweten / Offer twee vrouwen voor een man / Bankroof per computer</strong> by Sam Webster</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.901261, 4.7203928]).addTo(map).bindPopup('Wielewaallaan 26', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

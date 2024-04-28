@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Groeneweg 48</h1>
+    <h1 id="bookBox">Book Box at Groeneweg 48</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/superior-iron-man-vol-2-stark-contrast-premiere-hc/9200000040409197/'>Encyclopendie</a> by Tom Premier</li><li><a href='https://www.bol.com/be/nl/p/de-dag-na-morgen/9200000026526251/'>De dag na morgen</a> by Allan Folsom</li><li><a href='https://www.bol.com/be/nl/p/robert-langdon-1-het-bernini-mysterie/9200000059528291/'>Het bernini mysterie</a> by Dan Brown</li><li><a href='https://www.bol.com/be/nl/p/fenne-trilogie-1-eens-komt-het-geluk/9300000008059876/'>Fenne trilogie</a> by Henny Thijssing-Boer</li><li><a href='https://www.bol.com/be/nl/p/het-verre-paradijs/1001004005125166/'>Het verre paradijs</a> by M. M. Kaye</li><li><a href='https://www.bol.com/be/nl/p/zemindar/9200000027777556/'>Zemindar</a> by Valerie Fitzgerald</li><li><a href='https://www.bol.com/be/nl/p/de-hemelboom-trilogie-de-hemelboom-de-groene-tak-het-scharlaken-zaad/1001004001510707/'>De hemelboom trilogie</a> by Edith Pargeter</li><li><a href='https://www.bol.com/be/nl/p/jason-bourne-2-het-bourne-dubbelspel/9300000048977867/'>Het lason dubbelspel</a> by Robert Ludlum</li><li><a href='https://www.bol.com/be/nl/p/de-nachten-van-de-honden/1001004006872387/'>De nacht can de honden</a> by Stefan Boonen</li><li><a href='https://www.bol.com/be/nl/p/geen-kooi-voor-takka/1001004005166882/'>Geen kooi voor takka</a> by Detty verreydt</li><li><strong>Je chante avec Camille</strong> by Nancy Delvaux</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.869753, 4.663364]).addTo(map).bindPopup('Groeneweg 48', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

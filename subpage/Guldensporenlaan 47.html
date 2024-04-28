@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Guldensporenlaan 47</h1>
+    <h1 id="bookBox">Book Box at Guldensporenlaan 47</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/avonturen-in-dierenwonderland/1001004001513380/'>Avonturen in dierenwonderland</a> by Hetty van Vugt</li><li><a href='https://www.bol.com/be/nl/p/1-minuutverhaaltjes-voor-jonge-lezers/1001004000061630/'>1-Minuutverhaaltjes Voor Jonge Lezers</a> by Hetty van Vugt</li><li><strong>Berckmans' Biotoop Deel 1: Alles wel in Kromsky's hel</strong> by Jean-Marie Henri Berckmans</li><li><a href='https://www.bol.com/be/nl/p/human-anatomy/1001004010909317/'>Menselijke anatomie</a> by Benjamin A. Rifkin</li><li><strong>Speelfilm Encyclopedie</strong> by Carlos Aguilar</li><li><a href='https://www.bol.com/be/nl/p/t-shirt-design-2/1001004001202353/'>Book Design 2</a> by B. Martin Pedersen</li><li><a href='https://www.bol.com/be/nl/p/koken-met-kip/1001004001530617/'>Koken Met Kip</a> by J. Ferguson</li><li><strong>Het Grote Boek Met Vis & Zeevruchten</strong> by Jody Vassallo</li><li><a href='https://www.bol.com/be/nl/p/boek-njam-smossen-mag/9200000010704113/'>Smossen Mag</a> by Roger van Damme</li><li><strong>Alarm op Spitsbergen</strong> by Dixie Dansercoer</li><li><a href='https://www.bol.com/be/nl/p/a-song-of-ice-and-fire-george-r-r-martin-s-a-game-of-thrones-5-book-boxed-set/9200000017835424/'>A Game of Thrones</a> by George R.R. Martin</li><li><a href='https://www.bol.com/be/nl/p/de-kunst-om-in-koor-te-huilen/1001004006539287/'>De kunst om in koor te huilen</a> by Erling Jepsen</li><li><a href='https://www.bol.com/be/nl/p/all-my-sons/1001004005040855/'>All My Sons</a> by Arthur Miller</li><li><a href='https://www.bol.com/be/nl/p/als-moeder/9300000152015753/'>Als Moeder</a> by Colum McCann</li><li><a href='https://www.bol.com/be/nl/p/wat-hoe-taalgids-kroatisch/9300000129969157/'>Kroatisch</a> by Wat & Hoe</li><li><a href='https://www.bol.com/be/nl/p/wat-hoe-taalgids-tsjechisch/9300000129969195/'>Tsjechisch</a> by Wat & Hoe</li><li><a href='https://www.bol.com/be/nl/p/vitale-steden/9200000049016423/'>Stadslucht Maakt Vrij</a> by Sven Gatz</li><li><a href='https://www.bol.com/be/nl/p/tanja-en-douwe-verliefd/9200000059921567/'>Tanja en Douwe verliefd</a> by Nanda Roep</li><li><strong>Operatie mammoet</strong> by Gert Boullart</li><li><a href='https://www.bol.com/be/nl/p/reiziger-van-lichte-zeden/1001004001634824/'>Reiziger van lichte zeden</a> by Jef Rademakers</li><li><a href='https://www.bol.com/be/nl/p/music-of-the-heart/1001004001280016/'>Music of the Heart</a> by Roberta Guaspari-Tzavaras</li><li><a href='https://www.bol.com/be/nl/p/tylers-oorlog/1001004005100491/'>Tylers Oorlog</a> by Gavin Lyall</li><li><strong>Zes onder zeil</strong> by Mieke Vanpol</li><li><a href='https://www.bol.com/be/nl/p/agressie-bij-dier-en-mens/1001004001514969/'>Over Agressie</a> by Konrad Lorenz</li><li><a href='https://www.bol.com/be/nl/p/fahrenheit-451/1001004001207520/'>Fahrenheit 451</a> by Ray Bradbury</li><li><a href='https://www.bol.com/be/nl/p/princess-margaret/1001004005996469/'>Broedermoord</a> by Tim Heald</li><li><strong>Daar ligt een hond begraven</strong> by Tim Heald</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.883296, 4.7389162]).addTo(map).bindPopup('Guldensporenlaan 47', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

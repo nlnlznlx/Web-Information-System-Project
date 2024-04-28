@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Leopold Ruelensstraat 26</h1>
+    <h1 id="bookBox">Book Box at Leopold Ruelensstraat 26</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/paper-towns/9200000018043619/'>Paper Towns</a> by John Green</li><li><a href='https://www.bol.com/be/nl/p/midnight-thief/9200000037399188/'>Midnight Thief</a> by Livia Blackburne</li><li><a href='https://www.bol.com/be/nl/p/lady-renegades/9200000062413353/'>Rebel Belle</a> by Rachel Hawkins</li><li><a href='https://www.bol.com/be/nl/p/ik-overleefde-voor-mijn-kind/1001004008570336/'>Ik Overleefde voor Mijn Kind</a> by Clara Rojas</li><li><a href='https://www.bol.com/be/nl/p/peru-handbook/9200000070127562/'>Peru Handbook</a> by Alan Murphy</li><li><a href='https://www.bol.com/be/nl/p/suriname-in-het-hart/1001004010968608/'>Suriname in het hart</a> by Diederik Samwel</li><li><a href='https://www.bol.com/be/nl/p/twilight-midnight-sun/9300000002415414/'>Twilight</a> by Stephenie Meyer</li><li><a href='https://www.bol.com/be/nl/p/monsoon/9200000090077539/'>Monsoon</a> by Wilbur Smith</li><li><a href='https://www.bol.com/be/nl/p/star-trek-the-next-generation-3-star-trek-myriad-universes-3-shattered-light/9200000017871551/'>Star Trek: Myriad Universes</a> by David R. George III</li><li><a href='https://www.bol.com/be/nl/p/the-lunar-chronicles-boxed-set/9200000132739212/'>Cress</a> by Marissa Meyer</li><li><a href='https://www.bol.com/be/nl/p/rage/9200000090078959/'>Rage</a> by Wilbur Smith</li><li><a href='https://www.bol.com/be/nl/p/sound-of-thunder-cry-wolf-duo/1001004006077435/'>Cry Wolf</a> by Wilbur Smith</li><li><a href='https://www.bol.com/be/nl/p/the-icarus-agenda/1001004000968283/'>The Icarus Agenda</a> by Robert Ludlum</li><li><strong>Niemand komt aan mijn kinderen</strong> by Donya Al-Hahi</li><li><a href='https://www.bol.com/be/nl/p/bikkel/9200000010155753/'>Bikkel</a> by Rudie Kagie</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.890673, 4.7262615]).addTo(map).bindPopup('Leopold Ruelensstraat 26', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

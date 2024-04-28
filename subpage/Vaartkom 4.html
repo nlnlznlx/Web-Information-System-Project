@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Vaartkom 4</h1>
+    <h1 id="bookBox">Book Box at Vaartkom 4</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/brandend-brazilie-jan-vanhaelen/1001004001539636/'>Brandend Brazili?</a> by Jan Vanhaelen</li><li><a href='https://www.bol.com/be/nl/p/wilde-lavendel/1001004002765114/'>Wilde Lavendel</a> by Belinda Alexandra</li><li><a href='https://www.bol.com/be/nl/p/een-huis-in-toscane/9200000049438277/'>Een Huis In Toscane</a> by Frances Mayes</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.887583, 4.7002172]).addTo(map).bindPopup('Vaartkom 4', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

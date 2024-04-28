@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Redingenstraat 90</h1>
+    <h1 id="bookBox">Book Box at Redingenstraat 90</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/harten-is-troef-louis-verbeeck/1001004001546624/'>Harten Is Troef</a> by Louis Verbeeck</li><li><a href='https://www.bol.com/be/nl/p/over-de-bril-heen/1001004005165488/'>Over De Bril Heen</a> by Louis Verbeeck</li><li><a href='https://www.bol.com/be/nl/p/baby-gami/1001004002450471/'>Baby-Gami</a> by Andrea Sarvady</li><li><strong>Se?ora Honingzoet</strong> by Fanny Buitrago</li><li><a href='https://www.bol.com/be/nl/p/de-kleine-lord/9300000167534720/'>De Kleine Lord</a> by Frances Hodgson Burnett</li><li><strong>Visuele Leidraad XML</strong> by Vander Veer Mengle</li><li><strong>Gezonde Voeding voor Uw Baby Heerlyk Vers en Zelfgemaakt</strong> by Anne Iburg</li><li><a href='https://www.bol.com/be/nl/p/baby-s-die-veel-huilen/1001004001507830/'>Baby's Die Veel Huilen</a> by Sheila Kitzinger</li><li><a href='https://www.bol.com/be/nl/p/toontje-poland-onder-de-tropenzon/1001004005151703/'>Onder De Tropenzon</a> by Johan Fabricius</li><li><a href='https://www.bol.com/be/nl/p/vele-hemels-boven-de-zevende/9200000095471489/'>Vele Hemels Boven De Zevende</a> by Griet Op de Beeck</li><li><a href='https://www.bol.com/be/nl/p/damiano/9200000034993683/'>Damiano</a> by R. A. MacAvoy</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.872708, 4.6944934]).addTo(map).bindPopup('Redingenstraat 90', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

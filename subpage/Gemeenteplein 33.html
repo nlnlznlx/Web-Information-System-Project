@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Gemeenteplein 33</h1>
+    <h1 id="bookBox">Book Box at Gemeenteplein 33</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/janson-directive/1001004007155400/'>The Janson Directive</a> by Robert Ludlum</li><li><a href='https://www.bol.com/be/nl/p/stars/1001004000795259/'>Others</a> by James Herbert</li><li><a href='https://www.bol.com/be/nl/p/cry-the-beloved-country/1001004001648872/'>Cry, The Beloved Country</a> by Alan Paton</li><li><a href='https://www.bol.com/be/nl/p/green-river-rising/1001004001090513/'>Green River Rising</a> by Tim Willocks</li><li><a href='https://www.bol.com/be/nl/p/more-twisted/9200000060301915/'>More Twisted</a> by Jeffert Deaver</li><li><a href='https://www.bol.com/be/nl/p/the-geography-of-bliss/9200000070676298/'>The Geography of Bliss</a> by Eric Weiner</li><li><strong>De Standaard stijlboek : een hulpkit van de De Standaard</strong> by Astrid Houthuys</li><li><strong>L'Univers de Th¨¦odore Rousseau</strong> by Antoine Terrasse</li><li><strong>L'Univers de Jongkind</strong> by Victorine Hefting</li><li><strong>L'Univers de Millet</strong> by Jean-Jacques L¨¦vaque </li><li><strong>Polynesie et Micronesie</strong> by Gis¨¨le Toulouzan</li><li><a href='https://www.bol.com/be/nl/p/monet-the-triumph-of-impressionism/9200000021964885/'>Monet</a> by Daniel Wildenstein</li><li><a href='https://www.bol.com/be/nl/p/turner/9200000048196521/'>Turner</a> by Robin Hamlyn</li><li><a href='https://www.bol.com/be/nl/p/monet/9200000069568240/'>Monet</a> by Yvon Taillandier</li><li><strong>Vergangenheit in der Gegenwart</strong> by P¨¦ter Korniss</li><li><a href='https://www.bol.com/be/nl/p/manet/1001004001203001/'>Manet</a> by John Richardson</li><li><strong>Impressionism </strong> by Ren¨¦ Huyghe</li><li><a href='https://www.bol.com/be/nl/p/gesellschaftsrecht/1001004008972516/'>Gesellschaftsrecht</a> by Christine Windbichler</li><li><strong>Neue Dekorputze und Effektfarben f¨¹r kreative Wandgestaltung</strong> by Hans W. Bastian</li><li><a href='https://www.bol.com/be/nl/p/treasure-of-khan/1001004011616546/'>Treasure of Khan</a> by Clive Cussler</li><li><a href='https://www.bol.com/be/nl/p/dolfijnenkind-2-het-monster-uit-de-diepte/1001004005487649/'>Het monster uit de diepte</a> by Patrick Lagrou</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.890501, 4.7295043]).addTo(map).bindPopup('Gemeenteplein 33', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

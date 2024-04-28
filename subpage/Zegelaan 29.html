@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Zegelaan 29</h1>
+    <h1 id="bookBox">Book Box at Zegelaan 29</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/aller-tage-abend/9200000078471425/'>Aller Tage Abend</a> by Jenny Erpenbeck</li><li><a href='https://www.bol.com/be/nl/p/fotofinish/1001004004729826/'>Fotofinish</a> by Jac Toes</li><li><a href='https://www.bol.com/be/nl/p/een-engel-in-een-wrede-wereld/666755845/'>Een engel in een wrede wereld</a> by Bradley</li><li><a href='https://www.bol.com/be/nl/p/1-000-000-puzzelwoorden-voor-al-uw-puzzelproblemen/9200000128383066/'>1.000.000 Puzzelwoorden</a> by M. Sanders</li><li><a href='https://www.bol.com/be/nl/p/memoirs-of-a-geisha/1001004005850979/'>Memoirs of a Geisha</a> by Arthur Golden</li><li><a href='https://www.bol.com/be/nl/p/nostradamus-1999/1001004001085220/'>Nostradamus 1999: Who Will Survive?</a> by Stefan Paulus</li><li><a href='https://www.bol.com/be/nl/p/moni-daniella/9200000009713666/'>Moni</a> by Ka-Tsetnik 135633</li><li><a href='https://www.bol.com/be/nl/p/super-puzzelwoordenboek/9200000048881015/'>Super puzzelwoordenboek</a> by Baas Harmelink</li><li><a href='https://www.bol.com/be/nl/p/warten/1001004008723156/'>Warten</a> by Ha jin</li><li><strong>Carne tr¨¦mula</strong> by Ruth Rendell</li><li><a href='https://www.bol.com/be/nl/p/lauter-reizende-alte-damen-3-cds/1001004008219390/'>Lauter Reizende Alte Damen</a> by Agatha Christie </li><li><a href='https://www.bol.com/be/nl/p/mijn-horizontale-leven/1001004002410194/'>Mijn Horizontale Leven</a> by Chelsea Handler</li><li><a href='https://www.bol.com/be/nl/p/gekwetste-vogels-t-franssen/1001004001539637/'>Gekwetste vogels</a> by T. Franssen</li><li><a href='https://www.bol.com/be/nl/p/the-secret-dreamworld-of-a-shopaholic/9200000001984079/'>The Secret Dreamworld of a Shopaholic</a> by Sophie Kinsella</li><li><a href='https://www.bol.com/be/nl/p/a-commissario-brunetti-mystery-death-at-la-fenice/9200000046810259/'>Death at La Fenice</a> by Donna Leon</li><li><strong>JEU DE JUMELLES</strong> by JAN ANDERSEN</li><li><a href='https://www.bol.com/be/nl/p/hotel-habbekrats-mysterious-cabbage-murder/9300000096669889/'>Hotel Habbekrats</a> by Rik Peters</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8657374, 4.7044391]).addTo(map).bindPopup('Zegelaan 29', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

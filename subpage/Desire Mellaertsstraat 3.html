@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Desire Mellaertsstraat 3</h1>
+    <h1 id="bookBox">Book Box at Desire Mellaertsstraat 3</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/oude-egyptenaren/1002004000039253/'>De liefdeskunstenaar</a> by Jane Alison</li><li><a href='https://www.bol.com/be/nl/p/very-best-of-vladimir-cosma/9200000042303493/'>Diane</a> by Herbert Best</li><li><a href='https://www.bol.com/be/nl/p/de-h-van-adri/9200000093139723/'>De H van Adri</a> by Wouter Klootwijk</li><li><a href='https://www.bol.com/be/nl/p/red-onze-planeet-atmosfeer/1001004002067610/'>De Atmosfeer</a> by Fabrizio Fabbri</li><li><a href='https://www.bol.com/be/nl/p/de-nieuwsgierige-hamster/1001004002059434/'>De Nieuwsgierige Hamster: Kijk- en leerboek voor nieuwsgierige kinderen</a> by Wang Shu-Jing</li><li><a href='https://www.bol.com/be/nl/p/management-and-cost-accounting/9300000006171500/'>Management and Cost Accounting</a> by Colin Drury</li><li><a href='https://www.bol.com/be/nl/p/mannen-rond-clarissa/9300000139876258/'>Mannen Rond Clarissa</a> by Rudolf Andrel</li><li><a href='https://www.bol.com/be/nl/p/european-coatings-tech-files-coatings-for-plastics/9200000078734986/'>Zelfbouwantennes</a> by J¨¹rgen Tech</li><li><a href='https://www.bol.com/be/nl/p/media-ethiek/1001004005388332/'>Media-ethiek</a> by Huub Evers</li><li><a href='https://www.bol.com/be/nl/p/ghostbusters-1-2/1002004006572845/'>De Camerons</a> by Robert Crichton</li><li><strong>Deining om Dorus</strong> by Mr. G. Th. Verharen</li><li><a href='https://www.bol.com/be/nl/p/elektronica-echt-niet-moeilijk-1-2-en-3/666814143/'>Elektronica echt niet moeilijk deel 3</a> by Adrian Schommers</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.883324, 4.7276925]).addTo(map).bindPopup('D¨¦sir¨¦ Mellaertsstraat 3', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

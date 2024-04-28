@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Ravenstraat 92</h1>
+    <h1 id="bookBox">Book Box at Ravenstraat 92</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><strong>Liefde is sterker dan de dood, Een hemel vol sterren</strong> by Konsalik Heinz G.</li><li><a href='https://www.bol.com/be/nl/p/la-baleine-blanche/9200000073266365/'>La baleine blanche</a> by Jacques Lanzmann</li><li><a href='https://www.bol.com/be/nl/p/voortgeschopt-als-een-steen/666838201/'>Voortgeschopt als een steen</a> by Helene Nolthenius</li><li><strong>Kiboko</strong> by Daniel P.Mannix</li><li><a href='https://www.bol.com/be/nl/p/terug-naar-peyton-place/9200000045904440/'>Peyton place</a> by Grace Metalious</li><li><a href='https://www.bol.com/be/nl/p/der-holcroft-vertrag/9200000033076538/'>Der Holcroft-vertrag</a> by Robert Ludlum</li><li><strong>Een huis in I talie</strong> by Lisa st aubin de teran</li><li><a href='https://www.bol.com/be/nl/p/the-parsifal-mosaic/1001004002402825/'>The parisifal mosaic</a> by Robert Ludlum</li><li><a href='https://www.bol.com/be/nl/p/la-scienza-in-cucina-e-l-arte-di-mangiare-bene/9200000051567317/'>L' arte de mangiar bene</a> by Artusi</li><li><a href='https://www.bol.com/be/nl/p/het-geheim-van-de-kaarten/666772194/'>Het geheim van de kaarten</a> by Jostein Gaarder</li><li><a href='https://www.bol.com/be/nl/p/een-vrouw-met-negen-levens/1001004002729201/'>Een vrouw met negen levens</a> by Isabeth Marain</li><li><a href='https://www.bol.com/be/nl/p/die-scorpio-illusion/9200000033106310/'>Die scorpio-illusion</a> by Robert Ludlum</li><li><a href='https://www.bol.com/be/nl/p/ik-schreeuwlelijk/666778445/'>Ik schreeuwlelijk</a> by Youp van 't Hek</li><li><a href='https://www.bol.com/be/nl/p/der-wachsame-traumer/9200000036283056/'>Der wachsame traumer</a> by John Le Carre</li><li><a href='https://www.bol.com/be/nl/p/religiose-gestalten-in-dostojewskijs-werk/9300000035309145/'>Heinzrobertschiette</a> by Romano Guardini</li><li><strong>De zondag gisteren vandaag altijd</strong> by Guardini</li><li><a href='https://www.bol.com/be/nl/p/psycho/9300000035004086/'>Psycho</a> by Alfred Hitchcock</li><li><a href='https://www.bol.com/be/nl/p/the-complete-father-brown-stories/9300000002267745/'>G. K.Chesterton</a> by Father Brown</li><li><a href='https://www.bol.com/be/nl/p/la-pupille-du-roi-louis-ii-de-baviere/9300000032317777/'>De Avonjurier</a> by Courths-Mahler</li><li><a href='https://www.bol.com/be/nl/p/natrium-klorid/9300000133632274/'>Natriumklorid </a> by Jussi Adler-Olsen</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.879175, 4.7102246]).addTo(map).bindPopup('Ravenstraat 92', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

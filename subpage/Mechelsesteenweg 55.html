@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Mechelsesteenweg 55</h1>
+    <h1 id="bookBox">Book Box at Mechelsesteenweg 55</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/capriccio-italiano-goden-en-eilanden/9200000048779329/'>Capriccio Italiano en Goden en eilanden</a> by Bertus Aafjes</li><li><a href='https://www.bol.com/be/nl/p/mijn-leuk-dieren-puzzelboek-2-4-jaar/1001004007579398/'>Mijn leuk dieren puzzelboek 2-4 jaar</a> by Zuidnederlandse Uitgeverij </li><li><a href='https://www.bol.com/be/nl/p/wij-geloven-in-god-en-in-christus/1001004002057547/'>Geloven in God</a> by H. Berkhof</li><li><a href='https://www.bol.com/be/nl/p/plan-b/9200000020408394/'>Plan B</a> by Emily Barr</li><li><a href='https://www.bol.com/be/nl/p/ripley-achterna/666780117/'>Ripley Achterna</a> by Patricia Highsmith</li><li><a href='https://www.bol.com/be/nl/p/dossier-k/1001004011369359/'>Diamant</a> by Jef Geeraerts</li><li><a href='https://www.bol.com/be/nl/p/geverfde-duivel/1001004001529255/'>De geverfde duivel</a> by Christine Aventin </li><li><a href='https://www.bol.com/be/nl/p/rose-de-provence/1001004001509952/'>Rose de Provence</a> by Axel Boots</li><li><a href='https://www.bol.com/be/nl/p/stranddieven/1001004001807291/'>Stranddieven</a> by Joanne Harris</li><li><a href='https://www.bol.com/be/nl/p/eva-s-oog/1001004001638643/'>Eva's Oog</a> by Karin Fossum</li><li><a href='https://www.bol.com/be/nl/p/mafia-chic/1001004002256432/'>Red Dress Ink</a> by Erica Orloff</li><li><strong>1001 tips voor alledag</strong> by M&P</li><li><a href='https://www.bol.com/be/nl/p/j-ai-epouse-un-inconnu/9200000033698210/'>J'ai ¨¦pous¨¦ un inconnu</a> by Patricia Macdonald</li><li><a href='https://www.bol.com/be/nl/p/zonder-genade/9200000011874102/'>Zonder Genade</a> by Renate Dorrestein</li><li><a href='https://www.bol.com/be/nl/p/bibi-gaat-ervoor/9200000008614197/'>Bibi gaat ervoor</a> by Jolanda Dijkmeijer</li><li><a href='https://www.bol.com/be/nl/p/van-min-negen-tot-plus-een/1001004002598912/'>Jools Oliver van min negen tot plus een!</a> by Jools Oliver</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.890961, 4.6940804]).addTo(map).bindPopup('Mechelsesteenweg 55', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

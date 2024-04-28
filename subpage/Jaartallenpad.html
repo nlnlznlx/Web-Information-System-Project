@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Jaartallenpad</h1>
+    <h1 id="bookBox">Book Box at Jaartallenpad</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/vakdidactiek-economie/9200000045885071/'>Vakdidactiek voor leraren economie </a> by Kristof De Witte</li><li><strong>United Nations Convention to Combat Desertification: The Land-Drought Nexus</strong> by Anke Reichuber</li><li><strong>Het land achter de horizon</strong> by Tonny Vos-Dahmen von Buchholz</li><li><a href='https://www.bol.com/be/nl/p/leren-in-maatschappelijk-betrokken-onderwijs/9200000114012302/'>Leren in maatschappelijk betrokken onderwijs </a> by Jan Elen</li><li><a href='https://www.bol.com/be/nl/p/emilie-of-over-opvoeding-onderwijs-en-opera/9300000005714547/'>Emilie of Over opvoeding, onderwijs en opera</a> by Stefaan E. Cuypers</li><li><a href='https://www.bol.com/be/nl/p/fatale-fout/9200000085931460/'>Fatale Fout</a> by Sophie Hannah</li><li><a href='https://www.bol.com/be/nl/p/fortune-paul-loup-sulitzer/9300000065367756/'>Fortune </a> by Paul Loup Karl Sulitzer</li><li><a href='https://www.bol.com/be/nl/p/de-ark/1001004001558179/'>De Ark</a> by Zhang Jie</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.885533, 4.6971273]).addTo(map).bindPopup('Jaartallenpad', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

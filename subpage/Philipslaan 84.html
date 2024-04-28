@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Philipslaan 84</h1>
+    <h1 id="bookBox">Book Box at Philipslaan 84</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/plant/9300000044133918/'>Tuinieren en verzorging van kamerplanten</a> by Divers</li><li><a href='https://www.bol.com/be/nl/p/the-hangman-s-song/9200000030471831/'>The Hangman's Song</a> by James Oswald</li><li><a href='https://www.bol.com/be/nl/p/the-kiss/9200000031598986/'>The Kiss</a> by Kathryn Harrison</li><li><a href='https://www.bol.com/be/nl/p/the-almost-moon/9200000001535952/'>The Almost Moon</a> by Alice Sebold</li><li><a href='https://www.bol.com/be/nl/p/madame-curie/1001004008776670/'>Madame Curie</a> by ¨¨ve Curie</li><li><a href='https://www.bol.com/be/nl/p/jack-reacher-5-brandpunt/9200000039671829/'>Brandpunt</a> by Lee Child</li><li><a href='https://www.bol.com/be/nl/p/oude-schuld/666870440/'>Oude Schuld</a> by John Matthews</li><li><a href='https://www.bol.com/be/nl/p/de-ivoren-olifant/1001004011557023/'>De ivoren olifant</a> by Nerea Riesco</li><li><strong>Flik, de eekhoorn</strong> by Pierre Coran</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8648368, 4.7237317]).addTo(map).bindPopup('Philipslaan 84', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

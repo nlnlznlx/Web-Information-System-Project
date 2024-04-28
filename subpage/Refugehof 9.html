@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Refugehof 9</h1>
+    <h1 id="bookBox">Book Box at Refugehof 9</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/rivka/9200000049736303/'>Rivka</a> by Femmetje De Wind</li><li><strong>Nanda Roep en Hans Kuyper</strong> by Tanja en Douwe Verliefd</li><li><strong>Het Wonder van St Bruno</strong> by Philippa Carr</li><li><a href='https://www.bol.com/be/nl/p/bel-ria/9200000066610331/'>Bel Ria</a> by Sheila Burnford</li><li><a href='https://www.bol.com/be/nl/p/honingtranen/1001004011270004/'>Honingtranen</a> by Nafisa Haji</li><li><a href='https://www.bol.com/be/nl/p/in-handen-van-de-vijand-elizabeth-george/1001004005734978/'>In Handen Van De Vijand</a> by Elizabeth George</li><li><a href='https://www.bol.com/be/nl/p/de-dyslectische-hartenclub/9200000025959641/'>De Dyslectische-Hartenclub</a> by Hanneke Hendrix</li><li><a href='https://www.bol.com/be/nl/p/geloof-hoop-liefde-leven-en-werken-van-moeder-teresa/666817453/'>Geloof Hoop Liefde</a> by Kathryn Spink</li><li><a href='https://www.bol.com/be/nl/p/morgen-ben-ik-de-bruid/1001004006191099/'>Morgen Ben Ik De Bruid</a> by Kirsten Sawyer</li><li><a href='https://www.bol.com/be/nl/p/focus/1001004006847308/'>Focus!</a> by Leo Babauta</li><li><strong>Ti?p Th? Tr?c Tuy?n Th?ng Minh</strong> by Alex Blyth</li><li><a href='https://www.bol.com/be/nl/p/optimaal-gezond-in-8-weken/666829277/'>Optimaal Gezond in 8 Weken</a> by Andrew Weil</li><li><a href='https://www.bol.com/be/nl/p/l-staat-voor-leugens/666774857/'>Sue Grafton L Staat voor Leugens</a> by Sue Grafton</li><li><a href='https://www.bol.com/be/nl/p/les-vivants-et-les-morts-prix-rtl-lire-2005/9200000033716957/'>Les Vivants et les Morts</a> by Gerard Mordillat</li><li><strong>Leren Kiezen / Kiezen Leren 04 Balans</strong> by Frans Meiers</li><li><a href='https://www.bol.com/be/nl/p/baccara-extra-32-baccara-extra-band-32/9300000158779094/'>Baccara</a> by Jacqueline Diamond</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8766245, 4.6935976]).addTo(map).bindPopup('Refugehof 9', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

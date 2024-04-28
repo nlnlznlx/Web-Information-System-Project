@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Quinten Metsysplein 3</h1>
+    <h1 id="bookBox">Book Box at Quinten Metsysplein 3</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/null-gleich-eins/9300000147712591/'>Null Gleich Eins</a> by Arne Dahl</li><li><a href='https://www.bol.com/be/nl/p/meester-van-de-zwarte-molen/666808118/'>Meester van de Zwarte Molen</a> by Otfried Preussler</li><li><a href='https://www.bol.com/be/nl/p/amerigo/1001004001653459/'>Amerigo</a> by Kees Putman</li><li><strong>De Wraak van de Toeareg</strong> by J. J. Groenewrg</li><li><strong>Het Wonder van de Liefde</strong> by Aleen Leslie</li><li><a href='https://www.bol.com/be/nl/p/so-long-archie/9200000049539670/'>So Long, Archie</a> by Willi Heinrich</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.876462, 4.7122765]).addTo(map).bindPopup('Quinten Metsysplein 3', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

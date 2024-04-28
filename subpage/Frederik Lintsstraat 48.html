@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Frederik Lintsstraat 48</h1>
+    <h1 id="bookBox">Book Box at Frederik Lintsstraat 48</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/dick-francis-mysteries-import/9300000093258702/'>Inbreuk</a> by Dick Francis</li><li><strong>Juffrouw Jones uit Brightstead </strong> by Jan H. Eekhout</li><li><a href='https://www.bol.com/be/nl/p/wij-amuseren-ons-kapot/1001004005153166/'>Wij Amuseren ons Kapot</a> by Neil Postman</li><li><a href='https://www.bol.com/be/nl/p/pim-pandoer-de-schrik-van-de-imbosch/9200000048568803/'>De Schrik Van De Imbosch</a> by Pim Pandoer</li><li><a href='https://www.bol.com/be/nl/p/mik-heeft-de-hik/666824989/'>Mik heeft de hik</a> by Agnes Verboven</li><li><strong>Pavillon Rouge</strong> by Laura Whetter</li><li><a href='https://www.bol.com/be/nl/p/die-andere-torn-g-van-der-heyden/666881473/'>Die andere Torn</a> by Gil Vander Heyden</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8732159, 4.7029886]).addTo(map).bindPopup('Frederik Lintsstraat 48', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

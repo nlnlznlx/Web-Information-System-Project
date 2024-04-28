@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Albrecht Rodenbachstraat 55</h1>
+    <h1 id="bookBox">Book Box at Albrecht Rodenbachstraat 55</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/introduction-to-social-work/1001004011422524/'>Introduction to Social Work</a> by O. William Farley</li><li><a href='https://www.bol.com/be/nl/p/hartstocht-en-het-verlangen/1001004005096212/'>De hartstocht en het verlangen</a> by Rosemary Rogers</li><li><a href='https://www.bol.com/be/nl/p/ellen-g-white-books-on-salvation-christ-in-his-sanctuary/9300000049966386/'>The Desire of Ages</a> by Ellen G. White</li><li><a href='https://www.bol.com/be/nl/p/the-long-arm-of-gil-hamilton/1001004006109781/'>The Long Arm of Gil Hamilton</a> by Larry Niven</li><li><strong>May day : young literature from the ten new member states of the European Union.</strong> by European Commission</li><li><strong>Het Beste Boek 208</strong> by Maeve Binchy</li><li><a href='https://www.bol.com/be/nl/p/gevierendeeld/1001004005090059/'>Gevierendeeld</a> by Daisy ver Boven</li><li><a href='https://www.bol.com/be/nl/p/golfregels/9300000138967603/'>GVB Regelexamen</a> by Nederlandse Golf Federatie</li><li><a href='https://www.bol.com/be/nl/p/lena-wil-alleen-maar-voetbal/1001004001573469/'>Alleen maar voetbal</a> by Kirsten Boie</li><li><a href='https://www.bol.com/be/nl/p/mijn-mama-is-een-cowboy-boonen-stefan/9300000017409223/'>Mijn mama is een cowboy</a> by Boonen Stefan</li><li><a href='https://www.bol.com/be/nl/p/brandpost-5/1001004005086200/'>Brandpost 5</a> by Jack Olsen</li><li><a href='https://www.bol.com/be/nl/p/shimmer-shine-omnibus/9200000082256543/'>Shimmer & Shine: Omnibus met 3 verhalen!</a> by Big Balloon</li><li><a href='https://www.bol.com/be/nl/p/buitenspel/9200000048381159/'>Buitenspel</a> by Vivian den Hollander</li><li><a href='https://www.bol.com/be/nl/p/de-smaak-van-de-provence/1001004005448947/'>Aan tafel in Frankrijk</a> by Georgeanne Brennan</li><li><a href='https://www.bol.com/be/nl/p/de-heggenrijder/1001004001807671/'>De Heggenrijder</a> by Jan de Zutter</li><li><a href='https://www.bol.com/be/nl/p/het-bezoek/666806844/'>Het Bezoek</a> by Adrian Plass</li><li><a href='https://www.bol.com/be/nl/p/brieven-aan-miriam/1001004001521215/'>Brieven aan Miriam</a> by Lutgard Van Heuckelom</li><li><strong>A New Man: Missionary Journeys of an African American</strong> by Hoise Birks</li><li><strong>Literatuur en radio</strong> by Birgit van Puymbroeck</li><li><a href='https://www.bol.com/be/nl/p/eekhoorns-sneeuwpop/9300000042356529/'>Eekhoorns sneeuwpop</a> by Julia Donaldson</li><li><a href='https://www.bol.com/be/nl/p/verzameld/9300000153390325/'>Kronkels</a> by Inge Misschaert</li><li><strong>Jeugdpsychologie: Hebben onze jongens en meisjes vertouwen in vader en moeder</strong> by J. Vlerick</li><li><a href='https://www.bol.com/be/nl/p/de-enige-weg-ellen-g-white/9200000084900556/'>De Enige Weg</a> by Ellen G. White</li><li><a href='https://www.bol.com/be/nl/p/kijk-mijn-bijbel/9200000001045770/'>Kijk, mijn Bijbel!</a> by Bethan James</li><li><a href='https://www.bol.com/be/nl/p/act-of-will/9200000015442322/'>Act of Will</a> by Barbara Taylor Bradford</li><li><a href='https://www.bol.com/be/nl/p/elementary-go-38-basic-josekis/1001004000775935/'>38 Basic Joseki</a> by Kiyoshi Kosugi</li><li><strong>Glimwormen een kortverhaal</strong> by Marjolijn van Heemstra</li><li><a href='https://www.bol.com/be/nl/p/in-the-blink-of-an-eye-a-perspective-on-film-editing-2nd-edition/9300000165638748/'>In the Blink of an Eye: A Perspective on Film Editing</a> by Walter Murch</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.890636, 4.7240621]).addTo(map).bindPopup('Albrecht Rodenbachstraat 55', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

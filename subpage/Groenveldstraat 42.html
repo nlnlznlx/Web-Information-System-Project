@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Groenveldstraat 42</h1>
+    <h1 id="bookBox">Book Box at Groenveldstraat 42</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/het-handboek-voor-internet-en-intranet-technologie/1001004000571758/'>Het handboek voor internet intranet technologie</a> by Jeroen Vanheste</li><li><strong>Het complete handboek internet</strong> by Honeycutt Pike</li><li><a href='https://www.bol.com/be/nl/p/it-servicemanagement-volgens-itil/1001004001751199/'>It-Servicemanagement volgens ITIL</a> by Peter Janssen</li><li><a href='https://www.bol.com/be/nl/p/dood-vogeltje/666865650/'>Een dood vogeltje</a> by Diane Broeckhoven</li><li><a href='https://www.bol.com/be/nl/p/wij-hebben-parkinson/1001004006866622/'>Wij hebben parkinson</a> by Mieke de Booser </li><li><a href='https://www.bol.com/be/nl/p/zwarte-ogen/1001004001527457/'>Zwarte ogen</a> by Dennis Potter</li><li><a href='https://www.bol.com/be/nl/p/ghosts-of-the-nile/1001004002243932/'>Ghosts of the nile</a> by Cheryl Harness</li><li><a href='https://www.bol.com/be/nl/p/wilt/1001004001689556/'>Wilt</a> by Tom Sharpe</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8745267, 4.6834789]).addTo(map).bindPopup('Groenveldstraat 42', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

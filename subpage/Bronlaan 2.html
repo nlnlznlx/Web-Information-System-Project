@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Bronlaan 2</h1>
+    <h1 id="bookBox">Book Box at Bronlaan 2</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/pietje-puk-weet-raad/666748130/'>Pietje puk weet raad</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-is-de-baas/666748131/'>Pietje Puk is de baas</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-weet-raad/666748130/'>Pietje Puk </a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-gaat-op-reis-is-de-baas/1001004001304290/'>Pietje Puk is de baas</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-heeft-gelijk-wordt-schaatskampioen/1001004002131354/'>Pietje Puk wordt brandweerman</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-heeft-geluk-gaat-op-reis/9200000108690650/'>Pietje Puk gaat op reis</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-en-de-winkeldief/666748144/'>Pietje Puk en de winkeldief</a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-wordt-boswachter/666748129/'>Pietje Puk wordt boswachter</a> by Henri Arnoldus</li><li><strong>Pietje Puk viert feest</strong> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/pietje-puk-wordt-agent/666748124/'>Pietje Puk wordt agent </a> by Henri Arnoldus</li><li><a href='https://www.bol.com/be/nl/p/de-fietskuren-van-nicole-en-ingrid/1001004001565454/'>De fietskuren van Nicole en Ingrid</a> by Ingrid De Wilde</li><li><a href='https://www.bol.com/be/nl/p/dief/1001004001517297/'>Dief</a> by Vivien Alcock</li><li><a href='https://www.bol.com/be/nl/p/villa-serena/9200000095240489/'>Villa Serena</a> by Domenica de Rosa</li><li><strong>Stemmen voor de stad. Perspectieven op stedelijk sociaal werk. </strong> by Odisee</li><li><a href='https://www.bol.com/be/nl/p/order-of-darkness-changeling/9200000033149187/'>Order of Darkness  Changeling</a> by Philippa Gregory</li><li><a href='https://www.bol.com/be/nl/p/er-was-eens-assepoester-pinokkio-hans-grietje/9300000005892247/'>Hans en Grietje</a> by Deltas</li><li><a href='https://www.bol.com/be/nl/p/power-brands/1001004008726553/'>Power Brands</a> by Hajo Riesenbeck</li><li><strong>Koning voetbal </strong> by Ren¨¦ Struelens</li><li><a href='https://www.bol.com/be/nl/p/wispel-en-kwispel/1001004005160724/'>Wispel en kwispel</a> by G. Thijs</li><li><a href='https://www.bol.com/be/nl/p/sprookjeskaravaan/1001004005121320/'>Sprookjeskaravaan</a> by Vazsonyi</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8630829, 4.707924]).addTo(map).bindPopup('Bronlaan 2', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at G. Vander Lindenstraat 8</h1>
+    <h1 id="bookBox">Book Box at G. Vander Lindenstraat 8</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/de-grote-verkilling/9200000108570676/'>De Grote Verkilling</a> by Geert van Istendael</li><li><a href='https://www.bol.com/be/nl/p/de-exmoor-trilogie-1-rusteloos-land/1001004010655169/'>Rusteloos Land</a> by Belinda Bauer</li><li><strong>Pour Soigner L'enfant Psychotique</strong> by Jacques Hochma</li><li><a href='https://www.bol.com/be/nl/p/het-dievencircus-en-de-grote-verdwijntruc/9200000029287338/'>De Zeshoeksverhouding</a> by William Sutcliffe</li><li><a href='https://www.bol.com/be/nl/p/adolphe/9200000018252375/'>Adolphe</a> by Benjamin Constant</li><li><a href='https://www.bol.com/be/nl/p/rijke-meiden/9300000135568983/'>Rijke Meiden</a> by Youp van 't Hek</li><li><a href='https://www.bol.com/be/nl/p/de-eeuwige-bron/9200000047691621/'>De Eeuwige Bron</a> by Ayn Rand</li><li><a href='https://www.bol.com/be/nl/p/de-stilte-van-de-sneeuw/666884852/'>De stilte van de sneeuw</a> by Brigitte aubert</li><li><a href='https://www.bol.com/be/nl/p/grip/1001004011449287/'>Grip</a> by Stephan Enter</li><li><a href='https://www.bol.com/be/nl/p/cs-lewis-study-the-problem-of-pain-study-guide/9200000096706228/'>The Problem of Pain</a> by C.S. Lewis</li><li><a href='https://www.bol.com/be/nl/p/i-m-the-king-of-the-castle/9200000025099139/'>I'm the King of the Castle</a> by Susan Hill</li><li><a href='https://www.bol.com/be/nl/p/eat-pray-love/1001004005442423/'>Eat, Pray, Love</a> by Elizabeth Gilbert</li><li><a href='https://www.bol.com/be/nl/p/a-perfect-spy/9200000092085390/'>A Perfect Spy</a> by John Le Carre</li><li><a href='https://www.bol.com/be/nl/p/de-laatste-samenzweerder/9300000019087999/'>De Laatste Samenzweerder</a> by Peter Stothard</li><li><a href='https://www.bol.com/be/nl/p/varken-vermist/666789389/'>Varken vermist</a> by Tessa Krailing</li><li><strong>Slang ontsnapt</strong> by Tessa Krailing</li><li><a href='https://www.bol.com/be/nl/p/drie-vrouwen/9200000108570885/'>drie vrouwen</a> by lisa taddeo</li><li><a href='https://www.bol.com/be/nl/p/de-overlevenden/9300000017935176/'>De Overlevenden</a> by Jane Harper</li><li><a href='https://www.bol.com/be/nl/p/de-man-van-st-petersburg/1001004005105307/'>De Man Van St.Petersburg</a> by Ken Follett</li><li><a href='https://www.bol.com/be/nl/p/census/9200000095628537/'>Census</a> by Jesse Ball</li><li><a href='https://www.bol.com/be/nl/p/1-tv-feuilleton-tim/9200000049311808/'>Keromar</a> by Louis De Groof</li><li><a href='https://www.bol.com/be/nl/p/wreck-this-journal/9200000009896914/'>Wreck This Journal</a> by Keri Smith</li><li><strong>Uit het hoofd, in het hoofd</strong> by Willo Gonnissen</li><li><a href='https://www.bol.com/be/nl/p/de-insluiper/1001004001511374/'>De Insluiper</a> by John Sandford</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8690901, 4.7002504]).addTo(map).bindPopup('G. Vander Lindenstraat 8', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 

@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Locomotievenstraat 5</h1>
+    <h1 id="bookBox">Book Box at Locomotievenstraat 5</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><strong>De cli?nt </strong> by John Grisham</li><li><a href='https://www.bol.com/be/nl/p/gijzeling/1001004006274361/'>Gijzeling</a> by Rom Molemaker</li><li><a href='https://www.bol.com/be/nl/p/l-i-f-e-heej-sgatje/1001004005445338/'>Heej Sgatje</a> by Wilma Geldof</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.882927, 4.7223911]).addTo(map).bindPopup('Locomotievenstraat 5', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 
