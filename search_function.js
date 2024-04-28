@@ -246,3 +246,24 @@ document.getElementById('searchForm').addEventListener('submit', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     fetchSearchResults(currentPage);
 });
+
+async function deleteBook(title, author, bookBox) {
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with your actual API key
+    const filter = {
+        "Title of the Book": title,
+        "Name of the First Author or Publisher": author,
+        "Address of the Book Box": bookBox
+    };
+    const response = await performApiRequest(token, 'POST', 'action/deleteOne', {
+        dataSource: 'book-box',
+        database: 'books',
+        collection: 'book entries',
+        filter: filter
+    });
+    if (response.deletedCount === 1) {
+        alert('Book retrieved and deleted successfully!');
+        document.getElementById('searchForm').submit(); // Refresh the search results to reflect the deletion
+    } else {
+        alert('Failed to delete the book. Please ensure the details are correct and try again.');
+    }
+}

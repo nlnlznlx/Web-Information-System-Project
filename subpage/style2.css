@@ -75,7 +75,23 @@ footer {
     clear: both; /* Ensures footer is at the bottom after the flex/grid items */
 }
 
+#toggleAddBookForm {
+    background-color: black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    margin-left: 20px;
+}
+#toggleAddBookForm:hover {
+    background-color: dimgrey;
+}
+
 @media (max-width: 768px) {
     .book-title-slider, .book-box-map {
         height: auto; /* Auto height on smaller screens */
     }
+

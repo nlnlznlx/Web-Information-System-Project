@@ -36,7 +36,7 @@
 </nav>
 
 <header>
-    <h1>Book Box at Albert Stainierstraat 2</h1>
+    <h1 id="bookBox">Book Box at Albert Stainierstraat 2</h1>
 </header>
 
 <div class="container">
@@ -48,6 +48,10 @@
         <ul>
             <li><a href='https://www.bol.com/be/nl/p/vergrendelde-stad/9200000049435831/'>Vergrendelde Stad</a> by Rene Struelens</li><li><a href='https://www.bol.com/be/nl/p/s-nachts/1001004010213896/'>S Nachts</a> by Arnaud Roi</li><li><a href='https://www.bol.com/be/nl/p/tournee-generale/1001004006829177/'>Tournee Generale De Geheimen van het Belgische Bier</a> by Geert Degrande</li><li><a href='https://www.bol.com/be/nl/p/sam-smith-spion-ontvoerd/1001004010949192/'>Sam Smith</a> by Jonas Boets</li><li><strong>Offenboek Europees Rijbewijs</strong> by Kol. Fr. Paesschierssens</li><li><strong>Cidou op het Platteland</strong> by De Zwaluwen</li><li><strong>Facebook Verfilmd als The Social Network</strong> by Ben Mezrich</li><li><strong>Bol Mag Niet Mee</strong> by Yan Gout</li><li><strong>Flavours That Connect Multifaith Recipe Book</strong> by Maryana Hnyp</li><li><strong>Sprietje Een en Sprietje Twee</strong> by Leo Salien</li><li><strong>Het Regenmeisje</strong> by A. van Nerum</li><li><a href='https://www.bol.com/be/nl/p/children-tik-tak-box-2/9200000050318011/'>Tik Tak Speelboek</a> by Mil Lenssens</li><li><a href='https://www.bol.com/be/nl/p/tiny-op-de-boerderij/9200000049352709/'>Tiny op de Boerderij</a> by Gijs Haag</li><li><a href='https://www.bol.com/be/nl/p/willis/666838833/'>Willis Het Doet Er Niet Toe Hoe</a> by Daan Remmerts de Vries</li><li><strong>Hoe Brommer Hoe Liever</strong> by Frits Vekemans</li><li><strong>Een Boekje Over Troost van Spits</strong> by Veronique Puts</li><li><strong>Geschiedenis van de Filosofie I</strong> by H. F. Storig</li><li><strong>Geschiedenis van de Filosofie II</strong> by H. F. Storig</li><li><strong>100 Recepten: Evenwichting en Niet Duur</strong> by Vereniging voor Kankerbestrijding</li><li><strong>100 Recepten: Gezond en Lekker</strong> by Vereniging voor Kankerbestrijding</li><li><a href='https://www.bol.com/be/nl/p/n-or-m/9200000090838680/'>N of M</a> by Agatha Christie</li><li><a href='https://www.bol.com/be/nl/p/moord-in-de-orient-expres-moord-op-de-nijl/1001004005945772/'>Moord in de Orient-Express</a> by Agatha Christie</li><li><a href='https://www.bol.com/be/nl/p/verliefde-butler/9200000048892352/'>De Verliefde Butler</a> by P. G. Wodehouse</li><li><strong>Tantes Zijn Geen Heren</strong> by P. G. Wodehouse</li><li><a href='https://www.bol.com/be/nl/p/het-blazoen-van-de-woosters/1001004002621006/'>Het Blazoen van de Woosters</a> by P. G. Wodehouse</li>
         </ul>
+        <button id="toggleAddBookForm" class="btn btn-primary">Add a Book to This Box</button>
+    </div>
+    <div id="addBookFormContainer" style="display:none;">
+        <!-- The form will be inserted here by JavaScript -->
     </div>
 
     <div id="bookBoxMap" class="book-box-map">
@@ -65,6 +69,7 @@
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
     L.marker([50.8714656, 4.7235203]).addTo(map).bindPopup('Albert Stainierstraat 2', { maxWidth: "auto" });
 </script>
+<script src="add book.js"></script>
 </body>
 </html>
 
