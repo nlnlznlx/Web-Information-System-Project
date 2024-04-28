@@ -78,6 +78,29 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     displaySearchResults(data.documents);
 });
 
+
+function buildSearchFilter(searchQuery, searchType) {
+    let filter = {};
+    if (searchType === "title") {
+        filter = {"Title of the Book": {"$regex": searchQuery, "$options": "i"}};
+    } else if (searchType === "author") {
+        filter = filter = {
+            $or: [
+                {"Name of the First Author or Publisher": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Second Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Third Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Fourth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Fifth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Sixth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
+                {"Name of the Seventh Author (optional)": {"$regex": searchQuery, "$options": "i"}}
+            ]
+        };
+
+    } else if (searchType === "bookBox") {
+        filter = {"Address of the Book Box": {"$regex": searchQuery, "$options": "i"}};
+    }
+    return filter;
+}
 function displaySearchResults(data) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
@@ -134,10 +157,92 @@ function displaySearchResults(data) {
         li.appendChild(bookBox);
 
         const getButton = document.createElement('button');
-        getButton.textContent = 'get the book';
+        getButton.textContent = 'remove';
         getButton.onclick = () => deleteBook(book['Title of the Book'], book['Name of the First Author or Publisher'], book['Address of the Book Box']);
         li.appendChild(getButton);
 
         searchResults.appendChild(li);
     });
 }
+
+let currentPage=1
+async function changePage(newPage) {
+    currentPage = newPage;
+    await fetchSearchResults(currentPage);
+}
+
+async function fetchSearchResults(page) {
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
+    const searchQuery = document.getElementById('searchQuery').value;
+    const searchType = document.getElementById('searchType').value;
+    const filter = buildSearchFilter(searchQuery, searchType);
+    const resultsPerPage = 10;
+    const skip = (page - 1) * resultsPerPage;
+    const data = await performApiRequest(token, 'POST', 'action/find', {
+        dataSource: 'book-box', // Replace with your dataSource
+        database: 'books',
+        collection: 'book entries',
+        filter: filter,
+        limit: resultsPerPage,
+        skip: skip
+    });
+
+    displaySearchResults(data.documents);
+    const totalPages = Math.ceil(data.totalCount / resultsPerPage);
+    updatePaginationControls(totalPages, currentPage);
+}
+
+// Function to update pagination controls
+function updatePaginationControls(totalPages, currentPage) {
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = ''; // Clear existing pagination controls
+
+    // Previous Button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    const prevLink = document.createElement('a');
+    prevLink.className = 'page-link';
+    prevLink.href = '#';
+    prevLink.innerText = 'Previous';
+    prevLink.onclick = () => changePage(currentPage - 1);
+    prevLi.appendChild(prevLink);
+    paginationDiv.appendChild(prevLi);
+
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLi = document.createElement('li');
+        pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+        const pageLink = document.createElement('a');
+        pageLink.className = 'page-link';
+        pageLink.href = '#';
+        pageLink.innerText = i;
+        pageLink.onclick = (e) => {
+            e.preventDefault();
+            changePage(i);
+        };
+        pageLi.appendChild(pageLink);
+        paginationDiv.appendChild(pageLi);
+    }
+
+    // Next Button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    const nextLink = document.createElement('a');
+    nextLink.className = 'page-link';
+    nextLink.href = '#';
+    nextLink.innerText = 'Next';
+    nextLink.onclick = () => changePage(currentPage + 1);
+    nextLi.appendChild(nextLink);
+    paginationDiv.appendChild(nextLi);
+}
+
+// Event listener for the search form
+document.getElementById('searchForm').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    changePage(1); // Always search from the first page
+});
+
+// Load initial search results
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSearchResults(currentPage);
+});

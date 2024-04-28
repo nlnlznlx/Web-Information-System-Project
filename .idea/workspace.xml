@@ -7,10 +7,16 @@
     <list default="true" id="5e3f48dd-5d2d-4bf8-8ff7-33c21b6cf81f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/search function/search function.css" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.html" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search function/search function.js" beforeDir="false" afterPath="$PROJECT_DIR$/search function/search function.js" afterDir="false" />
 =======
+>>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/search function/search function.css" beforeDir="false" afterPath="$PROJECT_DIR$/search function.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search function/search function.html" beforeDir="false" afterPath="$PROJECT_DIR$/search function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search function/search function.js" beforeDir="false" afterPath="$PROJECT_DIR$/search function.js" afterDir="false" />
 >>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +54,7 @@
     &quot;JavaScript Debug.about.html.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.books.html.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index2.html.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.map.html.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.search function.html.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.test.html.executor&quot;: &quot;Run&quot;,
@@ -56,6 +63,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/DH/semester2/web information system/Web-Information-System-Project&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -67,6 +75,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DH\semester2\web information system\Web-Information-System-Project" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DH\semester2\web information system\Web-Information-System-Project" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,8 +98,13 @@
       <workItem from="1713771903600" duration="5305000" />
       <workItem from="1713777260329" duration="30000" />
       <workItem from="1713778112973" duration="5501000" />
+<<<<<<< Updated upstream
 =======
       <workItem from="1713697946539" duration="5767000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1713872538237" duration="9323000" />
+      <workItem from="1714216813252" duration="7397000" />
 >>>>>>> Stashed changes
     </task>
     <servers />
@@ -107,5 +128,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/search function.js</url>
+          <line>210</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
