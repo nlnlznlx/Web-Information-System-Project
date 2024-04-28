@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Refugehof 9</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Refugehof 9</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Refugehof 9.jpg" alt="Book Box at Refugehof 9">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/rivka/9200000049736303/'>Rivka</a> by Femmetje De Wind</li><li><strong>Nanda Roep en Hans Kuyper</strong> by Tanja en Douwe Verliefd</li><li><strong>Het Wonder van St Bruno</strong> by Philippa Carr</li><li><a href='https://www.bol.com/be/nl/p/bel-ria/9200000066610331/'>Bel Ria</a> by Sheila Burnford</li><li><a href='https://www.bol.com/be/nl/p/honingtranen/1001004011270004/'>Honingtranen</a> by Nafisa Haji</li><li><a href='https://www.bol.com/be/nl/p/in-handen-van-de-vijand-elizabeth-george/1001004005734978/'>In Handen Van De Vijand</a> by Elizabeth George</li><li><a href='https://www.bol.com/be/nl/p/de-dyslectische-hartenclub/9200000025959641/'>De Dyslectische-Hartenclub</a> by Hanneke Hendrix</li><li><a href='https://www.bol.com/be/nl/p/geloof-hoop-liefde-leven-en-werken-van-moeder-teresa/666817453/'>Geloof Hoop Liefde</a> by Kathryn Spink</li><li><a href='https://www.bol.com/be/nl/p/morgen-ben-ik-de-bruid/1001004006191099/'>Morgen Ben Ik De Bruid</a> by Kirsten Sawyer</li><li><a href='https://www.bol.com/be/nl/p/focus/1001004006847308/'>Focus!</a> by Leo Babauta</li><li><strong>Ti?p Th? Tr?c Tuy?n Th?ng Minh</strong> by Alex Blyth</li><li><a href='https://www.bol.com/be/nl/p/optimaal-gezond-in-8-weken/666829277/'>Optimaal Gezond in 8 Weken</a> by Andrew Weil</li><li><a href='https://www.bol.com/be/nl/p/l-staat-voor-leugens/666774857/'>Sue Grafton L Staat voor Leugens</a> by Sue Grafton</li><li><a href='https://www.bol.com/be/nl/p/les-vivants-et-les-morts-prix-rtl-lire-2005/9200000033716957/'>Les Vivants et les Morts</a> by Gerard Mordillat</li><li><strong>Leren Kiezen / Kiezen Leren 04 Balans</strong> by Frans Meiers</li><li><a href='https://www.bol.com/be/nl/p/baccara-extra-32-baccara-extra-band-32/9300000158779094/'>Baccara</a> by Jacqueline Diamond</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.8766245, 4.6935976], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.8766245, 4.6935976]).addTo(map).bindPopup('Refugehof 9', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

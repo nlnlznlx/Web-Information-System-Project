@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box at {{ address }}</title>
+    <title>Book Box at Schorenshof 13</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,30 +23,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="map.html">Map</a>
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="books.html">Book Boxes</a>
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <header>
-    <h1>Book Box at {{ address }}</h1>
+    <h1>Book Box at Schorenshof 13</h1>
 </header>
 
 <div class="container">
     <div class="book-box-image">
-        <img src="../{{ image_link }}" alt="Book Box at {{ address }}">
+        <img src="../img/Schorenshof 13.jpg" alt="Book Box at Schorenshof 13">
     </div>
 
     <div class="book-list">
         <ul>
-            {{ book_list }}
+            <li><a href='https://www.bol.com/be/nl/p/de-belofte-van-uw-leven/666823285/'>De Belofte van Uw Leven</a> by Theije Twijnstra</li><li><a href='https://www.bol.com/be/nl/p/de-ontdekking-van-holland/9300000164983998/'>Met Liefde</a> by Jan Brokken</li><li><strong>366 Tips voor de Biodiversiteit</strong> by Camille Pisani</li><li><a href='https://www.bol.com/be/nl/p/warbler-press-contemplations-shakespeare-on-love/9300000007933095/'>Shakespeare on Love</a> by Benjamin Darling</li><li><a href='https://www.bol.com/be/nl/p/de-7-spirituele-wetten-van-succes/9300000061978654/'>De 7 spirituele wetten van succes</a> by Deepak Chopra</li><li><a href='https://www.bol.com/be/nl/p/monterosso-mon-amour/9300000093246356/'>Monterosso mon amour</a> by Ilja Leonard Pfeijffer</li><li><a href='https://www.bol.com/be/nl/p/liefde-is-het-enige/666793053/'>Liefde is het enige</a> by Kees Winkler</li><li><a href='https://www.bol.com/be/nl/p/bucketlist-het-bucketlist-boek-voor-ouders/9200000072427149/'>Het Bucketlist Boek voor ouders </a> by Elise de Rijck</li><li><a href='https://www.bol.com/be/nl/p/tijd-voor-jezelf/9300000004657771/'>Tijd voor jezelf</a> by Kathryn Nicolai</li>
         </ul>
     </div>
 
@@ -59,12 +60,14 @@
 </footer>
 <section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 12);
+    var map = L.map('bookBoxMap').setView([50.890616, 4.6986294], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}', { maxWidth: "auto" });
+    L.marker([50.890616, 4.6986294]).addTo(map).bindPopup('Schorenshof 13', { maxWidth: "auto" });
 </script>
 </body>
 </html>
+
+
 
 

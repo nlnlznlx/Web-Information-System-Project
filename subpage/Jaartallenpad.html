@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box at {{ address }}</title>
+    <title>Book Box at Jaartallenpad</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,30 +23,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="map.html">Map</a>
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="books.html">Book Boxes</a>
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <header>
-    <h1>Book Box at {{ address }}</h1>
+    <h1>Book Box at Jaartallenpad</h1>
 </header>
 
 <div class="container">
     <div class="book-box-image">
-        <img src="../{{ image_link }}" alt="Book Box at {{ address }}">
+        <img src="../img/Jaartallenpad.jpg" alt="Book Box at Jaartallenpad">
     </div>
 
     <div class="book-list">
         <ul>
-            {{ book_list }}
+            <li><a href='https://www.bol.com/be/nl/p/vakdidactiek-economie/9200000045885071/'>Vakdidactiek voor leraren economie </a> by Kristof De Witte</li><li><strong>United Nations Convention to Combat Desertification: The Land-Drought Nexus</strong> by Anke Reichuber</li><li><strong>Het land achter de horizon</strong> by Tonny Vos-Dahmen von Buchholz</li><li><a href='https://www.bol.com/be/nl/p/leren-in-maatschappelijk-betrokken-onderwijs/9200000114012302/'>Leren in maatschappelijk betrokken onderwijs </a> by Jan Elen</li><li><a href='https://www.bol.com/be/nl/p/emilie-of-over-opvoeding-onderwijs-en-opera/9300000005714547/'>Emilie of Over opvoeding, onderwijs en opera</a> by Stefaan E. Cuypers</li><li><a href='https://www.bol.com/be/nl/p/fatale-fout/9200000085931460/'>Fatale Fout</a> by Sophie Hannah</li><li><a href='https://www.bol.com/be/nl/p/fortune-paul-loup-sulitzer/9300000065367756/'>Fortune </a> by Paul Loup Karl Sulitzer</li><li><a href='https://www.bol.com/be/nl/p/de-ark/1001004001558179/'>De Ark</a> by Zhang Jie</li>
         </ul>
     </div>
 
@@ -59,12 +60,14 @@
 </footer>
 <section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 12);
+    var map = L.map('bookBoxMap').setView([50.885533, 4.6971273], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}', { maxWidth: "auto" });
+    L.marker([50.885533, 4.6971273]).addTo(map).bindPopup('Jaartallenpad', { maxWidth: "auto" });
 </script>
 </body>
 </html>
+
+
 
 

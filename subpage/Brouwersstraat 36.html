@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Brouwersstraat 36</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Brouwersstraat 36</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Brouwersstraat 36.jpg" alt="Book Box at Brouwersstraat 36">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/galveston/9200000073393837/'>Galveston</a> by Suzanne Morris</li><li><a href='https://www.bol.com/be/nl/p/darjeeling/9200000033028831/'>Darjeeling</a> by Dominique Marny</li><li><strong>L'Alternative Du Diable</strong> by Frederick Forsyth</li><li><a href='https://www.bol.com/be/nl/p/kookgids-lichte-gerechten/9200000048780700/'>Kookgids lichte gerechten</a> by Kathryn Hawkins</li><li><strong>De Rode Ridder: De Wrede Slavendrijver</strong> by Leopold Vermeiren</li><li><a href='https://www.bol.com/be/nl/p/ghostbusters-1-2/1002004006572845/'>De Koffiebar</a> by Sherri Johns</li><li><a href='https://www.bol.com/be/nl/p/de-rode-ridder-op-de-ijzeren-brug/9200000048692864/'>De Rode Ridder: Op de Yzerenbrug</a> by Leopold Vermeiren</li><li><strong>Les Coulisses de Scotland Yard</strong> by Robert Barr</li><li><a href='https://www.bol.com/be/nl/p/de-wittgensteins/1001004006872047/'>De Wittgensteins</a> by Alexander Waugh</li><li><a href='https://www.bol.com/be/nl/p/maak-dat-je-wegkomt/9200000026301008/'>Maak dat je Wegkomt</a> by Fred Vargas</li><li><a href='https://www.bol.com/be/nl/p/fin-de-soiree/9200000033170129/'>Fin de Soir¨¦e</a> by Guy Lagorce</li><li><strong>Return to Eden</strong> by Rosalind Miles</li><li><strong>Rak¨®ssy</strong> by Cecelia Holland</li><li><a href='https://www.bol.com/be/nl/p/rachel-et-ses-amours/9200000034472583/'>Rachel et ses Amours</a> by Charles Exbrayat</li><li><a href='https://www.bol.com/be/nl/p/brandend-verlangen-constance-gluyas/1001004005128044/'>Brandend Verlangen</a> by Constance Gluyas</li><li><a href='https://www.bol.com/be/nl/p/les-loups-de-lauzargues-tome-1-jean-de-la-nuit/9300000111302549/'>Jean de la Nuit</a> by Juliette Benzoni</li><li><a href='https://www.bol.com/be/nl/p/tueur-et-son-ombre/9200000038292196/'>Le Tueur et Son Ombre</a> by Herbert Lieberman</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.88317, 4.6934879], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.88317, 4.6934879]).addTo(map).bindPopup('Brouwersstraat 36', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

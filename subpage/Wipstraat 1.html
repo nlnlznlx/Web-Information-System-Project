@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box at {{ address }}</title>
+    <title>Book Box at Wipstraat 1</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,30 +23,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="map.html">Map</a>
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="books.html">Book Boxes</a>
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <header>
-    <h1>Book Box at {{ address }}</h1>
+    <h1>Book Box at Wipstraat 1</h1>
 </header>
 
 <div class="container">
     <div class="book-box-image">
-        <img src="../{{ image_link }}" alt="Book Box at {{ address }}">
+        <img src="../img/Wipstraat 1.jpg" alt="Book Box at Wipstraat 1">
     </div>
 
     <div class="book-list">
         <ul>
-            {{ book_list }}
+            <li><a href='https://www.bol.com/be/nl/p/zazapina-in-de-zoo/1001004005089789/'>Zazapina in de Zoo</a> by Liva Wilems</li><li><a href='https://www.bol.com/be/nl/p/frits-en-tineke/1001004005096111/'>Frits en Tineke</a> by Jeannette van Luipen-Bronwasser</li><li><a href='https://www.bol.com/be/nl/p/sorceress/9200000127762520/'>Sorceress</a> by Celia Rees</li><li><strong>Die Riten der G?tter</strong> by Frank Herbert</li><li><a href='https://www.bol.com/be/nl/p/timmie-is-verdwenen/1001004001555718/'>Timmie is Verdwenen!</a> by Margret Rettich</li><li><a href='https://www.bol.com/be/nl/p/in-de-stilte-van-de-nacht/1001004001534895/'>In de Stilte van de Nacht</a> by Nancy Price</li><li><strong>Als de dauw hangt komt er regen</strong> by Margit S?derholm</li><li><strong>Torias de Tovenaar</strong> by Hans Keuls</li><li><a href='https://www.bol.com/be/nl/p/made-in-america/1001004000646091/'>Made in America: Regaining the Productive Edge</a> by Michael L. Dertouzos</li><li><a href='https://www.bol.com/be/nl/p/scherven/1001004001555818/'>Scherven</a> by Katrien Vandewoude</li>
         </ul>
     </div>
 
@@ -59,12 +60,14 @@
 </footer>
 <section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([{{ latitude }}, {{ longitude }}], 12);
+    var map = L.map('bookBoxMap').setView([50.886856, 4.7205591], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([{{ latitude }}, {{ longitude }}]).addTo(map).bindPopup('{{ address }}', { maxWidth: "auto" });
+    L.marker([50.886856, 4.7205591]).addTo(map).bindPopup('Wipstraat 1', { maxWidth: "auto" });
 </script>
 </body>
 </html>
+
+
 
 

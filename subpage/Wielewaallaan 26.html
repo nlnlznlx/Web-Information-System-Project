@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Wielewaallaan 26</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Wielewaallaan 26</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Wielewaallaan 26.jpg" alt="Book Box at Wielewaallaan 26">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><strong>Doorgaan, ja of nee?</strong> by Jack Dominian</li><li><a href='https://www.bol.com/be/nl/p/libelle-bibliotheek-dansen-op-de-vulkaan/9200000021327696/'>Dansen op de vulkaan</a> by Anthony Capella</li><li><a href='https://www.bol.com/be/nl/p/de-kookclub/1001004008186920/'>De kookclub</a> by Sophie King</li><li><strong>Het Beste Boek 137</strong> by Desmond Bagley</li><li><a href='https://www.bol.com/be/nl/p/als-je-me-niet-kunt-horen-jack-lance/9200000061855712/'>Als Je Me Niet Kunt Horen</a> by Jack Lance</li><li><strong>Het geheim van de Nijl</strong> by Elizabeth Peters</li><li><strong>Zieltjes Zonder Zorg</strong> by Eva Versteeg</li><li><strong>Zwangerschap van Week Tot Week</strong> by Trudy van Ommeren</li><li><strong>Wij Hebben Een Baby</strong> by Irene Vergagen</li><li><strong>Nog Bij Moeder Thuis</strong> by Eva Versteeg</li><li><strong>Gids voor de Homeopatie</strong> by Luc Chaltin</li><li><a href='https://www.bol.com/be/nl/p/eva-s-oog/1001004001638643/'>Eva's Oog</a> by Karin Fossum</li><li><strong>Using Existing Light</strong> by Caroline Grimes</li><li><strong>Marie-Jos¨¦: Princesse de Belgique, derni¨¨re reine d'Italie </strong> by Agnes Adriaenssen</li><li><strong>Global Tender Mangement Optimization</strong> by Marcel Gessler</li><li><strong>Boelvaar poef 2013 - 2/3/4</strong> by Belgische Louis Paul Boongenootschap</li><li><a href='https://www.bol.com/be/nl/p/08-15-omnibus/1001004005138231/'>08/15 Omnibus</a> by Hans Hellmut Kirst</li><li><strong>De meesterwerken van Emile Zola</strong> by ¨¦mile Zola</li><li><a href='https://www.bol.com/be/nl/p/adobe-photoshop-lightroom-3-book/1001004010295296/'>The Adobe Photoshop Lightroom 3 Book: The Complete Guide for Photographers</a> by Martin Evening</li><li><a href='https://www.bol.com/be/nl/p/judith-krantz-5-x-hardcover-1-frederique-2-justine-3-gigi-4-dazzle-5-scruples/9300000172480155/'>Gigi</a> by Judith Krantz</li><li><a href='https://www.bol.com/be/nl/p/deze-kant-van-de-vrede/1001004001510816/'>Deze Kant van de Vrede</a> by Hanan Ashrawi</li><li><strong>Gids Homeopathie</strong> by Luc Chaltin</li><li><strong>Dokter zonder geweten / Offer twee vrouwen voor een man / Bankroof per computer</strong> by Sam Webster</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.901261, 4.7203928], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.901261, 4.7203928]).addTo(map).bindPopup('Wielewaallaan 26', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+

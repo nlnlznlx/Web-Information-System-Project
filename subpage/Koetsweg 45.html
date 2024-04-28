@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Box at Koetsweg 45</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>Book Box at Koetsweg 45</h1>
+</header>
+
+<div class="container">
+    <div class="book-box-image">
+        <img src="../img/Koetsweg 45.jpg" alt="Book Box at Koetsweg 45">
+    </div>
+
+    <div class="book-list">
+        <ul>
+            <li><a href='https://www.bol.com/be/nl/p/en-el-pais-de-la-nube-blanca/9200000110978067/'>La Transicion</a> by El Pais</li><li><a href='https://www.bol.com/be/nl/p/boze-tongen/1001004001571421/'>Boze Tongen</a> by Tom Lanoye</li><li><strong>Industriefotografie Schriftenreihe</strong> by Reinhard Matz</li><li><a href='https://www.bol.com/be/nl/p/thomas-bimbam/1001004005086004/'>Thomas Bimbam</a> by Robine Clignett</li><li><strong>Serge Moati</strong> by Dernieres Nouvelles de Tunis</li><li><a href='https://www.bol.com/be/nl/p/enterprise-one-to-one/666851322/'>Enterprise One-to-One</a> by Don Peppers</li><li><a href='https://www.bol.com/be/nl/p/internationaal-recht-in-kort-bestek/9300000008452257/'>Bronnenboek Internationaal Recht</a> by Jan Wouters</li><li><strong>Apolloon Tussen Zwart en Wit</strong> by Albert van Hoeck</li><li><strong>Zeg Ja Tegen de Liefde</strong> by Dr. J. Z. Baruch</li><li><a href='https://www.bol.com/be/nl/p/the-shadow-of-the-lynx/9200000035027132/'>The Shadow of the Lynx</a> by Victoria Hoit</li><li><a href='https://www.bol.com/be/nl/p/fear-is-the-key/9300000168660360/'>Fear is the Key</a> by Alistair MacLean</li><li><strong>Optionen-Handel</strong> by Dr. Gregor Bauer</li><li><a href='https://www.bol.com/be/nl/p/omnibus-drie-romans-over-stewardessen-en-piloten/9200000097464906/'>Omnibus Drie Romans over Stewardessen en Piloten</a> by Constance M. White</li><li><a href='https://www.bol.com/be/nl/p/het-toverboek-van-anton/1001004001555668/'>Anton</a> by Schreiber-Wicke</li><li><strong>Juultje Neemt Afscheid van School</strong> by Anneke Bloemen</li><li><a href='https://www.bol.com/be/nl/p/glamp-of-hoe-paddenwratje-kabouter/1001004001986235/'>Blondekoning</a> by Henri van Daele</li><li><a href='https://www.bol.com/be/nl/p/alles-wat-licht-is/9200000108614066/'>Sneeuwlucht</a> by Marleen Nelen</li>
+        </ul>
+    </div>
+
+    <div id="bookBoxMap" class="book-box-map">
+        <!-- Leaflet map will be here -->
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>&copy; 2024 Book Exchange</p>
+</footer>
+<section id="map"></section>
+<script>
+    var map = L.map('bookBoxMap').setView([50.8747052, 4.7338468], 12);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
+        {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+    L.marker([50.8747052, 4.7338468]).addTo(map).bindPopup('Koetsweg 45', { maxWidth: "auto" });
+</script>
+</body>
+</html>
+
+
+
+
