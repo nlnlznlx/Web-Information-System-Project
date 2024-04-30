@@ -118,13 +118,6 @@ async function fetchSearchResults(page) {
         }
     }
 
-    //const searchType = params.get('searchType') || document.getElementById('searchType').value;
-    //const searchQuery = params.get('searchQuery') || document.getElementById('searchQuery').value;
-    //const searchQuery = document.getElementById('searchQuery') ? document.getElementById('searchQuery').value : params.get('searchQuery');
-    //const searchType = document.getElementById('searchType') ? document.getElementById('searchType').value : params.get('searchType');
-    //const searchQuery = document.getElementById('searchQuery').value;
-    //const searchType = document.getElementById('searchType').value;
-
     const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
     const filter = buildSearchFilter(searchQuery, searchType);
     const resultsPerPage = 10;
@@ -158,8 +151,18 @@ document.getElementById('searchForm')?.addEventListener('submit', (event) => {
 // Displays search results on the page
 async function displaySearchResults(data) {
     const searchResults = document.getElementById('searchResults');
-    //console.log(searchResults);
     searchResults.innerHTML = '';
+
+    const booksCount = document.getElementById('books_count');
+    let countText = '';
+    if (data.length === 0) {
+        countText = 'No books found';
+    } else if (data.length === 1) {
+        countText = '1 book found';
+    } else {
+        countText = `${data.length} books found`;
+    }
+    booksCount.textContent = countText;
 
     for (const book of data) {
         const li = document.createElement('li');
