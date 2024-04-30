@@ -1,3 +1,6 @@
+// Constants and Initial State
+let currentPage = 1;
+
 // Fetch bearer token using MongoDB API key
 async function fetchBearerToken(apiKey) {
     const url = 'https://services.cloud.mongodb.com/api/client/v2.0/app/data-mqtzj/auth/providers/api-key/login';
@@ -42,43 +45,7 @@ async function performApiRequest(token, method, path, body) {
     return await response.json();
 }
 
-// Handlers for search, add, and delete operations
-document.addEventListener('DOMContentLoaded', async (event) => {
-    const params = new URLSearchParams(window.location.search);
-    const searchType = params.get('searchType');
-    const searchQuery = params.get('searchQuery');
-
-    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with actual API key
-
-    let filter = {};
-    if (searchType === "title") {
-        filter = { "Title of the Book": { "$regex": searchQuery, "$options": "i" } };
-    } else if (searchType === "author") {
-        filter = filter = {
-            $or: [
-                {"Name of the First Author or Publisher": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Second Author (optional)": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Third Author (optional)": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Fourth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Fifth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Sixth Author (optional)": {"$regex": searchQuery, "$options": "i"}},
-                {"Name of the Seventh Author (optional)": {"$regex": searchQuery, "$options": "i"}}
-            ]};
-
-    } else if (searchType === "bookBox") {
-        filter = { "Address of the Book Box": { "$regex": searchQuery, "$options": "i" } };
-    }
-
-    const data = await performApiRequest(token, 'POST', 'action/find', {
-        dataSource: 'book-box',
-        database: 'books',
-        collection: 'book entries',
-        filter: filter
-    });
-    displaySearchResults(data.documents);
-});
-
-
+// Constructs a filter based on search query and type for MongoDB queries
 function buildSearchFilter(searchQuery, searchType) {
     let filter = {};
     if (searchType === "title") {
@@ -101,11 +68,115 @@ function buildSearchFilter(searchQuery, searchType) {
     }
     return filter;
 }
-function displaySearchResults(data) {
+
+// Fetches a book cover image using the Google Books API
+async function fetchBookCover(title) {
+    const apiKey = 'AIzaSyDoEKU8_2pYMFFNXjSO2mPHmhv3rl-SYQo';
+    const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}&key=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+            const book = data.items[0];  // Taking the first book found
+            const coverImageUrl = book.volumeInfo.imageLinks?.thumbnail;  // Using optional chaining in case imageLinks is undefined
+            return coverImageUrl;  // Return the URL
+        } else {
+            console.log("No books found with that title.");
+            return "No books found";
+        }
+    } catch (error) {
+        console.error("Failed to fetch book cover image:", error);
+        return "Error fetching data";
+    }
+}
+
+async function fetchSearchResults(page) {
+    // Attempt to get search parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    const searchQueryFromParams = params.get('searchQuery');
+    const searchTypeFromParams = params.get('searchType');
+
+    let searchQuery, searchType;
+
+    if (searchQueryFromParams && searchTypeFromParams) {
+        // If there are URL parameters, use them (coming from index.html)
+        searchQuery = searchQueryFromParams;
+        searchType = searchTypeFromParams;
+    } else {
+        // Otherwise, use values from the DOM elements (direct search on search_function.html)
+        const searchQueryElement = document.getElementById('searchQuery');
+        const searchTypeElement = document.getElementById('searchType');
+
+        if (searchQueryElement && searchTypeElement) {
+            searchQuery = searchQueryElement.value;
+            searchType = searchTypeElement.value;
+        } else {
+            console.error('No search parameters or input fields found.');
+            return; // Exit function if no inputs are available
+        }
+    }
+
+    //const searchType = params.get('searchType') || document.getElementById('searchType').value;
+    //const searchQuery = params.get('searchQuery') || document.getElementById('searchQuery').value;
+    //const searchQuery = document.getElementById('searchQuery') ? document.getElementById('searchQuery').value : params.get('searchQuery');
+    //const searchType = document.getElementById('searchType') ? document.getElementById('searchType').value : params.get('searchType');
+    //const searchQuery = document.getElementById('searchQuery').value;
+    //const searchType = document.getElementById('searchType').value;
+
+    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
+    const filter = buildSearchFilter(searchQuery, searchType);
+    const resultsPerPage = 10;
+    const skip = (page - 1) * resultsPerPage;
+    const data = await performApiRequest(token, 'POST', 'action/find', {
+        dataSource: 'book-box',
+        database: 'books',
+        collection: 'book entries',
+        filter: filter,
+        limit: resultsPerPage,
+        skip: skip
+    });
+
+    displaySearchResults(data.documents);
+    const totalPages = Math.ceil(data.totalCount / resultsPerPage);
+    updatePaginationControls(totalPages, currentPage);
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', async () => {
+    if (new URLSearchParams(window.location.search).has('searchQuery')) {
+        await fetchSearchResults(1);
+    }
+});
+
+document.getElementById('searchForm')?.addEventListener('submit', (event) => {
+    //event.preventDefault();
+    changePage(1); // Always search from the first page
+});
+
+// Displays search results on the page
+async function displaySearchResults(data) {
     const searchResults = document.getElementById('searchResults');
+    //console.log(searchResults);
     searchResults.innerHTML = '';
-    data.forEach(book => {
+
+    for (const book of data) {
         const li = document.createElement('li');
+
+        const coverImage = document.createElement('img');
+        coverImage.alt = "Cover image";
+        li.appendChild(coverImage);
+        // Fetch the book cover using the title of the book
+        const imageUrl = await fetchBookCover(book['Title of the Book']);
+        if (imageUrl && imageUrl.startsWith('http')) {  // Check if the URL is valid
+            coverImage.src = imageUrl;
+            coverImage.alt = `Cover image of ${book['Title of the Book']}`;
+        } else {
+            coverImage.alt = 'No cover image available';
+            coverImage.style.display = 'none';  // Optionally hide the image element
+        }
+
         const title = document.createElement('strong');
         title.textContent = `Title: ${book['Title of the Book']}`;
         li.appendChild(title);
@@ -162,34 +233,7 @@ function displaySearchResults(data) {
         li.appendChild(getButton);
 
         searchResults.appendChild(li);
-    });
-}
-
-let currentPage=1
-async function changePage(newPage) {
-    currentPage = newPage;
-    await fetchSearchResults(currentPage);
-}
-
-async function fetchSearchResults(page) {
-    const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
-    const searchQuery = document.getElementById('searchQuery').value;
-    const searchType = document.getElementById('searchType').value;
-    const filter = buildSearchFilter(searchQuery, searchType);
-    const resultsPerPage = 10;
-    const skip = (page - 1) * resultsPerPage;
-    const data = await performApiRequest(token, 'POST', 'action/find', {
-        dataSource: 'book-box', // Replace with your dataSource
-        database: 'books',
-        collection: 'book entries',
-        filter: filter,
-        limit: resultsPerPage,
-        skip: skip
-    });
-
-    displaySearchResults(data.documents);
-    const totalPages = Math.ceil(data.totalCount / resultsPerPage);
-    updatePaginationControls(totalPages, currentPage);
+    }
 }
 
 // Function to update pagination controls
@@ -236,16 +280,11 @@ function updatePaginationControls(totalPages, currentPage) {
     paginationDiv.appendChild(nextLi);
 }
 
-// Event listener for the search form
-document.getElementById('searchForm').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    changePage(1); // Always search from the first page
-});
 
-// Load initial search results
-document.addEventListener('DOMContentLoaded', () => {
-    fetchSearchResults(currentPage);
-});
+async function changePage(newPage) {
+    currentPage = newPage;
+    await fetchSearchResults(currentPage);
+}
 
 async function deleteBook(title, author, bookBox) {
     const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua'); // Ensure to replace with your actual API key

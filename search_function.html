@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name= "viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel= "stylesheet" href= "search_function.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <!-- Bootstrap CSS -->
     <link rel= "stylesheet"
           href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -40,7 +38,7 @@
             </li>
         </ul>
 
-        <form id="searchForm" class="form-inline my-2 my-lg-0" action="search_function.html" method="GET">
+        <form id="searchForm" name="searchForm" class="form-inline my-2 my-lg-0" action="search_function.html" method="GET">
             <label for="searchQuery" class="sr-only">Search by:</label>
             <select id="searchType" name="searchType" class="form-control mr-sm-2">
                 <option value="title">Title</option>
@@ -61,32 +59,6 @@
             <!-- Pagination items will be added dynamically with JavaScript -->
         </ul>
     </nav>
-
-    <!-- Add book form
-    <h2>Add New Book</h2>
-    <form id="addForm">
-        <label for="addTitle">Title:</label>
-        <input type="text" id="addTitle" name="title" required><br>
-        <label for="addAuthor1">Author 1 (Primary):</label>
-        <input type="text" id="addAuthor1" name="author1"><br>
-        <label for="addAuthor2">Author 2 (Optional):</label>
-        <input type="text" id="addAuthor2" name="author2"><br>
-        <label for="addAuthor3">Author 3 (Optional):</label>
-        <input type="text" id="addAuthor3" name="author3"><br>
-        <label for="addAuthor4">Author 4 (Optional):</label>
-        <input type="text" id="addAuthor4" name="author4"><br>
-        <label for="addAuthor5">Author 5 (Optional):</label>
-        <input type="text" id="addAuthor5" name="author5"><br>
-        <label for="addAuthor6">Author 6 (Optional):</label>
-        <input type="text" id="addAuthor6" name="author6"><br>
-        <label for="addAuthor7">Author 7 (Optional):</label>
-        <input type="text" id="addAuthor7" name="author7"><br>
-        <label for="addBookBox">Book Box:</label>
-        <input type="text" id="addBookBox" name="bookBox" required><br>
-        <button type="submit">Add Book</button>
-    </form>
--->
-
 </div>
 
 <script src="search_function.js"></script>
