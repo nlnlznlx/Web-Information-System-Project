@@ -48,10 +48,15 @@ function displayBooks(books) {
 
     books.forEach(book => {
         const listItem = document.createElement('li');
+        const bookLink = document.createElement('a');
+        bookLink.href = book['Book URL']; // Set the href to the URL from MongoDB
+        bookLink.textContent = book['Title of the Book'];
+        bookLink.target = "_blank"; // Optional: opens the link in a new tab
         const title = document.createElement('strong'); // Create a strong tag for bold text
-        title.textContent = book['Title of the Book'];
+
 
         listItem.appendChild(title);
+        listItem.appendChild(bookLink);
         listItem.innerHTML += ` by ${book['Name of the First Author or Publisher'] || 'Unknown Author'}`;
         bookList.appendChild(listItem);
     });
