@@ -36,7 +36,7 @@ async function fetchBooksForBox(address) {
     const data = await performApiRequest(token, 'POST', 'action/find', {
         dataSource: 'book-box',
         database: 'books',
-        collection: 'books_csv',
+        collection: 'book entries',
         filter: filter
     });
     displayBooks(data.documents);

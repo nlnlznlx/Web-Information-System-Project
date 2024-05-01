@@ -3,14 +3,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Box at Albert Stainierstraat 2</title>
+    <title>Book Box at Albert Giraudstraat 28</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,25 +24,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/csv-to-html.py/index.html">Home</a>
+                <a class="nav-link" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/csv-to-html.py/map.html">Map</a>
+                <a class="nav-link" href="../map.html">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/csv-to-html.py/books.html">Book Boxes</a>
+                <a class="nav-link" href="../books.html">Book Boxes</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <header>
-    <h1 id="bookBox">Book Box at Albert Stainierstraat 2</h1>
+    <h1 id="bookBox">Book Box at Albert Giraudstraat 28</h1>
 </header>
 
 <div class="container">
     <div class="book-box-image">
-        <img src="../img/Albert Stainierstraat 2.jpg" alt="Book Box at Albert Stainierstraat 2">
+        <img src="../img/Albert Giraudstraat 28.jpg" alt="Book Box at Albert Giraudstraat 28">
     </div>
 
     <div class="book-list">
@@ -51,6 +52,7 @@
     <div id="addBookFormContainer" style="display:none;">
         <!-- The form will be inserted here by JavaScript -->
     </div>
+
 
     <div id="bookBoxMap" class="book-box-map">
         <!-- Leaflet map will be here -->
@@ -62,10 +64,10 @@
 </footer>
 <section id="map"></section>
 <script>
-    var map = L.map('bookBoxMap').setView([50.8714656, 4.7235203], 12);
+    var map = L.map('bookBoxMap').setView([50.8707402, 4.6982059], 12);
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp',
         {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
-    L.marker([50.8714656, 4.7235203]).addTo(map).bindPopup('Albert Stainierstraat 2', { maxWidth: "auto" });
+    L.marker([50.8707402, 4.6982059]).addTo(map).bindPopup('Albert Giraudstraat 28', { maxWidth: "auto" });
 </script>
 <script src="add book.js"></script>
 <script src="book list.js"></script>
