@@ -76,7 +76,7 @@ async function loadImages() {
 
             const img = document.createElement('img');
             img.className = 'card-img-top'; // Bootstrap class for card images
-            img.src = item.image_url; // Assume each item has an image_url
+            img.src = 'img/' + item.street_name + '.jpg'//item.image_url; // Assume each item has an image_url
             img.alt = `Cover image of ${item.street_name}`;
 
             const cardBody = document.createElement('div');
