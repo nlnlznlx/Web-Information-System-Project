@@ -37,12 +37,27 @@ nav a.active {
 }
 
 
-input[type="text"], button, select {
-    padding: 10px;
-    margin: 10px 0;
+.form-inline {
+    justify-content: center; /* Center form in the available space */
+    padding: 20px 0; /* Padding around the form */
 }
-input[type="text"] {
-    width: 300px;
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 ul {

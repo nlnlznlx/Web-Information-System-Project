@@ -16,6 +16,9 @@ header {
     padding: 20px 15px; /* Consistent padding around the content */
 }
 
+.navbar {
+    margin-bottom: 20px; /* Space below the navbar */
+}
 
 nav ul {
     list-style-type: none;
@@ -66,14 +69,7 @@ footer {
     margin-top: 20px;
 }
 
-.form-inline {
-    justify-content: center; /* Center form in the available space */
-    padding: 20px 0; /* Padding around the form */
-}
 
-.form-group {
-    margin-bottom: 10px;
-}
 
 label {
     display: block;
