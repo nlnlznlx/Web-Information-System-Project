@@ -1,11 +1,42 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    padding-top: 20px;
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
 }
+
+.container, .container-fluid {
+    padding: 20px 15px; /* Consistent padding around the content */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a.active {
+    color: #000;
+}
+
+
 input[type="text"], button, select {
     padding: 10px;
     margin: 10px 0;
@@ -13,14 +44,16 @@ input[type="text"], button, select {
 input[type="text"] {
     width: 300px;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
 }
-li {
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-top: 5px;
+
+.book-entry {
+    background-color: #f4f4f4; /* Sets the background color of each list item to a light grey */
+    padding: 10px; /* Adds padding inside each list item */
+    margin-top: 5px; /* Adds a top margin to each list item */
 }
 
 button {

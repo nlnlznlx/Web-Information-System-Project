@@ -7,6 +7,45 @@ header {
     align-items: start;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.container, .container-fluid {
+    padding: 20px 15px; /* Consistent padding around the content */
+}
+
+.navbar {
+    margin-bottom: 20px; /* Space below the navbar */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a.active {
+    color: #000;
+}
+
+.about-section, .contact-section {
+    margin: 20px;
+}
+
 
 
 .container {
@@ -94,4 +133,5 @@ footer {
     .book-title-slider, .book-box-map {
         height: auto; /* Auto height on smaller screens */
     }
+}
 
