@@ -166,6 +166,7 @@ async function displaySearchResults(data) {
 
     for (const book of data) {
         const li = document.createElement('li');
+        li.classList.add('book-entry');
 
         const coverImage = document.createElement('img');
         coverImage.alt = "Cover image";

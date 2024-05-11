@@ -16,9 +16,6 @@ header {
     padding: 20px 15px; /* Consistent padding around the content */
 }
 
-.navbar {
-    margin-bottom: 20px; /* Space below the navbar */
-}
 
 nav ul {
     list-style-type: none;
