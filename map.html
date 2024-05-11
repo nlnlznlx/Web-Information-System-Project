@@ -58,6 +58,17 @@
                     <a class="nav-link" href="about.html">About Us</a>
                 </li>
             </ul>
+
+            <form id="searchForm" name="searchForm" class="form-inline my-2 my-lg-0" action="search_function.html" method="GET">
+                <label for="searchQuery" class="sr-only">Search by:</label>
+                <select id="searchType" name="searchType" class="form-control mr-sm-2">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="bookBox">Book Box</option>
+                </select>
+                <input type="text" id="searchQuery" name="searchQuery" placeholder="Find a Book!" class="form-control mr-sm-2">
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+            </form>
         </div>
     </nav>
 
