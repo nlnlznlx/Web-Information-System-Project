@@ -5,6 +5,22 @@ body {
     background: #f4f4f4;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('img/bg_image.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4; 
+    pointer-events: none; /* Ensures clicks pass through to elements below */
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -36,9 +52,10 @@ nav a {
     color: #333;
 }
 
-nav a.active {
-    color: #000;
+nav li.active {
+    color: #000; /* Black color for active state */
 }
+
 
 .about-section, .contact-section {
     margin: 20px;
@@ -56,10 +73,8 @@ nav a.active {
 
 #welcome {
     text-align: center; /* Center-align the welcome message */
-    padding: 20px;
-    background: white; /* White background for the text area */
-    margin-top: 20px; /* Space above the welcome section */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    margin: 10px;
+    padding: 10px;
 }
 
 footer {
@@ -68,7 +83,6 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
-
 
 
 label {
@@ -98,15 +112,83 @@ button:hover {
     background-color: #555;
 }
 
-
-/* books.html */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+/* search_function.html */
+.books-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the nav is pushed to the bottom */
+    height: 100%; /* Use a minimum height if necessary */
 }
 
+.books-container > div {
+    width: 100%; /* Ensures the div stretches to full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the center, adjust if necessary */
+}
+
+.books-container > h1,
+.books-container > div > h4 {
+    align-self: flex-start;
+    width: calc(90%); /* Adjust this width to match the card container width */
+    margin-left: auto; /* This centers the div */
+    margin-right: auto; /* This centers the div */
+    padding-left: 10px; /* This should align with the start of your cards */
+}
+
+#searchResults {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: space-around; /* This spreads out the content */
+    list-style-type: none;
+    padding: 0 20px; /* Adjust padding to fit your design needs */
+    width: 95%; /* Takes up full width of its container */
+}
+
+.book-entry {
+    display: flex;
+    align-items: start; /* Ensure alignment is at the top */
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    width: calc(50% - 40px); /* Adjust for margin */
+    flex: 0 0 calc(50% - 40px); /* Ensures that each entry only takes up half the width minus margin */
+}
+
+.book-entry img {
+    width: 150px; /* Adjust width as necessary */
+    height: 200px; /* Adjust height to maintain aspect ratio */
+    object-position: center; /* Center the image within the frame */
+    margin-right: 20px; /* Space between the image and the text */
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column; /* Stack the text elements vertically */
+    justify-content: center; /* Center the text vertically, if needed */
+    width: calc(100% - 170px); /* Adjust width accounting for the image and its margin */
+}
+
+
+.book-entry img[alt="No cover image available"] {
+    display: none; /* Hide the image element if no cover is available */
+}
+
+
+.book-entry p {
+    margin-top: 10px; /* Removes default margin for clean alignment */
+}
+
+#nav-pagination {
+    width: 100%; /* Full width for better control */
+    display: flex;
+    justify-content: center; /* Center the pagination horizontally */
+    padding: 20px 0; /* Adds padding above and below for spacing */
+}
+
+/* books.html */
 section#book-listings {
     padding: 20px;
 }
@@ -192,68 +274,6 @@ section#book-listings {
     display: block;
 }
 
-/* forum.css */
-main {
-    margin: 20px; /* Add margin to create space around the main content */
-    padding: 20px; /* Add padding to create space inside the main content */
-}
-
-#discussion-join {
-    margin-left: 20px; /* Add margin to the left of the h2 element */
-}
-
-#book-listings {
-    /* Add specific styles for the book listings section */
-}
-
-#book-recommendation {
-    /* Add specific styles for the book recommendation section */
-    padding: 20px; /* Add padding to create space inside the book recommendation section */
-}
-
-#discussion-form {
-    margin-bottom: 20px;
-    margin-left: 20px; /* Add margin to the left */
-    margin-right: 20px; /* Add margin to the right */
-}
-
-#discussion-posts {
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 20px; /* Add margin to the left */
-    margin-right: 20px; /* Add margin to the right */
-}
-
-#discussion-posts h2 {
-    margin-top: 0;
-    
-}
-
-#discussion-posts .post {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#discussion-posts .post p {
-    margin: 0;
-}
-
-label[for="discussion-posts"] {
-    margin-left: 20px; /* Add margin to the left of the label element */
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    margin-top: 20px;
-    
-}
 
 /* map.html */
 #map-container {
@@ -271,3 +291,37 @@ footer {
     margin-right: 20px; /* Add margin to the right */
 }
 
+.weather-container{
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+/* about.html */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column; /* Stacks the sections vertically */
+    align-items: center; /* Centers the sections horizontally */
+}
+
+.about-section, .contact-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 60%;   
+}
+
+.about-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
