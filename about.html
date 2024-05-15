@@ -19,7 +19,7 @@
         }
     </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="/img/logo.png" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
@@ -37,42 +37,47 @@
                 <li class="nav-item">
                     <a class="nav-link" href="books.html">Book Boxes</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="about.html">About Us<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
-    <section class="about-section">
-        <h2>About Us</h2>
-        <p>We are a group of students from KU Leuven dedicated to promoting reading and literacy in our community through book exchange initiatives.</p>
-        <p>Our mission is to make books more accessible to everyone and foster a love for reading.</p>
-        <p>This website is a course project created and built by Meihan Luo, Yiyao Jin, Zita Baronnet, Renfei Xu and Yuxuan Kang in May 2024, using HTML, CSS, JavaScript and Bootstrap.</p>
-    </section>
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <form id="ContactForm" name="contact-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send Message</button>
-        </form>
-    </section>
-
+    <div class="about-container">
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <form id="ContactForm" name="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send Message</button>
+            </form>
+        </section>
+        <section class="about-section">
+            <h2>About Us</h2>
+            <p>We are a group of students from KU Leuven dedicated to promoting reading and literacy in our community through book exchange initiatives.</p>
+            <p>Our mission is to make books more accessible to everyone and foster a love for reading.</p>
+            <p>This website is a course project created and built by Meihan Luo, Yiyao Jin, Zita Baronnet, Renfei Xu and Yuxuan Kang in May 2024, using HTML, CSS, JavaScript and Bootstrap.</p>
+        </section>
+    </div>
     <footer class="container-fluid text-center">
         <p>&copy; 2024 Book Exchange</p>
     </footer>
     <script src="about.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
 
 </body>
 </html>
