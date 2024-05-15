@@ -37,7 +37,7 @@
         }
     </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="/img/logo.png" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,10 +45,10 @@
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -80,20 +80,20 @@
 
     <!-- Weather Section -->
     <section class="weather-container" id="weather-info">
-        <h3>Weather Information</h3>
+        <h3>Weather</h3>
         <div id="weather-details">
             <!-- Weather data will be inserted here -->
         </div>
         
     </section>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script>
         var map = L.map('map').setView([50.8798438, 4.7005176], 12);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Elai0T56rsYOsxHkJPwp', { attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>' })
             .addTo(map);
-
-
 
         fetch('coordinates.json')
             .then(response => {
@@ -134,11 +134,11 @@
                     <p>Air Quality (US-EPA Index): ${weatherData.current.air_quality["us-epa-index"]}</p>
                 
                 `;
-                document.getElementById('weather-info').innerHTML = weatherDetails;
+                document.getElementById('weather-details').innerHTML = weatherDetails;
             })
             .catch(error => {
                 console.error('Error fetching weather data:', error);
-                document.getElementById('weather-info').innerText = 'Failed to fetch weather data';
+                document.getElementById('weather-details').innerText = 'Failed to fetch weather data';
             });
 
     </script>
