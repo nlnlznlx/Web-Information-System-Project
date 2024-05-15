@@ -77,8 +77,8 @@ document.getElementById('toggleAddBookForm').addEventListener('click', function(
                 <label for="addAuthor7">Author 7 (Optional):</label>
                 <input type="text" id="addAuthor7" name="author7"><br>
 
-                <button type="submit">Add Book</button>
-                <button type="button" id="cancelAddBook">Cancel</button>
+                <button class="btn btn-success" type="submit">Submit</button>
+                <button class="btn btn-secondary" type="button" id="cancelAddBook">Cancel</button>
             </form>
         `;
 

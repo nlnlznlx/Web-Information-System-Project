@@ -73,10 +73,10 @@ nav a.active {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 10px;
+    margin: 0 10px 30px 10px;
 }
 
 .book-box-image {
-    padding: 5px;
     border: 0px solid #ccc; /* A thicker border for emphasis */
     border-radius: 0px; /* Rounded corners for the image */
     overflow: hidden; /* Ensures the border radius clips the image */
@@ -117,7 +117,6 @@ nav a.active {
 .book-box-map {
     height: 320px;
     width: 300px;
-    margin-top: 5px;
 }
 
 footer {
@@ -132,10 +131,10 @@ footer {
 #toggleAddBookForm {
     background-color: black;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     border: none;
     margin-left: 20px;
@@ -143,10 +142,24 @@ footer {
 #toggleAddBookForm:hover {
     background-color: dimgrey;
 }
+#toggleAddBookForm 
 
 #addBookFormContainer{
     margin-bottom: 20px;
+}
 
+#addBookFormContainer h2{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#addBookFormContainer label{
+    margin: 10px;
+}
+
+#addBookFormContainer button{
+    margin-top: 10px;
+    margin: 10px;
 }
 
 @media (max-width: 768px) {
