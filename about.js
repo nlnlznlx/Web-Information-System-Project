@@ -76,7 +76,7 @@ form.addEventListener("submit",(e)=>{
 
     console.log(insertObject)
     postForm(insertObject)
-    
 
+    alert('Submitted successfully!');
     form.reset(); // change here to show a message after submission
 });

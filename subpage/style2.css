@@ -144,6 +144,11 @@ footer {
     background-color: dimgrey;
 }
 
+#addBookFormContainer{
+    margin-bottom: 20px;
+
+}
+
 @media (max-width: 768px) {
     .book-title-slider, .book-box-map {
         height: auto; /* Auto height on smaller screens */
