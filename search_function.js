@@ -71,7 +71,7 @@ function buildSearchFilter(searchQuery, searchType) {
 
 // Fetches a book cover image using the Google Books API
 async function fetchBookCover(title) {
-    const apiKey = 'AIzaSyDoEKU8_2pYMFFNXjSO2mPHmhv3rl-SYQo';
+    const apiKey = 'AIzaSyB7aJsr4Xk4etBAeFrBXirIjTAaimQzhmE';
     const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}&key=${apiKey}`;
 
     try {
@@ -120,6 +120,7 @@ async function fetchSearchResults(page) {
 
     const token = await fetchBearerToken('87gOLgck9Xw5eDxNMcIYW8zat9sE9nNeS5u2R76hyKZ6YOww8Qf1Jv07POHmc2Ua');
     const filter = buildSearchFilter(searchQuery, searchType);
+    const totalCount = await fetchTotalCount(token, filter); // Fetch total count
     const resultsPerPage = 10;
     const skip = (page - 1) * resultsPerPage;
     const data = await performApiRequest(token, 'POST', 'action/find', {
@@ -131,9 +132,38 @@ async function fetchSearchResults(page) {
         skip: skip
     });
 
-    displaySearchResults(data.documents);
-    const totalPages = Math.ceil(data.totalCount / resultsPerPage);
+    displaySearchResults(data.documents, totalCount);
+    const totalPages = Math.ceil(totalCount / resultsPerPage);
     updatePaginationControls(totalPages, currentPage);
+}
+
+async function fetchTotalCount(token, filter) {
+    const url = `https://data.mongodb-api.com/app/data-mqtzj/endpoint/data/v1/action/aggregate`;
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            "dataSource": "book-box",
+            "database": "books",
+            "collection": "book entries",
+            "pipeline": [
+                { "$match": filter },
+                { "$group": { "_id": null, "totalCount": { "$sum": 1 } } }
+            ]
+        })
+    });
+
+    const result = await response.json();
+    if (response.ok && result.documents && result.documents.length > 0) {
+        return result.documents[0].totalCount;
+    } else {
+        console.error('No results found or bad response:', result);
+        return 0;
+    }
 }
 
 // Event Listeners
@@ -149,18 +179,19 @@ document.getElementById('searchForm')?.addEventListener('submit', (event) => {
 });
 
 // Displays search results on the page
-async function displaySearchResults(data) {
+async function displaySearchResults(data, totalCount) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
     const booksCount = document.getElementById('books_count');
     let countText = '';
-    if (data.length === 0) {
+    console.log(totalCount);
+    if (totalCount === 0) {
         countText = 'No books found';
-    } else if (data.length === 1) {
+    } else if (totalCount === 1) {
         countText = '1 book found';
     } else {
-        countText = `${data.length} books found`;
+        countText = `${totalCount} books found`;
     }
     booksCount.textContent = countText;
 
@@ -170,7 +201,6 @@ async function displaySearchResults(data) {
 
         const coverImage = document.createElement('img');
         coverImage.alt = "Cover image";
-        li.appendChild(coverImage);
         // Fetch the book cover using the title of the book
         const imageUrl = await fetchBookCover(book['Title of the Book']);
         if (imageUrl && imageUrl.startsWith('http')) {  // Check if the URL is valid
@@ -180,62 +210,67 @@ async function displaySearchResults(data) {
             coverImage.alt = 'No cover image available';
             coverImage.style.display = 'none';  // Optionally hide the image element
         }
+        li.appendChild(coverImage);
 
-        const title = document.createElement('strong');
+        const bookInfo = document.createElement('div');
+        bookInfo.className = 'book-info';
+
+        const title = document.createElement('p');
         title.textContent = `Title: ${book['Title of the Book']}`;
-        li.appendChild(title);
+        bookInfo.appendChild(title);
 
         if (book['Name of the First Author or Publisher']) {
             const author1 = document.createElement('p');
             author1.textContent = `First Author or Publisher: ${book['Name of the First Author or Publisher']}`;
-            li.appendChild(author1);
+            bookInfo.appendChild(author1);
         }
 
         if (book['Name of the Second Author (optional)']) {
             const author2 = document.createElement('p');
             author2.textContent = `Second Author: ${book['Name of the Second Author (optional)']}`;
-            li.appendChild(author2);
+            bookInfo.appendChild(author2);
         }
 
         if (book['Name of the Third Author (optional)']) {
             const author3 = document.createElement('p');
             author3.textContent = `Third Author: ${book['Name of the Third Author (optional)']}`;
-            li.appendChild(author3);
+            bookInfo.appendChild(author3);
         }
 
         if (book['Name of the Fourth Author (optional)']) {
             const author4 = document.createElement('p');
             author4.textContent = `Fourth Author: ${book['Name of the Fourth Author (optional)']}`;
-            li.appendChild(author4);
+            bookInfo.appendChild(author4);
         }
 
         if (book['Name of the Fifth Author (optional)']) {
             const author5 = document.createElement('p');
             author5.textContent = `Fifth Author: ${book['Name of the Fifth Author (optional)']}`;
-            li.appendChild(author5);
+            bookInfo.appendChild(author5);
         }
 
         if (book['Name of the Sixth Author (optional)']) {
             const author6 = document.createElement('p');
             author6.textContent = `Sixth Author: ${book['Name of the Sixth Author (optional)']}`;
-            li.appendChild(author6);
+            bookInfo.appendChild(author6);
         }
 
         if (book['Name of the Seventh Author (optional)']) {
             const author7 = document.createElement('p');
             author7.textContent = `Seventh Author: ${book['Name of the Seventh Author (optional)']}`;
-            li.appendChild(author7);
+            bookInfo.appendChild(author7);
         }
 
         const bookBox = document.createElement('p');
         bookBox.textContent = `Book Box: ${book['Address of the Book Box']}`;
-        li.appendChild(bookBox);
+        bookInfo.appendChild(bookBox);
 
         const getButton = document.createElement('button');
         getButton.textContent = 'remove';
         getButton.onclick = () => deleteBook(book['Title of the Book'], book['Name of the First Author or Publisher'], book['Address of the Book Box']);
-        li.appendChild(getButton);
+        bookInfo.appendChild(getButton);
 
+        li.appendChild(bookInfo);
         searchResults.appendChild(li);
     }
 }
