@@ -76,6 +76,7 @@ nav a.active {
     margin: 0 10px 30px 10px;
 }
 
+
 .book-box-image {
     border: 0px solid #ccc; /* A thicker border for emphasis */
     border-radius: 0px; /* Rounded corners for the image */
@@ -142,10 +143,13 @@ footer {
 #toggleAddBookForm:hover {
     background-color: dimgrey;
 }
-#toggleAddBookForm 
 
-#addBookFormContainer{
-    margin-bottom: 20px;
+#addBookFormContainer {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 0 10px 30px 10px;
 }
 
 #addBookFormContainer h2{
